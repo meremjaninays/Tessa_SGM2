@@ -1,0 +1,126 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-12T14\:06\:41) {
+	#exchange_view(RowID:c7dac5b3-b6b2-4082-a987-723d4ed40b4d, Alias:DvPartners, Caption:$Sgm_Views_Captions_Partners, ModifiedById:8d13a7a6-2cfd-4ed7-b1d6-4705d2e2d60e, ModifiedByName:Меремьянина Ю.С., FormatVersion:2, ModifiedDateTime:2019-11-05T15\:04\:38, GroupName:Dv) {
+		#metadata {
+			#view(DefaultSortColumn: DvName, DefaultSortDirection: desc, Paging: always, MultiSelect: true, RowCountSubset: Count, QuickSearchParam: QuickSearch, ConnectionAlias: dv)
+
+			#column(Alias: DvID, Hidden: true, Type: Guid)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+
+			#column(Alias: DvName, Caption: $Sgm_Views_Columns_Name, Type: String, SortBy: [p].[Name])
+			#column(Alias: FullName, Caption: $CardTypes_Controls_FullTitle, Type: String)
+			#column(Alias: ManagerName, Caption: $CardTypes_Controls_PartnerHead, Type: String)
+			#column(Alias: ContactPersonName, Caption: $CardTypes_Controls_PartnerContactPerson, Type: String)
+			#column(Alias: ChiefAccountantName, Caption: $CardTypes_Controls_PartnerChiefAccountant, Type: String)
+			#column(Alias: Phone, Caption: $CardTypes_Controls_Phone, Type: String)
+			#column(Alias: Fax, Caption: Fax, Type: String)
+			#column(Alias: Email, Caption: Email, Type: String)
+			#column(Alias: Account, Caption: $CardTypes_Controls_CorrAccount, Type: String)
+			#column(Alias: BankName, Caption: $CardTypes_Controls_PartnerBank, Type: String)
+			#column(Alias: CorrespondentAccount, Caption: $CardTypes_Controls_ContactAddress, Type: String)
+			#column(Alias: BIK, Caption: $CardTypes_Controls_BIK, Type: String)
+			#column(Alias: INN, Caption: $CardTypes_Controls_INN, Type: String)
+			#column(Alias: KPP, Caption: $CardTypes_Controls_KPP, Type: String)
+			#column(Alias: OKPO, Caption: $CardTypes_Controls_OKPO, Type: String)
+			#column(Alias: OKONH, Caption: $CardTypes_Controls_OKVED, Type: String)
+			#column(Alias: Comments, Caption: $CardTypes_Controls_Comment, Type: String)
+			#column(Alias: URL, Caption: $Sgm_CardTypes_Controls_URL, Type: String)
+			#column(Alias: NotAvailable, Caption: $Sgm_CardTypes_Controls_HiddenForSelect, Type: Boolean)
+			#column(Alias: Code1C, Caption: Code1C, Type: String)
+			#column(Alias: CodeMdm, Caption: CodeMdm, Type: String)
+
+			#param(Alias: QuickSearch, Caption: $Sgm_Views_Params_QuickSearch, Type: String, Multiple: false)
+			#param(Alias: Name, Caption: $Sgm_Views_Columns_Name, Type: String)
+
+			#reference(ColPrefix: Dv, RefSection: DvPartner, DisplayValueColumn: DvName, IsCard: false)
+
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			SELECT
+				[t].*
+			FROM
+			\(
+				SELECT
+					\#if\(Normal\) \{
+					p.RowID AS DvID\,
+					p.Name AS DvName\,
+					p.FullName\,
+
+					ISNULL\(em.LastName\, N''\)
+						+ ISNULL\(N' ' + em.FirstName\, N''\)
+						+ ISNULL\(N' ' + em.MiddleName\, N''\)
+					AS ManagerName\,
+					ISNULL\(ecp.LastName\, N''\)
+						+ ISNULL\(N' ' + ecp.FirstName\, N''\)
+						+ ISNULL\(N' ' + ecp.MiddleName\, N''\)
+					AS ContactPersonName\,
+					ISNULL\(eca.LastName\, N''\)
+						+ ISNULL\(N' ' + eca.FirstName\, N''\)
+						+ ISNULL\(N' ' + eca.MiddleName\, N''\)
+					AS ChiefAccountantName\,
+
+					p.Phone\,
+					p.Fax\,
+					p.Email\,
+				
+					p.Account\,
+					p.BankName\,
+					p.CorrespondentAccount\,
+					p.BIK\,
+
+					p.INN\,
+					p.KPP\,
+
+					p.OKPO\,
+					p.OKONH\,
+
+					p.Comments\,
+					p.URL\,
+
+					p.NotAvailable\,
+
+					CAST\(p1c.Value AS UNIQUEIDENTIFIER\) AS Code1C\,
+					CAST\(pmdm.Value AS VARCHAR\(MAX\)\) AS CodeMdm\,
+
+					ROW_NUMBER\(\) OVER \(ORDER BY \#order_by\) AS [rn]
+					\}
+
+					\#if\(!Normal\) \{
+					COUNT\(1\) AS [Cnt]
+					\}
+				FROM [dvtable_\{C78ABDED-DB1C-4217-AE0D-51A400546923\}] p WITH\(NOLOCK\)
+				\#if\(Normal\) \{ -- left не учитываем в расчете count т.к. он один или не существует
+				LEFT JOIN [dvtable_\{031D280E-054C-4347-B5BC-3FE6CAE3D162\}] p1c WITH\(NOLOCK\)
+					ON p1c.ParentRowID=p.RowID AND p1c.Name='Идентификатор 1С'
+				LEFT JOIN [dvtable_\{031D280E-054C-4347-B5BC-3FE6CAE3D162\}] pmdm WITH\(NOLOCK\)
+					ON pmdm.ParentRowID=p.RowID AND pmdm.Name='Идентификатор МДМ'
+				
+				LEFT JOIN [dvtable_\{1A46BF0F-2D02-4AC9-8866-5ADF245921E8\}] em WITH\(NOLOCK\)
+					ON em.RowID=p.Manager
+				LEFT JOIN [dvtable_\{1A46BF0F-2D02-4AC9-8866-5ADF245921E8\}] ecp WITH\(NOLOCK\)
+					ON ecp.RowID=p.ContactPerson
+				LEFT JOIN [dvtable_\{1A46BF0F-2D02-4AC9-8866-5ADF245921E8\}] eca WITH\(NOLOCK\)
+					ON eca.RowID=p.ChiefAccountant
+					\}
+				WHERE 1 = 1
+					and 
+					not exists \(select top\(1\) 1 from
+					[MSK1-SQLTES01].[tessa].[dbo].[Partners] tes where tes.id=p.rowid\)
+					\#if\(Normal\) \{ 
+					\#param\(QuickSearch\, [p].[Name]\)
+					\#param\(Name\, [p].[Name]\)
+					\}
+				
+			\) [t]
+			\#if\(PageOffset\) \{
+			WHERE [t].[rn] >= \#param\(PageOffset\) and [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			ORDER BY [t].[rn]
+			\}
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:c7dac5b3-b6b2-4082-a987-723d4ed40b4d) 
+	}
+}

@@ -1,0 +1,243 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-13T06\:32\:01) {
+	#exchange_view(RowID:0d22f1d8-d4aa-4ac6-b645-7ddd914c3f69, Alias:SgmMyCompletedTasks, Caption:$Sgm_Views_Captions_CompletedByMe, ModifiedById:8d13a7a6-2cfd-4ed7-b1d6-4705d2e2d60e, ModifiedByName:Меремьянина Ю.С., FormatVersion:2, ModifiedDateTime:2019-10-17T14\:31\:20, GroupName:SgmWorkplace) {
+		#metadata {
+			#view(DefaultSortColumn: CompleteDate, DefaultSortDirection: desc, Paging: always, QuickSearchParam:FTsearch)
+
+			#column(Alias: CardID, Hidden: true, Type: $TaskHistory.ID)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+
+			#column(Alias: CardTypeCaption, Caption: $Sgm_Views_Columns_TypeCaption, Type: $Types.Caption, Localizable: true)
+			#column(Alias: FullNumber, Caption: $Sgm_Views_Columns_DocNumber, Type: $DocumentCommonInfo.FullNumber, SortBy: [dci].[FullNumber])
+			#column(Alias: ParentDocumentName, Caption: $Sgm_Views_Columns_ParentDocument, Type: String)
+			#column(Alias: PartnerName, Caption: $Sgm_Views_Columns_Partner, Type: $DocumentCommonInfo.PartnerName)
+			#column(Alias: Subject, Caption: $Sgm_Views_Columns_Subject, Type: $DocumentCommonInfo.Subject)
+			#column(Alias: DocDate, Caption: $Sgm_Views_Columns_DocDate, Type: $DocumentCommonInfo.DocDateTime, SortBy: [dci].[DocDateTime])
+			#column(Alias: StartDate, Caption: $Sgm_Views_Columns_StartDate, Type: $TaskHistory.Created, SortBy: [th].[Created])
+			#column(Alias: PlannedDate, Caption: $Sgm_Views_Columns_Planned, Type: $TaskHistory.Planned, SortBy: [th].[Planned])
+			#column(Alias: AuthorName, Caption: $Sgm_Views_Columns_Author, Type: $TaskHistory.AuthorName, SortBy: [th].[AuthorName])
+			#column(Alias: CompleteDate, Caption: $Sgm_Views_Columns_CompleteDate, Type: $TaskHistory.Completed, SortBy: [th].[Completed])
+			#column(Alias: StateName, Caption: $Sgm_Views_Columns_Status, Type: $KrApprovalCommonInfo.StateName, Localizable: true)
+			#column(Alias: TaskComment, Caption: $Sgm_Views_Columns_ReportComment, Type: $SgmDocumentSatelliteTasks.Comment)
+			#column(Alias: ObjectPlaceName, Caption: $Sgm_Views_Columns_ObjectPlace, Type: $DocumentCommonInfo.ObjectPlaceName)
+			#column(Alias: RoleName, Caption: $Sgm_Views_Columns_Performer, Type: $Tasks.RoleName, SortBy: [th].[RoleName])
+
+			#param(Alias: ThisUser, Caption: ThisUser, Hidden: true, Multiple: false, Type: $PersonalRoles.ID, RefSection: SgmUser) {
+				#autocomplete(View: Users, Param: Name)
+			}
+			#param(Alias: CardID, Caption: CardID, Hidden: true, Type: $DocumentCommonInfo.ID)
+
+			#param(Alias: FromMeMode, Caption: $Views_CompletedTasks_FromMeMode_Param, Hidden: true, Multiple: false, Type: Int32, AllowedOperands: Equality)
+			#param(Alias: CardType, Caption: $Sgm_Views_Columns_TypeCaption, Type: $DocumentCommonInfo.CardTypeID, RefSection: SgmSolutionDocumentType) {
+				#autocomplete(View: SgmSolutionDocumentTypes, Param: QuickSearch)
+				#dropdown(View: SgmSolutionDocumentTypes)
+			}
+			#param(Alias: Partner, Caption: $Sgm_Views_Columns_Partner, Type: $DocumentCommonInfo.PartnerID, RefSection: SgmPartner) {
+			    #autocomplete(View: Partners, Param: Name)
+			}
+			#param(Alias: State, Hidden: true, Caption: State, Type: $KrApprovalCommonInfo.StateID)
+			#param(Alias: Subject, Caption: $Sgm_Views_Columns_Subject, Type: $DocumentCommonInfo.Subject)
+			#param(Alias: DocDate, Caption: $Sgm_Views_Columns_DocDate, Type: $DocumentCommonInfo.DocDateTime)
+			#param(Alias: StartDate, Caption: $Sgm_Views_Columns_StartDate, Type: $TaskHistory.InProgress)
+			#param(Alias: PlannedDate, Caption: $Sgm_Views_Columns_Planned, Type: $TaskHistory.Planned)
+			#param(Alias: CompleteDate, Caption: $Sgm_Views_Columns_CompleteDate, Type: $TaskHistory.Completed)
+			#param(Alias: ObjectPlace, Caption: $Sgm_Views_Columns_ObjectPlace, Type: $DocumentCommonInfo.ObjectPlaceID, RefSection: SgmObjectPlace) {
+			    #autocomplete(View: SgmObjectPlaces, Param: Name)
+			}
+			#param(Alias: Role, Caption: $Sgm_Views_Columns_Performer, Type: $Tasks.RoleID, RefSection: SgmDurableRole, AllowedOperands: Equality NonEquality) {
+				#autocomplete(View: DurableRoles, Param: Name)
+			}
+			#param(Alias: FTsearch, Caption: Файл содержит, Type: string, Multiple: false)
+
+			#reference(ColPrefix: Card, RefSection: Instances, DisplayValueColumn: FullNumber, IsCard: true, OpenOnDoubleClick: true)
+
+			#subset(Alias: ByRole, Caption: $Sgm_Views_Subsets_ByPerformer, RefColumn: RoleID, CaptionColumn: RoleName, RefParam: Role)
+			#subset(Alias: ByCardType, Caption: $Sgm_Views_Subsets_ByCardType, RefColumn: CardTypeID, CaptionColumn: CardTypeCaption, RefParam: CardType)
+			#subset(Alias: ByPartner, Caption: $Sgm_Views_Subsets_ByPartner, RefColumn: PartnerID, CaptionColumn: PartnerName, RefParam: Partner)
+			#subset(Alias: ByState, Caption: $Sgm_Views_Subsets_ByState, RefColumn: StateID, CaptionColumn: StateName, RefParam: State)
+			#subset(Alias: ByObjectPlace, Caption: $Sgm_Views_Subsets_ByObjectPlace, RefColumn: ObjectPlaceID, CaptionColumn: ObjectPlaceName, RefParam: ObjectPlace)
+		}
+		#description {}
+		#ms_query {
+			\#if\(FTsearch\) 
+			\{ 
+				DECLARE @FTsearch nvarchar\(500\) = \#param\(FTsearch\); 
+				SET @FTsearch='"'+@FTsearch+'"'
+			\}
+
+			SELECT
+				\#if\(Normal\) \{
+				[th].[ID] AS [CardID]\,
+				[tp].[Caption] AS [CardTypeCaption]\,
+			    [dci].[FullNumber]\,
+				\(
+					[lParentTypeCaption].[Value]
+					+ N' - ' + ISNULL\([dci].[ParentFullNumber]\, N''\)
+					+ N' - ' + CONVERT\(NVARCHAR\(MAX\)\, [dci].[ParentCreationDate]\, 120\)
+					+ N' - ' + ISNULL\([dci].[ParentSubject]\, N''\)
+				\) AS [ParentDocumentName]\,
+			    [dci].[PartnerName]\,
+			    [dci].[Subject]\,
+			    [dci].[DocDateTime] AS [DocDate]\,
+			    [th].[InProgress] AS [StartDate]\,
+			    [th].[Planned] AS [PlannedDate]\,
+			    [th].[AuthorName]\,
+			    [th].[Completed] AS [CompleteDate]\,
+			    [aci].[StateName]\,
+			    [st].[Comment] AS [TaskComment]\,
+			    [dci].[ObjectPlaceName]\,
+			    [th].[RoleName]\,
+				[t].[rn]
+				\}
+				
+				\#if\(ByCardType\) \{
+				[tp].[ID] AS [CardTypeID]\,
+				[tp].[Caption] AS [CardTypeCaption]
+				\}
+
+				\#if\(ByPartner\) \{
+				[dci].[PartnerID]\,
+				ISNULL\([dci].[PartnerName]\, N'$Sgm_Views_Values_Null'\) AS [PartnerName]
+				\}
+				
+				\#if\(ByState\) \{
+				[aci].[StateID]\,
+				ISNULL\([aci].[StateName]\, N'$Sgm_Views_Values_Null'\) AS [StateName]
+				\}
+				
+				\#if\(ByObjectPlace\) \{
+				[dci].[ObjectPlaceID] AS [ObjectPlaceID]\,
+				ISNULL\([dci].[ObjectPlaceName]\, N'$Sgm_Views_Values_Null'\) AS [ObjectPlaceName]
+				\}
+				
+				\#if\(ByRole\) \{
+				[th].[RoleID]\,
+				ISNULL\([th].[RoleName]\, N'$Sgm_Views_Values_Null'\) AS [RoleName]
+				\}
+					
+			FROM
+				\(
+					\#if\(PageOffset\) \{
+					SELECT
+						[t].*
+					FROM
+						\(
+					\}
+							SELECT
+								[th].[RowID]
+								\#if\(Normal\) \{
+								\, ROW_NUMBER\(\) OVER \(ORDER BY \#order_by\) AS [rn]
+								\}
+							FROM [TaskHistory] AS [th] WITH \(NOLOCK\)
+							\#if\(CardType || Partner ||  Subject || DocDate || ObjectPlace
+								|| request.SortedBy\("FullNumber"\)
+								|| request.SortedBy\("DocDate"\) || FTsearch\) \{
+							INNER JOIN [DocumentCommonInfo] AS [dci] WITH \(NOLOCK\)
+								ON [dci].[ID] = [th].[ID]
+							\}
+							\#if\(State\) \{
+							INNER JOIN [KrApprovalCommonInfo] AS [aci] WITH \(NOLOCK\)
+								ON [aci].[MainCardID] = [th].[ID]
+							\}
+							\#if\(FTsearch\) 
+							\{
+								CROSS APPLY
+								\(SELECT top 1 Files.rowid FROM Files WITH \(NOLOCK\)
+									INNER JOIN [tessa-files].dbo.FileContent WITH \(NOLOCK\)
+								ON FileContent.VersionRowID=Files.VersionRowID
+									where dci.ID=files.ID AND CONTAINS\(Content\, @FTsearch\)\) files1
+							\}
+
+						
+							WHERE [th].[Completed] IS NOT NULL
+								\#if\(FromMeMode && FromMeMode.Value == 1\) \{
+								AND [th].[AuthorID] = \#if\(ThisUser\) \{ \#param\(ThisUser\) \} \{ \#param\(CurrentUserID\) \}
+								\}
+								\#if\(FromMeMode && FromMeMode.Value == 2\) \{
+								AND EXISTS \(
+									SELECT TOP\(1\) 1
+									FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+									WHERE \([ru].[ID] = [th].[RoleID] OR [ru].[ID] = [th].[UserID]\)
+										AND [ru].[IsDeputy] = 1
+										AND [ru].[UserID] = \#if\(ThisUser\) \{ \#param\(ThisUser\) \} \{ \#param\(CurrentUserID\) \}
+								\)
+								\} \{
+								AND [th].[CompletedByID] = \#if\(ThisUser\) \{ \#param\(ThisUser\) \} \{ \#param\(CurrentUserID\) \}
+								\}
+								\#param\(CardID\, [dci].[ID]\)
+								
+								\#param\(CardType\, [dci].[CardTypeID]\)
+								\#param\(Partner\, [dci].[PartnerID]\)
+								\#param\(Subject\, [dci].[Subject]\)
+								\#param\(DocDate\, [dci].[DocDateTime]\)
+								\#param\(ObjectPlace\, [dci].[ObjectPlaceID]\)
+								\#param\(StartDate\, [th].[Created]\)
+								\#param\(PlannedDate\, [th].[Planned]\)
+								\#param\(CompleteDate\, [th].[Completed]\)
+								\#param\(Performer\, [th].[RoleID]\)
+								\#param\(State\, [aci].[StateID]\)
+					\#if\(PageOffset\) \{
+						\) AS [t]
+					WHERE [t].[rn] >= \#param\(PageOffset\) AND [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+					\}
+				\) AS [t]
+				INNER JOIN [TaskHistory] AS [th] WITH \(NOLOCK\)
+					ON [th].[RowID] = [t].[RowID]
+				INNER JOIN [DocumentCommonInfo] AS [dci] WITH \(NOLOCK\)
+					ON [dci].[ID] = [th].[ID]
+				INNER JOIN [Types] AS [tp] WITH \(NOLOCK\)
+					ON [tp].[ID] = [dci].[CardTypeID]
+				LEFT JOIN [KrApprovalCommonInfo] AS [aci] WITH \(NOLOCK\)
+					ON [aci].[MainCardID] = [th].[ID]
+				LEFT JOIN [SgmDocumentSatelliteTasks] AS [st] WITH \(NOLOCK\)
+					ON [st].[RowID] = [th].[RowID]				
+				CROSS APPLY [Localization]\([dci].[ParentTypeCaption]\, \#param\(locale\)\) AS [lParentTypeCaption]
+
+
+			\#if\(ByCardType\) \{
+			GROUP BY [tp].[ID]\, [tp].[Caption]
+			\}
+
+			\#if\(ByPartner\) \{
+			GROUP BY [dci].[PartnerID]\, [dci].[PartnerName]
+			\}
+
+			\#if\(ByState\) \{
+			GROUP BY [aci].[StateID]\, [aci].[StateName]
+			\}
+
+			\#if\(ByObjectPlace\) \{
+			GROUP BY [dci].[ObjectPlaceID]\, [dci].[ObjectPlaceName]
+			\}
+
+			\#if\(ByRole\) \{
+			GROUP BY [th].[RoleID]\, [th].[RoleName]
+			\}
+
+			\#if\(Normal\) \{
+			ORDER BY [t].[rn]
+			\}
+
+			\#if\(ByCardType\) \{
+			ORDER BY [tp].[Caption]
+			\}
+
+			\#if\(ByPartner\) \{
+			ORDER BY [dci].[PartnerName]
+			\}
+
+			\#if\(ByState\) \{
+			ORDER BY [aci].[StateName]
+			\}
+
+			\#if\(ByObjectPlace\) \{
+			ORDER BY [dci].[ObjectPlaceName]
+			\}
+
+			\#if\(ByRole\) \{
+			ORDER BY [th].[RoleName]
+			\}
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:0d22f1d8-d4aa-4ac6-b645-7ddd914c3f69) 
+	}
+}

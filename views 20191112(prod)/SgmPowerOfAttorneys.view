@@ -1,0 +1,476 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-12T14\:06\:41) {
+	#exchange_view(RowID:795dd7e7-7bf0-40a7-995e-b83a595441be, Alias:SgmPowerOfAttorneys, Caption:$Sgm_Views_Captions_PowerOfAttorneys, ModifiedById:8d13a7a6-2cfd-4ed7-b1d6-4705d2e2d60e, ModifiedByName:Меремьянина Ю.С., FormatVersion:2, ModifiedDateTime:2019-11-07T14\:55\:11, GroupName:Sgm) {
+		#metadata {
+			#view(DefaultSortColumn: ElCreationDate, DefaultSortDirection: desc, Paging: always, MultiSelect: true, RowCountSubset: Count, QuickSearchParam: FTsearch)
+
+			#column(Alias: ElID, Hidden: true, Type: $DocumentCommonInfo.ID)
+			#column(Alias: ElTypeID, Hidden: true, Type: $Types.ID)
+			#column(Alias: ElTypeCaption, Hidden: true, Type: $Types.Caption)
+			#column(Alias: ElIsDocsvision, Hidden: true, Type: $SgmDocumentLinks.DocumentIsDocsvision)
+			#column(Alias: ElSubject, Hidden: true, Type: $DocumentCommonInfo.Subject)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+
+			#column(Alias: SecondaryFullNumber, Caption: $Sgm_Views_Columns_RegNumber, Type: $DocumentCommonInfo.SecondaryFullNumber)
+			#column(Alias: ElFullNumber, Caption: $Sgm_Views_Columns_ProjectNumber, Type: $DocumentCommonInfo.FullNumber)
+			#column(Alias: StateName, Caption: $Sgm_Views_Columns_State, Type: $KrApprovalCommonInfo.StateName, Localizable: true)
+			#column(Alias: ElCreationDate, Caption: $Sgm_Views_Columns_CreationDate, Type: $DocumentCommonInfo.CreationDate, SortBy: [dci].[CreationDate])
+			#column(Alias: PowerOfAttorneyDate, Caption: $Sgm_Views_Columns_PowerOfAttorneyDate, Type: Date, SortBy: [dci].[DocDateTime])
+			#column(Alias: ApprovalUrgencyName, Caption: $Sgm_Views_Columns_PowerOfAttorneyApprovalUrgency, Type: $SgmPowerOfAttorney.ApprovalUrgencyName, Hidden: true)
+			#column(Alias: CuratorName, Caption: $Sgm_Views_Columns_Curator, Type: $DocumentCommonInfo.CuratorName)
+			#column(Alias: PowerOfAttorneyEndDate, Caption: $Sgm_Views_Columns_PowerOfAttorneyEndDate, Type: Date, SortBy: [poa].[EndDate])
+			#column(Alias: ConfidantName, Caption: $Sgm_Views_Columns_Confidant, Type: $SgmPowerOfAttorney.ConfidantName)
+			#column(Alias: RepresentativeTypeName, Caption: $Sgm_Views_Columns_Representative, Type: $SgmPowerOfAttorney.RepresentativeTypeName, Localizable: true)
+			#column(Alias: WorkerName, Caption: $Sgm_Views_Columns_WorkerPoa, Type: $SgmPowerOfAttorney.WorkerName, Hidden: true)
+			#column(Alias: PartnerName, Caption: $Sgm_Views_Columns_Partner, Type: $DocumentCommonInfo.PartnerName, Hidden: true)
+			#column(Alias: PartnerContactName, Caption: $Sgm_Views_Columns_PartnerContactName, Type: $SgmPowerOfAttorneyRequest.PartnerContactName, Hidden: true)
+			#column(Alias: ConfidantAgentName, Caption: Доверенное лицо, Type: $SgmPowerOfAttorney.ConfidantAgentName)
+			#column(Alias: PowerOfAttorneyRequest, Caption: $Sgm_Views_Columns_PowerOfAttorneyRequest, Type: $DocumentCommonInfo.ParentFullNumber)
+			#column(Alias: RequestInitiatorName, Caption: $Sgm_Views_Columns_RequestInitiator, Type: $DocumentCommonInfo.CuratorName)
+			#column(Alias: CuratorComment, Caption: Комментарий куратора, Type: $SgmProcessInfo.CuratorComment)
+			#column(Alias: CurrentPerformers, Caption: $Sgm_Views_Columns_CurrentPerformers, Type: $SgmCurrentPerformersVirtual.RoleName)
+			#column(Alias: DocumentSourceName, Caption: Источник, Type: String, Hidden: true)
+			#column(Alias: Permissions, Caption: Полномочия, Type: $DocumentCommonInfo.Comment, MaxLength: 100)
+
+			#param(Alias: LinkTypeID, Caption: LinkTypeID, Hidden: true, Type: $DocumentCommonInfo.ID)
+			#param(Alias: ThisUser, Caption: ThisUser, Hidden: true, Multiple: false, Type: $PersonalRoles.ID, RefSection: SgmUser) {
+				#autocomplete(View: Users, Param: Name)
+			}
+			#param(Alias: ThisCardID, Caption: ThisCardID, Hidden: true, Type: $DocumentCommonInfo.ID)
+			#param(Alias: CardID, Caption: CardID, Hidden: true, Type: $DocumentCommonInfo.ID)
+
+			#param(Alias: QuickSearch, Caption: $Sgm_Views_Params_QuickSearch, Type: String, Multiple: false)
+
+			#param(Alias: SecondFullNumber, Caption: $Sgm_Views_Columns_RegNumber, Type: $DocumentCommonInfo.SecondaryFullNumber)
+			#param(Alias: FullNumber, Caption: $Sgm_Views_Columns_ProjectNumber, Type: $DocumentCommonInfo.FullNumber)
+			#param(Alias: State, Caption: $Sgm_Views_Columns_State, Type: $KrApprovalCommonInfo.StateID, RefSection: SgmPowerOfAttorneyState, HideAutoCompleteButton: true) {
+				#autocomplete(View: SgmPowerOfAttorneyStates, Param: Name)
+			    #dropdown(View: SgmPowerOfAttorneyStates)
+			}
+			#param(Alias: CreationDate, Caption: $Sgm_Views_Columns_CreationDate, Type: DateTime, AllowedOperands: GreatThan LessThan Between)
+			#param(Alias: PoaDate, Caption: $Sgm_Views_Columns_PowerOfAttorneyDate, Type: Date, AllowedOperands: GreatThan LessThan Between)
+			#param(Alias: ApprovalUrgency, Caption: $Sgm_Views_Columns_PowerOfAttorneyApprovalUrgency, Type: $SgmPowerOfAttorney.ApprovalUrgencyID, RefSection: SgmPowerOfAttorneyUrgency, HideAutoCompleteButton: true) {
+				#autocomplete(View: SgmPowerOfAttorneyUrgencies, Param: Name)
+			    #dropdown(View: SgmPowerOfAttorneyUrgencies)
+			}
+			#param(Alias: Curator, Caption: $Sgm_Views_Columns_Curator, Multiple: false, Type: $DocumentCommonInfo.CuratorID, RefSection: SgmUser) {
+				#autocomplete(View: Users, Param: Name)
+			}
+			#param(Alias: PoaEndDate, Caption: $Sgm_Views_Columns_PowerOfAttorneyEndDate, Type: Date, AllowedOperands: GreatThan LessThan Between)
+			#param(Alias: Confidant, Caption: $Sgm_Views_Columns_Confidant, Multiple: false, Type: $SgmPowerOfAttorney.ConfidantID, RefSection: SgmUser) {
+				#autocomplete(View: Users, Param: Name)
+			}
+			#param(Alias: Representative, Caption: $Sgm_Views_Columns_Representative, Type: $SgmPowerOfAttorney.RepresentativeTypeID, RefSection: SgmRepresentativeType, HideAutoCompleteButton: true) {
+				#autocomplete(View: SgmRepresentativeTypes, Param: Name)
+			    #dropdown(View: SgmRepresentativeTypes)
+			}
+			#param(Alias: Worker, Caption: $Sgm_Views_Columns_WorkerPoa, Multiple: false, Type: $PersonalRoles.ID, RefSection: SgmUser) {
+				#autocomplete(View: Users, Param: Name)
+			}	
+			#param(Alias: Partner, Caption: $Sgm_Views_Columns_Partner, Type: $DocumentCommonInfo.PartnerID, RefSection: SgmPartner) {
+			    #autocomplete(View: Partners, Param: Name)
+			}
+			#param(Alias: PartnerContact, Caption: $Sgm_Views_Columns_PartnerContactName, Type: $SgmPowerOfAttorney.PartnerContactRowID, RefSection: PartnersContacts) {
+			    #autocomplete(View: PartnersContacts, Param: Name)
+			}
+			#param(Alias: PowerOfAttorneyRequest, Caption: $Sgm_Views_Columns_PowerOfAttorneyRequest, Multiple: false, Type: $DocumentCommonInfo.ParentID, RefSection: SgmPowerOfAttorneyRequest) {
+			    #autocomplete(View: SgmPowerOfAttorneyRequests, Param: Name)
+			}
+			#param(Alias: RequestInitiator, Caption: $Sgm_Views_Columns_DocumentInitiator, Multiple: false, Type: $DocumentCommonInfo.CuratorID, RefSection: SgmUser) {
+				#autocomplete(View: Users, Param: Name)
+			}
+			#param(Alias: Permissions, Caption: Полномочия, Type: $DocumentCommonInfo.Comment)
+			#param(Alias: Comment, Caption: Комментарий куратора, Type: $SgmProcessInfo.CuratorComment)
+			#param(Alias: DocumentSource, Caption: Источник, Type: Int32, RefSection: SgmSource, AllowedOperands: Equality, HideAutoCompleteButton: true)
+			{
+			    #dropdown(View: SgmCardSources)
+			}
+			#param(Alias: FTsearch, Caption: Файл содержит, Type: string, Multiple: false)
+
+			#reference(ColPrefix: El, RefSection: SgmPowerOfAttorneys SgmDocument, DisplayValueColumn: ElFullNumber, IsCard: true, OpenOnDoubleClick: true)
+
+			#subset(Alias: ByState, Caption: $Sgm_Views_Subsets_ByPoaState, RefColumn: StateID, CaptionColumn: StateName, RefParam: State, CountColumn: Cnt)
+			#subset(Alias: ByCurator, Caption: $Sgm_Views_Subsets_ByCurator, RefColumn: CuratorID, CaptionColumn: CuratorName, RefParam: Curator, CountColumn: Cnt)
+			#subset(Alias: ByConfidant, Caption: $Sgm_Views_Subsets_ByConfidant, RefColumn: ConfidantID, CaptionColumn: ConfidantName, RefParam: Confidant, CountColumn: Cnt)
+			#subset(Alias: ByRepresentative, Caption: $Sgm_Views_Subsets_ByRepresentative, RefColumn: RepresentativeTypeID, CaptionColumn: RepresentativeTypeName, RefParam: Representative, CountColumn: Cnt)
+			#subset(Alias: ByWorker, Caption: $Sgm_Views_Subsets_ByWorker, RefColumn: WorkerID, CaptionColumn: WorkerName, RefParam: Worker, CountColumn: Cnt)
+			#subset(Alias: ByPartner, Caption: $Sgm_Views_Subsets_ByPartner, RefColumn: PartnerID, CaptionColumn: PartnerName, RefParam: Partner, CountColumn: Cnt)
+			#subset(Alias: ByPartnerContact, Caption: $Sgm_Views_Subsets_ByPartnerContact, RefColumn: PartnerContactRowID, CaptionColumn: PartnerContactName, RefParam: PartnerContact, CountColumn: Cnt)
+			#subset(Alias: ByInitiator, Caption: $Sgm_Views_Subsets_ByInitiatorRequest, RefColumn: InitiatorID, CaptionColumn: InitiatorName, RefParam: RequestInitiator, CountColumn: Cnt)
+			#subset(Alias: BySource, Caption: По источнику, RefColumn: DocumentSourceID, CaptionColumn: DocumentSourceName, RefParam: DocumentSource, CountColumn: Cnt)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			DECLARE @poa_type_id UNIQUEIDENTIFIER = '7a79f503-f0bf-4517-a4c3-95d66d1a2c06';
+			\#if\(FTsearch\) 
+			\{ 
+				DECLARE @FTsearch nvarchar\(500\) = \#param\(FTsearch\); 
+				SET @FTsearch='"'+@FTsearch+'"'
+			\}
+
+			\#if\(LinkTypeID\) \{
+			DECLARE @is_all_link_types BIT = 0;
+
+			SELECT @is_all_link_types = 1
+			FROM [SgmLinkTypeTargetTypes] AS [ltt] WITH \(NOLOCK\)
+			WHERE 1=1
+				\#param\(LinkTypeID\, [ltt].[ID]\)
+			\}
+
+			\#if\(!Administrator || ThisUser\) \{
+			DECLARE @rights TABLE \(
+				[ID] UNIQUEIDENTIFIER\,
+				[AllStates] BIT\,
+				[EmptyState] BIT\,
+				[Name] NVARCHAR\(MAX\)
+			\);
+
+			INSERT INTO @rights\([ID]\, [AllStates]\, [EmptyState]\, [Name]\)
+			SELECT
+				[p].[ID]\,
+				[AllStates].[Value]\,
+				CAST\(1 AS BIT\)\,
+				[p].[Caption]
+			FROM [KrPermissions] AS [p] WITH \(NOLOCK\)
+			CROSS APPLY \(
+				SELECT
+					\(
+						CASE COUNT\(1\)
+							WHEN 0 THEN 1
+							ELSE 0
+						END
+					\) AS [Value]
+				FROM [KrPermissionStates] AS [ps] WITH \(NOLOCK\)
+				WHERE [ps].[ID] = [p].[ID]
+			\) AS [AllStates]
+			WHERE [p].[CanReadCard] = 1
+			AND EXISTS \(
+				SELECT TOP\(1\) 1
+				FROM [KrPermissionTypes] AS [pt] WITH \(NOLOCK\)
+				WHERE [pt].[ID] = [p].[ID] AND [pt].[TypeID] IN \(@poa_type_id\)
+			\)
+			AND EXISTS \(
+				SELECT TOP\(1\) 1
+				FROM [KrPermissionRoles] AS [pr] WITH \(NOLOCK\)
+				INNER JOIN [RoleUsers] AS [ru] WITH \(NOLOCK\)
+					ON [pr].[RoleID] = [ru].[ID]
+				WHERE [pr].[ID] = [p].[ID] AND [ru].[UserID] = \#if\(ThisUser\) \{ \#param\(ThisUser\) \} \{ \#param\(CurrentUserID\) \}
+			\);
+
+			DECLARE @rules TABLE \(
+				[StateID] INT\,
+				[EmptyState] BIT\,
+				[StateName] NVARCHAR\(MAX\)
+			\);
+
+			INSERT INTO @rules\(StateID\, EmptyState\, StateName\)
+			SELECT DISTINCT
+				[ps].[StateID]\,
+				[r].[EmptyState]\,
+				[ps].[StateName]
+			FROM @rights AS [r]
+			LEFT JOIN [KrPermissionStates] AS [ps] WITH \(NOLOCK\)
+				ON [r].[ID] = [ps].[ID];
+			\}
+
+			SELECT
+					[t].*
+			FROM
+			\(
+			    SELECT
+			        \#if\(Normal\) \{
+			        [dci].[ID] 							AS [ElID]\,
+					[dci].[CardTypeID] 					AS [ElTypeID]\,
+					[t].[Caption] 						AS [ElTypeCaption]\,
+					[dci].[FullNumber] 					AS [ElFullNumber]\,				-- проектный номер
+					[dci].[CreationDate] 				AS [ElCreationDate]\,			-- дата создания
+					[dci].[Subject] 					AS [ElSubject]\,
+					CAST\(0 AS BIT\) 						AS [ElIsDocsvision]\,
+
+					[dci].[SecondaryFullNumber] 		AS [SecondaryFullNumber]\,		-- рег. номер
+					[aci].[StateName] 					AS [StateName]\,					-- статус
+					[dci].[DocDate] 					AS [PowerOfAttorneyDate]\,		-- дата доверенности
+					[poa].[ApprovalUrgencyName] 		AS [ApprovalUrgencyName]\,		-- срочность согласования
+					[dci].[CuratorName] 				AS [CuratorName]\,				-- куратор
+					[poa].[EndDate] 					AS [PowerOfAttorneyEndDate]\,	-- дата окончания
+					[poa].[ConfidantName] 				AS [ConfidantName]\,				-- доверитель
+					[poa].[RepresentativeTypeName] 		AS [RepresentativeTypeName]\,	-- представитель
+					[poa].[WorkerName] 					AS [WorkerName]\,				-- ФИО работника
+					[dci].[PartnerName] 				AS [PartnerName]\,				-- контрагент
+					[poa].[PartnerContactName] 			AS [PartnerContactName]\,		-- работник контрагента
+					[dci].[ParentFullNumber] 			AS [PowerOfAttorneyRequest]\,	-- номер заявки
+					isnull\(isnull\([poa].[ConfidantAgentName]\, [poa].[WorkerName]\)\, [PartnerName]\)+isnull\('\: '+[poa].[PartnerContactName]\,''\) AS [ConfidantAgentName]\,		-- доверенное лицо
+					[spi].[CuratorComment] 			AS [CuratorComment]\,	-- комментрий
+					[dci].[Comment] AS [Permissions]\,
+					\(												
+						SELECT [pdci].[CuratorName]
+						FROM [DocumentCommonInfo] AS [pdci] WITH \(NOLOCK\)
+							INNER JOIN [SgmPowerOfAttorneyRequest] AS [poar] WITH \(NOLOCK\)
+						ON [pdci].[ID] = [poar].[ID]
+						WHERE [dci].[ParentID] = [pdci].[ID]
+					\) AS [RequestInitiatorName]\,										-- инициатор заявки
+					STUFF\(\(
+					    SELECT N'\, ' + t.RoleName
+					    FROM [Tasks] AS [t] WITH \(NOLOCK\)
+					    WHERE [t].[ID] = [dci].[ID]
+					    --and not exists\(select 1 from [TaskHistory] as [th] 
+						--where [t].[RowID]=[th].[ParentRowID] AND [th].[OptionID] IS NULL\)
+					    ORDER BY t.RoleName
+					    FOR XML PATH\, TYPE
+				    \).value\(N'.[1]'\, N'nvarchar\(max\)'\)\, 1\, 2\, N''\) AS [CurrentPerformers]\,	
+
+
+					ROW_NUMBER\(\) OVER \(ORDER BY \#order_by\) AS [rn]
+					\}
+
+					\#if\(ByState\) \{
+					[aci].[StateID]\,
+					ISNULL\([aci].[StateName]\, N'$Sgm_Views_Values_Null'\) AS [StateName]\,
+					\}
+
+
+					\#if\(ByCurator\) \{
+					[dci].[CuratorID]\,
+					ISNULL\([dci].[CuratorName]\, N'$Sgm_Views_Values_Null'\) AS [CuratorName]\,
+					\}
+					
+					\#if\(ByConfidant\) \{
+					[poa].[ConfidantID]\,
+					ISNULL\([poa].[ConfidantName]\, N'$Sgm_Views_Values_Null'\) AS [ConfidantName]\,
+					\}
+
+					\#if\(ByRepresentative\) \{
+					[poa].[RepresentativeTypeID]\,
+					ISNULL\([poa].[RepresentativeTypeName]\, N'$Sgm_Views_Values_Null'\) AS [RepresentativeTypeName]\,
+					\}
+
+					\#if\(ByWorker\) \{
+					[poa].[WorkerID]\,
+					ISNULL\([poa].[WorkerName]\, N'$Sgm_Views_Values_Null'\) AS [WorkerName]\,
+					\}		
+					
+					\#if\(ByPartner\) \{
+					[dci].[PartnerID]\,
+					ISNULL\([dci].[PartnerName]\, N'$Sgm_Views_Values_Null'\) AS [PartnerName]\,
+					\}
+					
+					\#if\(ByPartnerContact\) \{
+					[poa].[PartnerContactRowID]\,
+					ISNULL\([poa].[PartnerContactName]\, N'$Sgm_Views_Values_Null'\) AS [PartnerContactName]\,
+					\}
+					
+					\#if\(ByInitiator\) \{
+					[pinit].[CuratorID]\,
+					ISNULL\([pinit].[CuratorName]\, N'$Sgm_Views_Values_Null'\) AS [InitiatorName]\,
+					\}
+					
+					\#if\(BySource\) \{
+					case 
+					when [sync].DvID is not null then 1
+					else 2
+					end
+					AS [DocumentSourceID]\,
+					case 
+					when [sync].DvID is not null then 'DocsVision'
+					else 'Tessa'
+					end
+					AS [DocumentSourceName]\,
+					\}
+
+					\#if\(!Normal\) \{
+					COUNT\(1\) AS [Cnt]
+					\}
+				FROM [DocumentCommonInfo] [dci] WITH\(NOLOCK\)
+				INNER JOIN [Types] AS [t] WITH\(NOLOCK\)
+					ON [t].[ID] = [dci].[CardTypeID]
+				INNER JOIN [SgmPowerOfAttorney] AS [poa] WITH\(NOLOCK\)
+					ON [poa].[ID] = [dci].[ID]
+				INNER JOIN [SgmProcessInfo] as [spi] WITH\(NOLOCK\)
+					ON [spi].[ID]=[dci].[ID]		
+				LEFT JOIN [SgmDvSyncInfo] AS [sync] WITH \(NOLOCK\)
+					ON [sync].[ID] = [dci].[ID]
+				\#if\(FTsearch\) 
+				\{
+				CROSS APPLY
+				\(SELECT top 1 Files.rowid FROM Files WITH \(NOLOCK\)
+					INNER JOIN [tessa-files].dbo.FileContent WITH \(NOLOCK\)
+				ON FileContent.VersionRowID=Files.VersionRowID
+					where dci.ID=files.ID AND CONTAINS\(Content\, @FTsearch\)\) files1
+				\}			
+				\#if\(ByInitiator\)\{
+				LEFT JOIN
+				\(
+					SELECT 	[poainit].[ID]\,
+							[poardci].[CuratorID]\,
+							[poardci].[CuratorName]
+					FROM [DocumentCommonInfo] [poardci] WITH\(NOLOCK\)
+						INNER JOIN [SgmPowerOfAttorney] AS [poainit] WITH\(NOLOCK\)
+							ON [poainit].[RequestID] = [poardci].[ID]
+				\) AS [pinit]
+					ON [pinit].[ID] = [dci].[ID]
+				\}
+				LEFT JOIN [KrApprovalCommonInfo] AS [aci] WITH\(NOLOCK\)
+				    ON [aci].[MainCardID] = [dci].[ID]
+
+				WHERE [dci].[CardTypeID] = @poa_type_id
+					\#if\(ThisCardID\) \{ AND [dci].[ID] <> \#param\(ThisCardID\) \}
+					\#if\(LinkTypeID\) \{
+					AND \(
+						@is_all_link_types = 0
+						OR EXISTS \(
+							SELECT TOP\(1\) 1
+							FROM [SgmLinkTypeTargetTypes] AS [ltt] WITH \(NOLOCK\)
+							WHERE [ltt].[TypeID] = [dci].[CardTypeID]
+								\#param\(LinkTypeID\, [ltt].[ID]\)
+							\)
+						\)
+					\}		
+					\#param\(CardID\, [dci].[ID]\)
+					\#param\(QuickSearch\, [dci].[FullNumber]\)
+					\#param\(SecondFullNumber\, [dci].[SecondaryFullNumber]\)
+					\#param\(FullNumber\, [dci].[FullNumber]\)
+					\#param\(State\, [aci].[StateID]\)
+					\#param\(CreationDate\, [dci].[CreationDate]\)
+					\#param\(PoaDate\, [dci].[DocDate]\)
+					\#param\(ApprovalUrgency\, [poa].[ApprovalUrgencyID]\)
+					\#param\(Curator\, [dci].[CuratorID]\)
+					\#param\(PoaEndDate\, [poa].[EndDate]\)
+					\#param\(Confidant\, [poa].[ConfidantID]\)
+					\#param\(Representative\, [poa].[RepresentativeTypeID]\)
+					\#param\(Worker\, [poa].[WorkerID]\)
+					\#param\(Partner\, [dci].[PartnerID]\)
+					\#param\(PartnerContact\, [poa].[PartnerContactRowID]\)
+					\#param\(PowerOfAttorneyRequest\, [dci].[ParentID]\)
+					\#param\(Permissions\, [dci].[Comment]\)
+					\#param\(Comment\, [spi].[CuratorComment]\)
+					\#if\(RequestInitiator\)
+					\{
+					AND EXISTS\(
+						SELECT TOP\(1\) 1
+						FROM [DocumentCommonInfo] AS [pdci] WITH \(NOLOCK\)
+							INNER JOIN [SgmPowerOfAttorneyRequest] AS [poar] WITH \(NOLOCK\)
+						ON [pdci].[ID] = [poar].[ID]
+						WHERE [dci].[ParentID] = [pdci].[ID]
+						\#param\(RequestInitiator\, [pdci].[CuratorID]\)
+						\)
+					\}
+					\#if\(DocumentSource\) 
+					\{
+					and \(\(\#param\(DocumentSource\)=1 and [sync].DvID is not null\)
+					or \(\#param\(DocumentSource\)=2 and [sync].DvID is null\)\)
+					\}
+
+				\#if\(!Administrator || ThisUser\) \{
+					AND \(
+						EXISTS \(
+							SELECT TOP\(1\) 1 FROM @rules AS [r]
+							WHERE \(\([r].[EmptyState] = 1 AND [aci].[StateID] IS NULL\) OR [r].[StateID] = [aci].[StateID] OR [r].[StateID] IS NULL\)
+						\)
+						OR
+						EXISTS \( -- я как назначенный и как исполнитель
+							SELECT TOP\(1\) 1
+							FROM [TaskHistory] AS [th] WITH \(NOLOCK\)
+							INNER JOIN [RoleUsers] AS [ru] WITH \(NOLOCK\)
+								ON \([ru].[ID] = [th].[RoleID] OR [ru].[ID] = [th].[UserID]\)
+							WHERE [th].[ID] = [dci].[ID]
+								AND [ru].[UserID] = \#if\(ThisUser\) \{ \#param\(ThisUser\) \} \{ \#param\(CurrentUserID\) \}
+						\)
+						OR
+						EXISTS \( -- я для автора или куратора
+							SELECT TOP\(1\) 1
+							FROM RoleUsers ru WITH \(NOLOCK\)
+							WHERE \([ru].[ID] = [dci].[AuthorID] OR [ru].[ID] = [dci].[CuratorID]\)
+								AND [ru].[UserID] = \#if\(ThisUser\) \{ \#param\(ThisUser\) \} \{ \#param\(CurrentUserID\) \}
+						\)
+						OR
+						EXISTS \( -- читатели документа
+							SELECT TOP\(1\) 1
+							FROM [SgmDocumentRoleRights] AS [dr] WITH \(NOLOCK\)
+							WHERE [dr].[ID] = [dci].[ID]
+								AND [dr].[RoleID] = \#if\(ThisUser\) \{ \#param\(ThisUser\) \} \{ \#param\(CurrentUserID\) \}
+						\)
+					\)
+					\}
+					
+				\#if\(ByState\) \{
+				GROUP BY [aci].[StateID]\, [aci].[StateName]
+				\}
+				
+				\#if\(ByCurator\) \{
+				GROUP BY [dci].[CuratorID]\, [dci].[CuratorName]
+				\}
+				
+				\#if\(ByConfidant\) \{
+				GROUP BY [poa].[ConfidantID]\, [poa].[ConfidantName]
+				\}
+				
+				\#if\(ByRepresentative\) \{
+				GROUP BY [poa].[RepresentativeTypeID]\, [poa].[RepresentativeTypeName]
+				\}
+				
+				\#if\(ByWorker\) \{
+				GROUP BY [poa].[WorkerID]\, [poa].[WorkerName]
+				\}
+				
+				\#if\(ByPartner\) \{
+				GROUP BY [dci].[PartnerID]\, [dci].[PartnerName]
+				\}
+				
+				\#if\(ByPartnerContact\) \{
+				GROUP BY [poa].[PartnerContactRowID]\, [poa].[PartnerContactName]
+				\}
+				
+				\#if\(ByInitiator\) \{
+				GROUP BY [pinit].[CuratorID]\, [pinit].[CuratorName]
+				\}
+				
+				\#if \(BySource\) \{
+				GROUP BY case 
+					when [sync].DvID is not null then 1
+					else 2
+					end\,
+					case 
+					when [sync].DvID is not null then 'DocsVision'
+					else 'Tessa'
+					end
+				\}
+					
+			\) AS [t]
+			\#if\(PageOffset\) \{
+			WHERE [t].[rn] >= \#param\(PageOffset\) and [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(ByState\) \{
+			ORDER BY [t].[StateName]
+			\}
+			\#if\(ByCurator\) \{
+			ORDER BY [t].[CuratorName]
+			\}
+			\#if\(ByConfidant\) \{
+			ORDER BY [t].[ConfidantName]
+			\}
+			\#if\(ByRepresentative\) \{
+			ORDER BY [t].[RepresentativeTypeName]
+			\}
+			\#if\(ByWorker\) \{
+			ORDER BY [t].[WorkerName]
+			\}
+			\#if\(ByPartner\) \{
+			ORDER BY [t].[PartnerName]
+			\}
+			\#if\(ByPartnerContact\) \{
+			ORDER BY [t].[PartnerContactName]
+			\}
+			\#if\(ByInitiator\) \{
+			ORDER BY [t].[InitiatorName]
+			\}
+			\#if\(Normal\) \{
+			ORDER BY [t].[rn]
+			\}
+		}
+		#pg_query {}
+		#role(RoleID:c741223d-281f-46f7-ba4f-86db5674a940, ViewID:795dd7e7-7bf0-40a7-995e-b83a595441be) 
+		#role(RoleID:871142f0-edb9-4039-a2f7-760bc4ad5dd1, ViewID:795dd7e7-7bf0-40a7-995e-b83a595441be) 
+		#role(RoleID:fa7fca25-4457-4370-a424-ea420e9b0646, ViewID:795dd7e7-7bf0-40a7-995e-b83a595441be) 
+		#role(RoleID:60f963be-dd8c-4b7f-803d-2c9b302daac2, ViewID:795dd7e7-7bf0-40a7-995e-b83a595441be) 
+	}
+}

@@ -1,0 +1,292 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-12T14\:06\:41) {
+	#exchange_view(RowID:e41be864-6424-4427-a3d9-28cd0714e719, Alias:SgmDocumentProjects, Caption:$Sgm_Views_Captions_DocumentsProjects, ModifiedById:8d13a7a6-2cfd-4ed7-b1d6-4705d2e2d60e, ModifiedByName:Меремьянина Ю.С., FormatVersion:2, ModifiedDateTime:2019-10-17T14\:31\:20, GroupName:SgmWorkplace) {
+		#metadata {
+			#view(DefaultSortColumn: ElCreationDate, DefaultSortDirection: desc, Paging: always, MultiSelect: true, RowCountSubset: Count, QuickSearchParam: FTsearch)
+
+			#column(Alias: ElID, Hidden: true, Type: $DocumentCommonInfo.ID)
+			#column(Alias: ElTypeID, Hidden: true, Type: $Types.ID)
+			#column(Alias: ElTypeCaption, Hidden: true, Type: $Types.Caption)
+			#column(Alias: ElIsDocsvision, Hidden: true, Type: $SgmDocumentLinks.DocumentIsDocsvision)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+
+			#column(Alias: CardTypeCaption, Caption: $Sgm_Views_Columns_TypeCaption, Type: $Types.Caption, Localizable: true)
+			#column(Alias: ElFullNumber, Caption: $Sgm_Views_Columns_DocNumber, Type: $DocumentCommonInfo.FullNumber, SortBy: [dci].[FullNumber])
+			#column(Alias: DocDate, Caption: $Sgm_Views_Columns_Date, Type: $DocumentCommonInfo.DocDateTime, SortBy: [dci].[DocDateTime])
+			#column(Alias: ParentDocumentName, Caption: $Sgm_Views_Columns_ParentDocument, Type: String)
+			#column(Alias: PrimaryDocumentName, Caption: $Sgm_Views_Columns_PrimaryDocument, Type: String)
+			#column(Alias: ContractSubject, Caption: $Sgm_Views_Columns_ContractSubject, Type: $DocumentCommonInfo.Comment, MaxLength: 50)
+			#column(Alias: ObjectPlaceName, Caption: $Sgm_Views_Columns_ObjectPlace, Type: $DocumentCommonInfo.ObjectPlaceName)
+			#column(Alias: ElSubject, Caption: $Sgm_Views_Columns_Subject, Type: $DocumentCommonInfo.Subject)
+			#column(Alias: CurrentPerformers, Caption: $Sgm_Views_Columns_CurrentPerformers, Type: String)
+			#column(Alias: PartnerName, Caption: $Sgm_Views_Columns_Partner, Type: $SgmDirective.DoNameName)
+			#column(Alias: StateName, Caption: $Sgm_Views_Columns_Status, Type: $KrApprovalCommonInfo.StateName, Localizable: true)
+			#column(Alias: ElCreationDate, Caption: $Sgm_Views_Columns_Created, Type: $DocumentCommonInfo.CreationDate, SortBy: [dci].[CreationDate])
+			#column(Alias: DocumentTypeName, Caption: $Sgm_Views_Columns_DocumentType, Type: $SgmItDocument.DocumentTypeName, Localizable: true)
+			#column(Alias: DocumentSourceName, Caption: Источник, Type: String, Hidden: true)
+
+			#param(Alias: ThisUser, Caption: ThisUser, Hidden: true, Multiple: false, Type: $PersonalRoles.ID, RefSection: SgmUser) {
+				#autocomplete(View: Users, Param: Name)
+			}
+			#param(Alias: CardID, Caption: CardID, Hidden: true, Type: $DocumentCommonInfo.ID)
+
+			#param(Alias: State, Hidden: true, Caption: State, Type: $KrApprovalCommonInfo.StateID)
+			#param(Alias: QuickSearch, Caption: $Sgm_Views_Params_QuickSearch, Type: String, Multiple: false)
+			#param(Alias: CardType, Caption: $Sgm_Views_Columns_TypeCaption, Type: $DocumentCommonInfo.CardTypeID, RefSection: SgmSolutionDocumentType) {
+				#autocomplete(View: SgmSolutionDocumentTypes, Param: QuickSearch)
+				#dropdown(View: SgmSolutionDocumentTypes)
+			}
+			#param(Alias: DocDate, Caption: $Sgm_Views_Columns_Date, Type: $DocumentCommonInfo.DocDateTime)
+			#param(Alias: ContractSubject, Caption: $Sgm_Views_Columns_ContractSubject, Type: $DocumentCommonInfo.Comment)
+			#param(Alias: Subject, Caption: $Sgm_Views_Columns_Subject, Type: $DocumentCommonInfo.Subject)
+			#param(Alias: ObjectPlace, Caption: $Sgm_Views_Columns_ObjectPlace, Type: $DocumentCommonInfo.ObjectPlaceID, RefSection: SgmObjectPlace) {
+			    #autocomplete(View: SgmObjectPlaces, Param: Name)
+			}
+			#param(Alias: Partner, Caption: $Sgm_Views_Columns_Partner, Type: $DocumentCommonInfo.PartnerID, RefSection: SgmPartner) {
+			    #autocomplete(View: Partners, Param: Name)
+			}
+			#param(Alias: CreationDate, Caption: $Sgm_Views_Columns_Created, Type: $DocumentCommonInfo.CreationDate)
+			#param(Alias: DocumentType, Caption: $Sgm_Views_Columns_DocumentType, Type: $SgmItDocument.DocumentTypeID, RefSection: SgmItDocumentType, HideAutoCompleteButton: true) {
+				#autocomplete(View: SgmItDocumentTypes, Param: Name)
+			    #dropdown(View: SgmItDocumentTypes)
+			}
+			#param(Alias: DocumentSource, Caption: Источник, Type: Int32, RefSection: SgmSource, AllowedOperands: Equality, HideAutoCompleteButton: true)
+			{
+			    #dropdown(View: SgmCardSources)
+			}
+			#param(Alias: FTsearch, Caption: Файл содержит, Type: string, Multiple: false)
+
+			#reference(ColPrefix: El, RefSection: SgmDocument, DisplayValueColumn: ElFullNumber, IsCard: true, OpenOnDoubleClick: true)
+
+			#subset(Alias: ByCardType, Caption: $Sgm_Views_Subsets_ByCardType, RefColumn: CardTypeID, CaptionColumn: CardTypeCaption, RefParam: CardType, CountColumn: Cnt)
+			#subset(Alias: ByObjectPlace, Caption: $Sgm_Views_Subsets_ByObjectPlace, RefColumn: ObjectPlaceID, CaptionColumn: ObjectPlaceName, RefParam: ObjectPlace, CountColumn: Cnt)
+			#subset(Alias: ByPartner, Caption: $Sgm_Views_Subsets_ByPartner, RefColumn: PartnerID, CaptionColumn: PartnerName, RefParam: Partner, CountColumn: Cnt)
+			#subset(Alias: ByState, Caption: $Sgm_Views_Subsets_ByState, RefColumn: StateID, CaptionColumn: StateName, RefParam: State, CountColumn: Cnt)
+			#subset(Alias: ByDocumentType, Caption: $Sgm_Views_Subsets_ByDocumentType, RefColumn: DocumentTypeID, CaptionColumn: DocumentTypeName, RefParam: DocumentType, CountColumn: Cnt)
+			#subset(Alias: BySource, Caption: По источнику, RefColumn: DocumentSourceID, CaptionColumn: DocumentSourceName, RefParam: DocumentSource, CountColumn: Cnt)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			\#if\(FTsearch\) 
+			\{ 
+				DECLARE @FTsearch nvarchar\(500\) = \#param\(FTsearch\); 
+				SET @FTsearch='"'+@FTsearch+'"'
+			\}
+
+			SELECT
+				\#if\(Normal\) \{
+			    [dci].[ID] AS [ElID]\,
+			    [dci].[CardTypeID] AS [ElTypeID]\,
+			    [tp].[Caption] AS [ElTypeCaption]\,
+			    [dci].[FullNumber] AS [ElFullNumber]\,
+			    [dci].[CreationDate] AS [ElCreationDate]\,
+				CAST\(0 AS BIT\) AS [ElIsDocsvision]\,
+				[dci].[Subject] as [ElSubject]\,
+
+			    [dci].[DocDateTime] AS [DocDate]\,
+				\(
+					[lParentTypeCaption].[Value]
+					+ N' - ' + ISNULL\([dci].[ParentFullNumber]\, N''\)
+					+ N' - ' + CONVERT\(NVARCHAR\(MAX\)\, [dci].[ParentCreationDate]\, 120\)
+					+ N' - ' + ISNULL\([dci].[ParentSubject]\, N''\)
+				\) AS [ParentDocumentName]\,
+				\(
+					[lPrimaryTypeCaption].[Value]
+					+ N' - ' + ISNULL\([dci].[PrimaryFullNumber]\, N''\)
+					+ N' - ' + CONVERT\(NVARCHAR\(MAX\)\, [dci].[PrimaryCreationDate]\, 120\)
+					+ N' - ' + ISNULL\([dci].[PrimarySubject]\, N''\)
+				\) AS [PrimaryDocumentName]\,
+			    [dci].[ObjectPlaceName]\,
+			    STUFF\(\(
+			        SELECT DISTINCT N'\, ' + ISNULL\([t].[UserName]\, [t].[RoleName]\)
+			        FROM [Tasks] [t] WITH \(NOLOCK\)
+			        WHERE [t].[ID] = [dci].[ID]
+			        ORDER BY N'\, ' + ISNULL\([t].[UserName]\,[t].[RoleName]\)
+			        FOR XML PATH\, TYPE
+			    \).value\(N'.[1]'\, N'nvarchar\(max\)'\)\, 1\, 2\, N''\) AS [CurrentPerformers]\,
+			    [dci].[PartnerName]\,
+			    [aci].[StateName]\,
+			    [dci].[Comment] AS [ContractSubject]\,
+			    [it].[DocumentTypeName]
+				\}
+
+				\#if\(ByCardType\) \{
+				[tp].[ID] AS [CardTypeID]\,
+				[tp].[Caption] AS [CardTypeCaption]\,
+				\}
+
+				\#if\(ByPartner\) \{
+				[dci].[PartnerID]\,
+				ISNULL\([dci].[PartnerName]\, N'$Sgm_Views_Values_Null'\) AS [PartnerName]\,
+				\}
+				
+				\#if\(ByState\) \{
+				[aci].[StateID]\,
+				ISNULL\([aci].[StateName]\, N'$Sgm_Views_Values_Null'\) AS [StateName]\,
+				\}
+				
+				\#if\(ByObjectPlace\) \{
+				[dci].[ObjectPlaceID] AS [ObjectPlaceID]\,
+				ISNULL\([dci].[ObjectPlaceName]\, N'$Sgm_Views_Values_Null'\) AS [ObjectPlaceName]\,
+				\}
+
+				\#if\(ByDocumentType\) \{
+				[it].[DocumentTypeID]\,
+				ISNULL\([it].[DocumentTypeName]\, N'$Sgm_Views_Values_Null'\) AS [DocumentTypeName]\,
+				\}
+				\#if\(BySource\) \{
+					case 
+					when [sync].DvID is not null then 1
+					else 2
+					end
+					AS [DocumentSourceID]\,
+					case 
+					when [sync].DvID is not null then 'DocsVision'
+					else 'Tessa'
+					end
+					AS [DocumentSourceName]\,
+				\}
+
+			    \#if\(!Normal\) \{
+			    COUNT\(1\) AS [Cnt]
+			    \}
+			FROM
+				\(
+					\#if\(PageOffset\) \{
+					SELECT
+						[t].*
+					FROM
+						\(
+					\}
+							SELECT
+								[dci].[ID]
+								\#if\(Normal\) \{
+								\, ROW_NUMBER\(\) OVER \(ORDER BY \#order_by\) AS [rn]
+								\}
+					        FROM [DocumentCommonInfo] AS [dci] WITH \(NOLOCK\)
+							\#if\(State\) \{
+							LEFT JOIN [KrApprovalCommonInfo] AS [aci] WITH \(NOLOCK\)
+							    ON [aci].[MainCardID] = [dci].[ID]
+							\}
+							\#if\(DocumentType\) \{
+							LEFT JOIN [SgmItDocument] AS [it] WITH \(NOLOCK\)
+								ON [it].[ID] = [dci].[ID]
+							\}
+							\#if\(DocumentSource\) \{
+							LEFT JOIN [SgmDvSyncInfo] AS [sync] WITH \(NOLOCK\)
+								ON [sync].[ID] = [dci].[ID]
+							\}
+							\#if\(FTsearch\) 
+							\{
+								CROSS APPLY
+								\(SELECT top 1 Files.rowid FROM Files WITH \(NOLOCK\)
+									INNER JOIN [tessa-files].dbo.FileContent WITH \(NOLOCK\)
+								ON FileContent.VersionRowID=Files.VersionRowID
+									where dci.ID=files.ID AND CONTAINS\(Content\, @FTsearch\)\) files1
+							\}
+						    WHERE \([dci].[AuthorID] = \#if\(ThisUser\) \{ \#param\(ThisUser\) \} \{ \#param\(CurrentUserID\) \}
+						    or [dci].[CuratorID] = \#if\(ThisUser\) \{ \#param\(ThisUser\) \} \{ \#param\(CurrentUserID\) \}\)
+						    	\#param\(CardID\, [dci].[ID]\)
+						    	
+						        \#param\(QuickSearch\, [dci].[FullNumber]\)
+						        \#param\(CardType\, [dci].[CardTypeID]\)
+						        \#param\(DocDate\, [dci].[DocDateTime]\)
+						        \#param\(ObjectPlace\, [dci].[ObjectPlaceID]\)
+						        \#param\(Partner\, [dci].[PartnerID]\)
+						        \#param\(State\, [aci].[StateID]\)
+						        \#param\(CreationDate\, [dci].[CreationDate]\)
+						        \#param\(Subject\, [dci].[Subject]\)
+						        \#param\(ContractSubject\, [dci].[Comment]\)
+						        \#param\(DocumentType\, [it].[DocumentTypeID]\)
+					            \#if\(DocumentSource\) 
+					            \{and \(\(\#param\(DocumentSource\)=1 and [sync].DvID is not null\)
+					            or \(\#param\(DocumentSource\)=2 and [sync].DvID is null\)\)
+					            \}
+					\#if\(PageOffset\) \{
+						\) AS [t]
+					WHERE [t].[rn] >= \#param\(PageOffset\) AND [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+					\}
+				\) AS [t]
+				INNER JOIN [DocumentCommonInfo] AS [dci] WITH \(NOLOCK\)
+					ON [dci].[ID] = [t].[ID]
+				INNER JOIN [Types] AS [tp] WITH \(NOLOCK\)
+					ON [tp].[ID] = [dci].[CardTypeID]
+				LEFT JOIN [KrApprovalCommonInfo] AS [aci] WITH \(NOLOCK\)
+					ON [aci].[MainCardID] = [dci].[ID]
+				LEFT JOIN [SgmItDocument] AS [it] WITH \(NOLOCK\)
+					ON [it].[ID] = [dci].[ID]
+				LEFT JOIN [SgmDvSyncInfo] AS [sync] WITH \(NOLOCK\)
+					ON [sync].[ID] = [dci].[ID]
+				CROSS APPLY [Localization]\([dci].[ParentTypeCaption]\, \#param\(locale\)\) AS [lParentTypeCaption]
+				CROSS APPLY [Localization]\([dci].[PrimaryTypeCaption]\, \#param\(locale\)\) AS [lPrimaryTypeCaption]
+
+				\#if\(ByDocumentType\) \{
+				CROSS APPLY [Localization]\([it].[DocumentTypeName]\, \#param\(locale\)\) AS [lDocumentTypeName]
+				\}
+
+
+				
+
+			\#if\(ByCardType\) \{
+			GROUP BY [tp].[ID]\, [tp].[Caption]
+			\}
+
+			\#if\(ByPartner\) \{
+			GROUP BY [dci].[PartnerID]\, [dci].[PartnerName]
+			\}
+
+			\#if\(ByState\) \{
+			GROUP BY [aci].[StateID]\, [aci].[StateName]
+			\}
+
+			\#if\(ByObjectPlace\) \{
+			GROUP BY [dci].[ObjectPlaceID]\, [dci].[ObjectPlaceName]
+			\}
+
+			\#if \(ByDocumentType\) \{
+			GROUP BY [it].[DocumentTypeID]\, [it].[DocumentTypeName]\, [lDocumentTypeName].[Value]
+			\}
+
+			\#if \(ByDocumentType\) \{
+			GROUP BY [it].[DocumentTypeID]\, [it].[DocumentTypeName]\, [lDocumentTypeName].[Value]
+			\}
+
+			\#if \(BySource\) \{
+			GROUP BY case 
+					when [sync].DvID is not null then 1
+					else 2
+					end\,
+					case 
+					when [sync].DvID is not null then 'DocsVision'
+					else 'Tessa'
+					end
+			\}
+
+			\#if\(Normal\) \{
+			ORDER BY [t].[rn]
+			\}
+
+			\#if\(ByCardType\) \{
+			ORDER BY [tp].[Caption]
+			\}
+
+			\#if\(ByPartner\) \{
+			ORDER BY [dci].[PartnerName]
+			\}
+
+			\#if\(ByState\) \{
+			ORDER BY [aci].[StateName]
+			\}
+
+			\#if\(ByObjectPlace\) \{
+			ORDER BY [dci].[ObjectPlaceName]
+			\}
+
+			\#if \(ByDocumentType\) \{
+			ORDER BY [lDocumentTypeName].[Value]
+			\}
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:e41be864-6424-4427-a3d9-28cd0714e719) 
+	}
+}

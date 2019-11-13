@@ -1,0 +1,374 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-12T14\:06\:41) {
+	#exchange_view(RowID:32324bf7-fac5-456f-bc61-27df8beca3fe, Alias:SgmMarketingReports, Caption:$Sgm_Views_Captions_MarketingReports, ModifiedById:8d13a7a6-2cfd-4ed7-b1d6-4705d2e2d60e, ModifiedByName:Меремьянина Ю.С., FormatVersion:2, ModifiedDateTime:2019-11-07T13\:13\:27, GroupName:Sgm_tk) {
+		#metadata {
+			#view(DefaultSortColumn: ElCreationDate, DefaultSortDirection: desc, Paging: always, MultiSelect: true, RowCountSubset: Count, QuickSearchParam: FTsearch)
+
+			#column(Alias: ElID, Hidden: true, Type: $DocumentCommonInfo.ID)
+			#column(Alias: ElTypeID, Hidden: true, Type: $Types.ID)
+			#column(Alias: ElTypeCaption, Hidden: true, Type: $Types.Caption)
+			#column(Alias: ElIsDocsvision, Hidden: true, Type: $SgmDocumentLinks.DocumentIsDocsvision)
+			#column(Alias: ElSubject, Hidden: true, Type: $DocumentCommonInfo.Subject)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+			#column(Alias: AppearanceColumn, Hidden: true, Type: String)
+
+			#column(Alias: DmsrPerformer, Caption: $Sgm_Views_Columns_DmsrPerformer, Type: $DocumentCommonInfo.CuratorName)
+			#column(Alias: CurrentPerformers, Caption: $Sgm_Views_Columns_CurrentPerformers, Type: $SgmCurrentPerformersVirtual.RoleName)
+			#column(Alias: RegulatoryPeriodUpTo, Caption: $Sgm_Views_Columns_RegulatoryPeriodUpTo, Type: $SgmDocumentSatellite.MrLastExecutionTaskCompleted, SortBy: [satellite].[MrLastExecutionTaskCompleted],  Appearance: AppearanceColumn)
+			#column(Alias: PurchaseState, Caption: $Sgm_Views_Columns_PurchaseState, Type: $SgmMarketingReport.PurchaseStateName)
+			#column(Alias: NumProductGroup, Caption: $Sgm_Views_Columns_NumProductGroup, Type: $SgmProductGroups.ProductGroupName)
+			#column(Alias: ProductName, Caption: $Sgm_Views_Columns_ProductName, Type: $SgmMarketingReport.ProductName)
+			#column(Alias: ProjectPartners, Caption: $Sgm_Views_Columns_ProjectPartners, Type: $SgmSupplierFromIp.SupplierName)
+			#column(Alias: PotentialPartners, Caption: $Sgm_Views_Columns_PotentialPartners, Type: $SgmPotentialPartners.SupplierName)
+			#column(Alias: ElFullNumber, Caption: $Sgm_Views_Columns_JNNumber, Type: $DocumentCommonInfo.FullNumber)
+			#column(Alias: SZDate, Caption: $Sgm_Views_Columns_JNNumber, Type: Date)
+			#column(Alias: InitiatingDepartment, Caption: Инициирующее подразделение, Type: $DocumentCommonInfo.DepartmentName)
+			#column(Alias: SMONumber, Caption: № МО, Type: String)
+			#column(Alias: ObjectPlace, Caption: $Sgm_Views_Columns_ConstructionObject, Type: String, MaxLength:150)
+			#column(Alias: StartDateInDMSR, Caption: $Sgm_Views_Columns_StartDateInDMSR, Type: $SgmDocumentSatellite.MrFirstExecutionTaskInProgress, SortBy: [satellite].[MrFirstExecutionTaskInProgress])
+			#column(Alias: StartDateInOSTP, Caption: $Sgm_Views_Columns_StartDateInOSTP, Type: $SgmDocumentSatellite.MrSigningOrApprovalTaskCompleted, SortBy: [satellite].[MrSigningOrApprovalTaskCompleted])
+			#column(Alias: ElCreationDate, Caption: Дата создания в СЭД, Type: Date, SortBy: [dci].[CreationDate])
+			#column(Alias: Status, Caption: $Sgm_Views_Columns_Status, Type: $KrApprovalCommonInfo.StateName, Localizable: true)
+			#column(Alias: DocumentSourceName, Caption: Источник, Type: String, Hidden: true)
+
+			#column(Alias: ContractationPeriod, Caption: $Sgm_Views_Columns_ContractationPeriod, Type: $SgmMarketingReport.ContractationPeriod, SortBy: mr.ContractationPeriod, Hidden: true)
+			#column(Alias: RequestNumber, Caption: $Sgm_Views_Columns_RequestNumber, Type: $SgmMarketingReport.RequestNumber, Hidden: true)
+			#column(Alias: Initiator, Caption: $Sgm_Views_Columns_Initiator, Type: $DocumentCommonInfo.RegistratorName, Hidden: true)
+			#column(Alias: PurchaseControl, Caption: $Sgm_Views_Columns_PurchaseControl, Type: $SgmMarketingReport.PurchaseControl, SortBy: mr.PurchaseControl, Hidden: true)
+
+			#param(Alias: QuickSearch, Caption: $Sgm_Views_Params_QuickSearch, Type: String, Multiple: false)
+			#param(Alias: JNNumber, Caption: $Sgm_Views_Columns_JNNumber, Type: String)
+			#param(Alias: MONumber, Caption: Номер МО, Type: String)
+			#param(Alias: JNDate, Caption: $Sgm_Views_Columns_JNDate, Type: Date)
+			#param(Alias: RequestNumber, Caption: $Sgm_Views_Columns_RequestNumber, Type: String)
+			#param(Alias: DmsrPerformer, Caption: $Sgm_Views_Columns_DmsrPerformer, Type: $DocumentCommonInfo.CuratorID, RefSection: SgmUser) {
+			    #autocomplete(View: Users, Param: Name)
+			}
+			#param(Alias: PurchaseState, Caption: $Sgm_Views_Columns_PurchaseState, Type: $SgmMarketingReport.PurchaseStateID, RefSection: SgmPurchaseState) {
+			    #autocomplete(View: SgmPurchaseStates, Param: Name)
+			}
+			#param(Alias: Status, Caption: $Sgm_Views_Columns_Status, Type: $KrApprovalCommonInfo.StateID, RefSection: SgmMarketingReportState, HideAutoCompleteButton: true) {
+				#autocomplete(View: SgmMarketingReportStates, Param: Name)
+			    #dropdown(View: SgmMarketingReportStates)
+			}
+			#param(Alias: ProductName, Caption: $Sgm_Views_Columns_ProductName, Type: String)
+			#param(Alias: Initiator, Caption: $Sgm_Views_Columns_Initiator, Type: $DocumentCommonInfo.RegistratorName, RefSection: SgmUser) {
+			    #autocomplete(View: Users, Param: Name)
+			}
+			#param(Alias: InitiatingDepartment, Caption: $Sgm_Views_Columns_InitiatingDepartment, Type: $DocumentCommonInfo.DepartmentName, RefSection: SgmDepartment) {
+			    #autocomplete(View: Departments, Param: Name)
+			}
+			#param(Alias: ObjectPlace, Caption: $Sgm_Views_Columns_ConstructionObject, Type: $DocumentCommonInfo.ObjectPlaceID, RefSection: SgmObjectPlace) {
+			    #autocomplete(View: SgmObjectPlaces, Param: Name)
+			}
+
+			#param(Alias: PositionsInTz, Caption: $Sgm_Views_Columns_PositionsInTz, Type: Int32)
+			#param(Alias: PurchaseVolume, Caption: $Sgm_Views_Columns_PurchaseVolume, Type: Int32)
+			#param(Alias: MeasurementUnit, Caption: $Sgm_Views_Columns_MeasurementUnit, Type: $SgmMarketingReport.MeasurementUnitID, RefSection: SgmMeasurementUnit) {
+			    #autocomplete(View: SgmMeasurementUnits, Param: Name)
+			}
+			#param(Alias: ContractationPeriod, Caption: $Sgm_Views_Columns_ContractationPeriod, Type: Int32)
+			#param(Alias: PurchaseControl, Caption: $Sgm_Views_Columns_PurchaseControl, Type: Date)
+			#param(Alias: FTsearch, Caption: Файл содержит, Type: string, Multiple: false)
+			#param(Alias: DocumentSource, Caption: Источник, Type: Int32, RefSection: SgmSource, AllowedOperands: Equality, HideAutoCompleteButton: true)
+			{
+			    #dropdown(View: SgmCardSources)
+			}
+			#param(Alias: CurrentPerformer, Caption: $Sgm_Views_Columns_CurrentPerformers, Type: $SgmCurrentPerformersVirtual.RoleID, RefSection: SgmUser) {
+			    #autocomplete(View: Users, Param: Name)
+			}
+
+			#reference(ColPrefix: El, RefSection: SgmMarketingReport, DisplayValueColumn: ElFullNumber, IsCard: true, OpenOnDoubleClick: true)
+
+			#subset(Alias: ByDmsrPerformer, Caption: $Sgm_Views_Subsets_ByDmsrPerformer, RefColumn: DmsrPerformerID, CaptionColumn: DmsrPerformerName, RefParam: DmsrPerformer, CountColumn: Cnt)
+			#subset(Alias: ByPurchaseState, Caption: $Sgm_Views_Subsets_ByPurchaseState, RefColumn: PurchaseStateID, CaptionColumn: PurchaseStateName, RefParam: PurchaseState, CountColumn: Cnt)
+			#subset(Alias: ByStatus, Caption: $Sgm_Views_Subsets_ByState, RefColumn: StateID, CaptionColumn: StateName, RefParam: Status, CountColumn: Cnt)
+			#subset(Alias: ByInitiator, Caption: $Sgm_Views_Subsets_ByInitiator, RefColumn: InitiatorID, CaptionColumn: InitiatorName, RefParam: Initiator, CountColumn: Cnt)
+			#subset(Alias: ByInitiatingDepartment, Caption: $Sgm_Views_Subsets_ByInitiatingDepartment, RefColumn: InitiatingDepartmentID, CaptionColumn: InitiatingDepartmentName, RefParam: InitiatingDepartment, CountColumn: Cnt)
+			#subset(Alias: ByObjectPlace, Caption: $Sgm_Views_Subsets_ByConstructionObject, RefColumn: ObjectPlaceID, CaptionColumn: ObjectPlaceName, RefParam: ObjectPlace, CountColumn: Cnt)
+			#subset(Alias: ByDoName, Caption: $Sgm_Views_Subsets_ByDoName, RefColumn: DoNameID, CaptionColumn: DoNameName, RefParam: DoName, CountColumn: Cnt)
+			#subset(Alias: ByMeasurementUnit, Caption: $Sgm_Views_Subsets_ByMeasurementUnit, RefColumn: MeasurementUnitID, CaptionColumn: MeasurementUnitName, RefParam: MeasurementUnit, CountColumn: Cnt)
+			#subset(Alias: BySource, Caption: По источнику, RefColumn: DocumentSourceID, CaptionColumn: DocumentSourceName, RefParam: DocumentSource, CountColumn: Cnt)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			\#if\(FTsearch\) 
+			\{ 
+				DECLARE @FTsearch nvarchar\(500\) = \#param\(FTsearch\); 
+				SET @FTsearch='"'+@FTsearch+'"'
+			\}
+
+				\#if\(Normal\) \{
+				DECLARE @RedThreshold	int;
+				SET @RedThreshold = 320; -- задания\, просроченные более чем на две недели \(320 квантов\)\, будут одинаково красные
+				
+				DECLARE @NowTimestamp			datetime;
+				SET @NowTimestamp		= GETUTCDATE\(\);
+
+				DECLARE @NowQuant				bigint;
+				SELECT TOP \(1\) @NowQuant = [q].[QuantNumber]
+				FROM [CalendarQuants] AS [q] WITH\(NOLOCK\)
+				WHERE [q].[StartTimeUTC] <= @NowTimestamp
+				ORDER BY [q].[StartTimeUTC] DESC;
+				\}
+
+
+			SELECT
+			    [t].*
+			FROM
+			\(
+			    SELECT
+			        \#if\(Normal\) \{
+			        [dci].[ID] AS [ElID]\,
+					[dci].[CardTypeID] AS [ElTypeID]\,
+					[t].[Caption] AS [ElTypeCaption]\,
+					[dci].[FullNumber] AS [ElFullNumber]\,
+					[dci].[CreationDate] AS [ElCreationDate]\,
+					CAST\(0 AS BIT\) AS [ElIsDocsvision]\,
+					[dci].[Subject] AS [ElSubject]\,
+					[mr].[RequestNumber]\,
+					[dci].[CuratorName] AS [DmsrPerformer]\,
+					[mr].[PurchaseStateName] AS [PurchaseState]\,
+					[aci].[StateName] AS [Status]\,
+					[mr].[ProductName]\,
+					[dci].[RegistratorName] AS [Initiator]\,
+					[dci].[DepartmentName] AS [InitiatingDepartment]\,
+					[mr].[ContractationPeriod]\,
+					[dci].[DocDate] AS SZDate\,
+					[mr].[PurchaseControl]\,
+					[mr].[SmoNumber] AS SMONumber\,
+							STUFF\(\(
+					    SELECT N'\, ' + t.RoleName
+					    FROM [Tasks] AS [t] WITH \(NOLOCK\)
+					    WHERE [t].[ID] = [dci].[ID]
+					    ORDER BY t.RoleName
+					    FOR XML PATH\, TYPE
+				    \).value\(N'.[1]'\, N'nvarchar\(max\)'\)\, 1\, 2\, N''\) AS [CurrentPerformers]\,
+					STUFF\(\(
+						SELECT N'\, ' + [pg].[ProductGroupName]
+						FROM [SgmProductGroups] AS [pg] WITH\(NOLOCK\)
+							WHERE [pg].[ID] = [dci].[ID]
+						ORDER BY [pg].[ProductGroupName]
+						FOR XML PATH\, TYPE
+					\).value\(N'.[1]'\, N'nvarchar\(max\)'\)\, 1\, 2\, N''\) AS [NumProductGroup]\,
+					STUFF\(\(
+						SELECT N'\, ' + [pp].[SupplierName]
+						FROM [SgmPotentialPartners] AS [pp] WITH\(NOLOCK\)
+							WHERE [pp].[ID] = [dci].[ID]
+						ORDER BY [pp].[SupplierName]
+						FOR XML PATH\, TYPE
+					\).value\(N'.[1]'\, N'nvarchar\(max\)'\)\, 1\, 2\, N''\) AS [PotentialPartners]\,
+					STUFF\(\(
+						SELECT N'\, ' + [sfip].[ProjectSupplierName]
+						FROM [SgmProjectSuppliers] AS [sfip] WITH\(NOLOCK\)
+							WHERE [sfip].[ID] = [dci].[ID]
+						ORDER BY [sfip].[ProjectSupplierName]
+						FOR XML PATH\, TYPE
+					\).value\(N'.[1]'\, N'nvarchar\(max\)'\)\, 1\, 2\, N''\) AS [ProjectPartners]\,
+					[Tasks].[Planned] AS [RegulatoryPeriodUpTo]\,
+					[satellite].[MrFirstExecutionTaskInProgress] AS [StartDateInDMSR]\,
+					[satellite].[MrSigningOrApprovalTaskCompleted] AS [StartDateInOSTP]\,
+					CASE
+						WHEN \(\([qq].[QuantNumber] - @NowQuant\) < 0\) THEN
+							CASE WHEN \(\([qq].[QuantNumber] - @NowQuant\) < \(-1 * @RedThreshold\)\)
+								THEN N'\#appearance\(Background\: \#A0FF0000\)'
+								ELSE N'\#appearance\(Background\: ' + CAST\(abs\(\([qq].[QuantNumber] - @NowQuant\)\) * 160 / @RedThreshold * 256 * 256 * 256 + 255 * 256 * 256 AS nvarchar\(max\)\) + N'\)'
+							END
+							WHEN \(\([qq].[QuantNumber] - @NowQuant\) < 32\) and \(\([qq].[QuantNumber] - @NowQuant\) > 0\) THEN
+							N'\#appearance\(Background\: \#A0F7FF00\)'
+							ELSE N''
+					END AS [AppearanceColumn]\,							
+					STUFF\(\(
+						SELECT N'\, ' + [SMRObjects].[ObjectPlaceName]
+						FROM [SgmMarketingReportObjectPlaces] [SMRObjects]  WITH\(NOLOCK\) 
+							WHERE [SMRObjects].[ID] = [dci].[ID]
+						FOR XML PATH\, TYPE
+					\).value\(N'.[1]'\, N'nvarchar\(max\)'\)\, 1\, 2\, N''\) AS [ObjectPlace]\,
+					
+					
+					ROW_NUMBER\(\) OVER \(ORDER BY \#order_by\) AS [rn]
+					\}
+					
+					\#if\(ByDmsrPerformer\) \{
+					[dci].[CuratorID] AS [DmsrPerformerID]\,
+					[dci].[CuratorName] AS [DmsrPerformerName]\,
+					\}
+					
+					\#if\(ByPurchaseState\) \{
+					[mr].[PurchaseStateID]\,
+					[mr].[PurchaseStateName]\,
+					\}
+					
+					\#if\(ByStatus\) \{
+					[aci].[StateID]\,
+					ISNULL\([aci].[StateName]\, N'$Sgm_Views_Values_Null'\) AS [StateName]\,
+					\}
+					
+					\#if\(ByInitiator\) \{
+					[mr].[InitiatorID]\,
+					ISNULL\([mr].[InitiatorName]\, N'$Sgm_Views_Values_Null'\) AS [InitiatorName]\,
+					\}
+					
+					\#if\(ByInitiatingDepartment\) \{
+					[mr].[InitiatingDepartmentID]\,
+					ISNULL\([mr].[InitiatingDepartmentName]\, N'$Sgm_Views_Values_Null'\) AS [InitiatingDepartmentName]\,
+					\}
+					
+					\#if\(ByObjectPlace\) \{
+					[dci].[ObjectPlaceID]\,
+					[dci].[ObjectPlaceName]\,
+					\}
+					
+					
+					\#if\(ByMeasurementUnit\) \{
+					[mr].[MeasurementUnitID]\,
+					ISNULL\([mr].[MeasurementUnitName]\, N'$Sgm_Views_Values_Null'\) AS [MeasurementUnitName]\,
+					\}
+					\#if\(BySource\) \{
+					CASE 
+					WHEN [sync].DvID IS NOT NULL THEN 1
+					ELSE 2
+					END
+					AS [DocumentSourceID]\,
+					CASE 
+					WHEN [sync].DvID IS NOT NULL THEN 'DocsVision'
+					ELSE 'Tessa'
+					END
+					AS [DocumentSourceName]\,
+				    \}
+					
+					\#if\(!Normal\) \{
+					COUNT\(1\) AS [Cnt]
+					\}
+				FROM [DocumentCommonInfo] [dci] WITH\(NOLOCK\)
+				INNER JOIN [Types] [t] WITH\(NOLOCK\)
+					ON [t].[ID] = [dci].[CardTypeID]
+				INNER JOIN [SgmMarketingReport] [mr] WITH\(NOLOCK\)
+				    ON [mr].[ID] = [dci].[ID]
+				LEFT JOIN [SgmDvSyncInfo] AS [sync] WITH \(NOLOCK\)
+					ON [sync].[ID] = [dci].[ID]	    
+				LEFT JOIN [SgmDocumentSatellite] [satellite] WITH\(NOLOCK\)
+					ON [satellite].[MainCardID] = [dci].[ID]
+				LEFT JOIN [taskhistory] [Tasks] WITH\(NOLOCK\)
+					ON [satellite].[MrFirstExecutionTaskRowID] = [Tasks] .[RowID] 
+				OUTER APPLY \(
+					SELECT TOP \(1\) [q].[QuantNumber]
+					FROM [CalendarQuants] AS [q] WITH \(NOLOCK\)
+					WHERE [q].[EndTimeUTC] >= [Tasks].[Planned]
+					ORDER BY [q].[EndTimeUTC] ASC
+					\) AS [qq]		
+					
+					
+				\#if\(Normal || Status || ByStatus\) \{
+				LEFT JOIN [KrApprovalCommonInfo] [aci] WITH\(NOLOCK\)
+				    ON [aci].[MainCardID] = [dci].[ID] 
+				\}
+				\#if\(FTsearch\) 
+				\{
+				CROSS APPLY
+				\(SELECT top 1 Files.rowid FROM Files WITH \(NOLOCK\)
+					INNER JOIN [tessa-files].dbo.FileContent WITH \(NOLOCK\)
+				ON FileContent.VersionRowID=Files.VersionRowID
+					where dci.ID=files.ID AND CONTAINS\(Content\, @FTsearch\)\) files1
+				\}	
+				
+				WHERE 1=1
+				    \#param\(JNNumber\, [dci].[FullNumber]\)
+				    \#param\(JNDate\, [dci].[CreationDate]\)
+				    \#param\(RequestNumber\, [mr].[RequestNumber]\)
+				    \#param\(DmsrPerformer\, [dci].[CuratorID]\)
+				    \#param\(PurchaseState\, [mr].[PurchaseStateID]\)
+				    \#param\(Status\, [aci].[StateID]\)
+				    \#param\(ProductName\, [mr].[ProductName]\)
+				    \#param\(Initiator\, [dci].[RegistratorID]\)
+				    \#param\(InitiatingDepartment\, [dci].[DepartmentID]\)
+				    \#param\(ObjectPlace\, [dci].[ObjectPlaceID]\)
+				    \#param\(DoName\, [mr].[DoNameID]\)
+				    \#param\(PositionsInTz\, [mr].[PositionsInTz]\)
+				    \#param\(PurchaseVolume\, [mr].[PurchaseVolume]\)
+				    \#param\(MeasurementUnit\, [mr].[MeasurementUnitID]\)
+				    \#param\(ContractationPeriod\, [mr].[ContractationPeriod]\)
+				    \#param\(PurchaseControl\, [mr].[PurchaseControl]\)
+				    \#param\(MONumber\, [mr].[SmoNumber]\)
+				    \#if\(DocumentSource\) \{
+			        AND \(\(\#param\(DocumentSource\)=1 AND [sync].DvID is not null\)
+			        OR \(\#param\(DocumentSource\)=2 AND [sync].DvID is null\)\)
+			        \}
+			        \#if\(CurrentPerformer\) \{
+					AND EXISTS \(
+					    SELECT TOP\(1\) 1
+					    FROM [Tasks] AS [t] WITH \(NOLOCK\)
+					    WHERE [t].[ID] = [dci].[ID]
+					        \#param\(CurrentPerformer\, ISNULL\(t.UserID\,t.RoleID\)\)\)
+					\}
+				    
+				\#if\(ByDmsrPerformer\) \{
+				GROUP BY [dci].[CuratorID]\, [dci].[CuratorName]
+				\}
+				\#if\(ByPurchaseState\) \{
+				GROUP BY [mr].[PurchaseStateID]\, [mr].[PurchaseStateName]
+				\}
+				\#if\(ByStatus\) \{
+				GROUP BY [aci].[StateID]\, [aci].[StateName]
+				\}
+				\#if\(ByInitiator\) \{
+				GROUP BY [mr].[InitiatorID]\, [mr].[InitiatorName]
+				\}
+				\#if\(ByInitiatingDepartment\) \{
+				GROUP BY [mr].[InitiatingDepartmentID]\, [mr].[InitiatingDepartmentName]
+				\}
+				\#if\(ByObjectPlace\) \{
+				GROUP BY [dci].[ObjectPlaceID]\, [dci].[ObjectPlaceName]
+				\}
+				\#if\(ByDoName\) \{
+				GROUP BY [mr].[DoNameID]\, [mr].[DoNameName]
+				\}
+				\#if\(ByMeasurementUnit\) \{
+				GROUP BY [mr].[MeasurementUnitID]\, [mr].[MeasurementUnitName]
+				\}
+				\#if \(BySource\) \{
+				GROUP BY CASE 
+					WHEN [sync].DvID IS NOT NULL THEN 1
+					ELSE 2
+					END\,
+					CASE 
+					WHEN [sync].DvID IS NOT NULL THEN 'DocsVision'
+					ELSE 'Tessa'
+					END
+				\}
+			\) AS [t]
+			\#if\(PageOffset\) \{
+			WHERE [t].[rn] >= \#param\(PageOffset\) and [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			ORDER BY [t].[rn]
+			\}
+			\#if\(ByDmsrPerformer\) \{
+			ORDER BY [t].[DmsrPerformerName]
+			\}
+			\#if\(ByPurchaseState\) \{
+			ORDER BY [t].[PurchaseStateName]
+			\}
+			\#if\(ByStatus\) \{
+			ORDER BY [t].[StateName]
+			\}
+			\#if\(ByInitiator\) \{
+			ORDER BY [t].[InitiatorName]
+			\}
+			\#if\(ByInitiatingDepartment\) \{
+			ORDER BY [t].[InitiatingDepartmentName]
+			\}
+			\#if\(ByObjectPlace\) \{
+			ORDER BY [t].[ObjectPlaceName]
+			\}
+			\#if\(ByDoName\) \{
+			ORDER BY [t].[DoNameName]
+			\}
+			\#if\(ByMeasurementUnit\) \{
+			ORDER BY [t].[MeasurementUnitName]
+			\}
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:32324bf7-fac5-456f-bc61-27df8beca3fe) 
+	}
+}

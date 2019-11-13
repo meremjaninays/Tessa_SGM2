@@ -1,0 +1,290 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-12T14\:06\:41) {
+	#exchange_view(RowID:eb811dc7-b580-4675-b3e9-3dacb182e771, Alias:SgmTcDocuments, Caption:$Sgm_Views_Captions_TcDocuments, ModifiedById:8d13a7a6-2cfd-4ed7-b1d6-4705d2e2d60e, ModifiedByName:Меремьянина Ю.С., FormatVersion:2, ModifiedDateTime:2019-11-08T14\:21\:54, GroupName:Sgm_tk) {
+		#metadata {
+			#view(DefaultSortColumn: ElCreationDate, DefaultSortDirection: desc, Paging: always, MultiSelect: true, RowCountSubset: Count, QuickSearchParam: FTsearch)
+
+			#column(Alias: ElID, Hidden: true, Type: $DocumentCommonInfo.ID)
+			#column(Alias: ElTypeID, Hidden: true, Type: $Types.ID)
+			#column(Alias: ElTypeCaption, Hidden: true, Type: $Types.Caption)
+			#column(Alias: ElIsDocsvision, Hidden: true, Type: $SgmDocumentLinks.DocumentIsDocsvision)
+			#column(Alias: ElSubject, Hidden: true, Type: $DocumentCommonInfo.Subject)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+
+			#column(Alias: SMONumber, Caption: Номер СМО, Type: String)
+			#column(Alias: ProtocolNumber, Caption: Номер протокола, Type: String)
+			#column(Alias: ElCreationDate, Caption: $Sgm_Views_Columns_CreationDate, Type: Date, SortBy: [dci].[CreationDate])
+			#column(Alias: ProjectNumber, Caption: $Sgm_Views_Columns_ProjectNumber, Type: $DocumentCommonInfo.FullNumber, Hidden: true)
+			#column(Alias: Winners, Caption: $Sgm_Views_Columns_Winners, Type: String)
+			#column(Alias: SettlementTerms, Caption: Условия расчетов с победителем, Type: String)
+			#column(Alias: ProductName, Caption: Наименование продукции, Type: String)
+			#column(Alias: WinnerDeliveryTimetable, Caption: Срок и график поставки, Type: String)
+			#column(Alias: Curator, Caption: Куратор, Type: $DocumentCommonInfo.CuratorName)
+			#column(Alias: AgreementTerm, Caption: $Sgm_Views_Columns_AgreementTerm, Type: $SgmTcDocument.AgreementTermName, SortBy: [tcd].[AgreementTermName])
+			#column(Alias: State, Caption: $Sgm_Views_Columns_Status, Type: $KrApprovalCommonInfo.StateName, Localizable: true)
+			#column(Alias: InitiatingDepartment, Caption: Инициатор закупки, Type: $DocumentCommonInfo.DepartmentName)
+			#column(Alias: ObjectPlace, Caption: $Sgm_Views_Columns_ObjectPlace, Type: String)
+			#column(Alias: CurrentPerformers, Caption: $Sgm_Views_Columns_CurrentPerformers, Type: $SgmCurrentPerformersVirtual.RoleName)
+			#column(Alias: DocumentSourceName, Caption: Источник, Type: String, Hidden: true)
+
+
+			#column(Alias: ElFullNumber, Caption: $Sgm_Views_Columns_JNNumber, Type: $DocumentCommonInfo.FullNumber, Hidden: true)
+			#column(Alias: RegistrationDate, Caption: $Sgm_Views_Columns_RegistrationDate, Type: $DocumentCommonInfo.DocDate, SortBy: [dci].[DocDate], Hidden: true)
+			#column(Alias: Initiator, Caption: $Sgm_Views_Columns_Initiator, Type: $DocumentCommonInfo.RegistratorName, Hidden: true)
+			#column(Alias: ApprovingTCMembers, Caption: $Sgm_Views_Columns_ApprovingTCMembers, Type: String, Hidden: true)
+			#param(Alias: JNNumber, Caption: $Sgm_Views_Columns_JNNumber, Type: String)
+			#param(Alias: RegistrationDate, Caption: $Sgm_Views_Columns_RegistrationDate, Type: $DocumentCommonInfo.DocDate)
+			#param(Alias: ProjectNumber, Caption: $Sgm_Views_Columns_ProjectNumber, Type: $DocumentCommonInfo.FullNumber)
+			#param(Alias: CreationDate, Caption: $Sgm_Views_Columns_CreationDate, Type: Date)
+			#param(Alias: Winner, Caption: $Sgm_Views_Columns_Winners, Type: $SgmWinners.WinnerID, RefSection: SgmPartner, AllowedOperands: Equality) {
+			    #autocomplete(View: Partners, Param: Name)
+			}
+			#param(Alias: State, Caption: $Sgm_Views_Columns_Status, Type: $KrApprovalCommonInfo.StateID, RefSection: SgmTcDocumentState, HideAutoCompleteButton: true) {
+				#autocomplete(View: SgmTcDocumentStates, Param: Name)
+			    #dropdown(View: SgmTcDocumentStates)
+			}
+			#param(Alias: Initiator, Caption: $Sgm_Views_Columns_Initiator, Type: $DocumentCommonInfo.RegistratorID, RefSection: SgmUser) {
+			    #autocomplete(View: Users, Param: Name)
+			}
+			#param(Alias: AgreementTerm, Caption: $Sgm_Views_Columns_AgreementTerm, Type: $SgmTcDocument.AgreementTermID, RefSection: SgmAgreementTerm) {
+			    #autocomplete(View: SgmAgreementTerms, Param: Name)
+			}
+			#param(Alias: InitiatingDepartment, Caption: $Sgm_Views_Columns_InitiatingDepartment, Type: $DocumentCommonInfo.DepartmentID, RefSection: SgmDepartment) {
+			    #autocomplete(View: Departments, Param: Name)
+			}
+			#param(Alias: ObjectPlace, Caption: $Sgm_Views_Columns_ObjectPlace, Type: $DocumentCommonInfo.ObjectPlaceID, RefSection: SgmObjectPlace) {
+			    #autocomplete(View: SgmObjectPlaces, Param: Name)
+			}
+			#param(Alias: ApprovingTCMember, Caption: $Sgm_Views_Columns_ApprovingTCMembers, Type: $SgmApprovalRoles.RoleID, RefSection: SgmUser, AllowedOperands: Equality) {
+			    #autocomplete(View: Users, Param: Name)
+			}
+			#param(Alias: FTsearch, Caption: Файл содержит, Type: string, Multiple: false)
+			#param(Alias: DocumentSource, Caption: Источник, Type: Int32, RefSection: SgmSource, AllowedOperands: Equality, HideAutoCompleteButton: true)
+			{
+			    #dropdown(View: SgmCardSources)
+			}
+
+
+			#reference(ColPrefix: El, RefSection: SgmTcDocument, DisplayValueColumn: ElFullNumber, IsCard: true, OpenOnDoubleClick: true)
+
+			#subset(Alias: ByState, Caption: $Sgm_Views_Subsets_ByState, RefColumn: StateID, CaptionColumn: StateName, RefParam: State, CountColumn: Cnt)
+			#subset(Alias: ByInitiator, Caption: $Sgm_Views_Subsets_ByInitiator, RefColumn: InitiatorID, CaptionColumn: InitiatorName, RefParam: Initiator, CountColumn: Cnt)
+			#subset(Alias: ByAgreementTerm, Caption: $Sgm_Views_Subsets_ByAgreementTerm, RefColumn: AgreementTermID, CaptionColumn: AgreementTermName, RefParam: AgreementTerm, CountColumn: Cnt)
+			#subset(Alias: ByInitiatingDepartment, Caption: $Sgm_Views_Subsets_ByInitiatingDepartment, RefColumn: InitiatingDepartmentID, CaptionColumn: InitiatingDepartmentName, RefParam: InitiatingDepartment, CountColumn: Cnt)
+			#subset(Alias: ByObjectPlace, Caption: $Sgm_Views_Subsets_ByObjectPlace, RefColumn: ObjectPlaceID, CaptionColumn: ObjectPlaceName, RefParam: ObjectPlace, CountColumn: Cnt)
+			#subset(Alias: BySource, Caption: По источнику, RefColumn: DocumentSourceID, CaptionColumn: DocumentSourceName, RefParam: DocumentSource, CountColumn: Cnt)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			\#if\(FTsearch\) 
+			\{ 
+				DECLARE @FTsearch nvarchar\(500\) = \#param\(FTsearch\); 
+				SET @FTsearch='"'+@FTsearch+'"'
+			\}
+
+			SELECT
+			    [t].*
+			FROM
+			\(
+			    SELECT
+			        \#if\(Normal\) \{
+			        [dci].[ID] AS [ElID]\,
+					[dci].[CardTypeID] AS [ElTypeID]\,
+					[t].[Caption] AS [ElTypeCaption]\,
+			        CAST\(0 AS BIT\) AS [ElIsDocsvision]\,
+					[dci].[Subject] AS [ElSubject]\,
+					[dci].[FullNumber] AS [ElFullNumber]\,
+					[dci].[CreationDate] AS [ElCreationDate]\,
+					[dci].[DocDate] AS [RegistrationDate]\,
+					[dci].[FullNumber] AS [ProjectNumber]\,
+					[tcd].[SmoNumber] AS [SmoNumber]\,
+					[tcd].[ProtocolNumber] AS [ProtocolNumber]\,
+					[tcd].[SettlementTerms] AS [SettlementTerms]\,
+					[tcd].[ProductNameName] AS [ProductName]\,
+					[tcd].[WinnerDeliveryTimetable] AS [WinnerDeliveryTimetable]\,
+					[dci].[CuratorName] AS [Curator]\,
+					STUFF\(\(
+					    SELECT N'\, ' + [w].[WinnerName]
+					    FROM [SgmWinners] AS [w] WITH \(NOLOCK\)
+					    WHERE [w].[ID] = [dci].[ID]
+					    ORDER BY [w].[WinnerName]
+					    FOR XML PATH\, TYPE
+				    \).value\(N'.[1]'\, N'nvarchar\(max\)'\)\, 1\, 2\, N''\) AS [Winners]\,
+				    [aci].[StateName] AS [State]\,
+				    [dci].[RegistratorName] AS [Initiator]\,
+				    [tcd].[AgreementTermName] AS [AgreementTerm]\,
+				    [dci].[DepartmentName] AS [InitiatingDepartment]\,
+				    STUFF\(\(
+					    SELECT N'\, ' + [ar].[RoleName]
+					    FROM [SgmApprovalRoles] AS [ar] WITH \(NOLOCK\)
+					    WHERE [ar].[ID] = [dci].[ID]
+					    ORDER BY [ar].[RoleName]
+					    FOR XML PATH\, TYPE
+				    \).value\(N'.[1]'\, N'nvarchar\(max\)'\)\, 1\, 2\, N''\) AS [ApprovingTCMembers]\,
+				    STUFF\(\(
+						SELECT N'\, ' + [SMRObjects].[ObjectPlaceName]
+						FROM [SgmTcDocumentObjectPlaces] [SMRObjects]  WITH\(NOLOCK\) 
+							WHERE [SMRObjects].[ID] = [dci].[ID]
+						FOR XML PATH\, TYPE
+					\).value\(N'.[1]'\, N'nvarchar\(max\)'\)\, 1\, 2\, N''\) AS [ObjectPlace]\,
+					STUFF\(\(
+					    SELECT N'\, ' + ISNULL\([t].[UserName]\, [t].[RoleName]\)
+					    FROM [Tasks] AS [t] WITH \(NOLOCK\)
+					    WHERE [t].[ID] = [dci].[ID]
+					    --AND NOT EXISTS\(
+					    	--SELECT 1 FROM [TaskHistory] AS [th] WITH\(NOLOCK\) 
+								--WHERE [t].[RowID] = [th].[ParentRowID] AND [th].[ParentRowID] IS NOT NULL
+						--\)
+					    ORDER BY ISNULL\(t.UserName\, t.RoleName\)
+					    FOR XML PATH\, TYPE
+				    \).value\(N'.[1]'\, N'nvarchar\(max\)'\)\, 1\, 2\, N''\) AS [CurrentPerformers]\,	
+				    
+			        
+			        ROW_NUMBER\(\) OVER \(ORDER BY \#order_by\) AS [rn]
+			        \}
+			        
+			        \#if\(ByState\) \{
+					[aci].[StateID]\,
+					ISNULL\([aci].[StateName]\, N'$Sgm_Views_Values_Null'\) AS [StateName]\,
+					\}
+					
+					\#if\(ByInitiator\) \{
+					[dci].[RegistratorID]\,
+					ISNULL\([dci].[RegistratorName]\, N'$Sgm_Views_Values_Null'\) AS [InitiatorName]\,
+					\}
+					
+					\#if\(ByAgreementTerm\) \{
+					[tcd].[AgreementTermID]\,
+					ISNULL\([tcd].[AgreementTermName]\, N'$Sgm_Views_Values_Null'\) AS [AgreementTermName]\,
+					\}
+					
+					\#if\(ByInitiatingDepartment\) \{
+					[dci].[DepartmentID] AS [InitiatingDepartmentID]\,
+					ISNULL\([dci].[DepartmentName]\, N'$Sgm_Views_Values_Null'\) AS [InitiatingDepartmentName]\,
+					\}
+					
+					\#if\(ByObjectPlace\) \{
+					[dci].[ObjectPlaceID]\,
+					ISNULL\([dci].[ObjectPlaceName]\, N'$Sgm_Views_Values_Null'\) AS [ObjectPlaceName]\,
+					\}
+					\#if\(BySource\) \{
+					case 
+					when [sync].DvID is not null then 1
+					else 2
+					end
+					AS [DocumentSourceID]\,
+					case 
+					when [sync].DvID is not null then 'DocsVision'
+					else 'Tessa'
+					end
+					AS [DocumentSourceName]\,
+				    \}
+					
+			        
+			        \#if\(!Normal\) \{
+					COUNT\(1\) AS [Cnt]
+					\}
+				FROM [DocumentCommonInfo] [dci] WITH\(NOLOCK\)
+				INNER JOIN [Types] [t] WITH\(NOLOCK\)
+					ON [t].[ID] = [dci].[CardTypeID]
+				INNER JOIN [SgmTcDocument] [tcd] WITH\(NOLOCK\)
+				    ON [tcd].[ID] = [dci].[ID]
+				LEFT JOIN [SgmDvSyncInfo] AS [sync] WITH \(NOLOCK\)
+					ON [sync].[ID] = [dci].[ID]	
+				\#if\(Normal || State || ByState\) \{
+				LEFT JOIN [KrApprovalCommonInfo] [aci] WITH\(NOLOCK\)
+				    ON [aci].[MainCardID] = [dci].[ID]   
+				\}
+				\#if\(FTsearch\) 
+				\{
+				CROSS APPLY
+				\(SELECT top 1 Files.rowid FROM Files WITH \(NOLOCK\)
+					INNER JOIN [tessa-files].dbo.FileContent WITH \(NOLOCK\)
+				ON FileContent.VersionRowID=Files.VersionRowID
+					where dci.ID=files.ID AND CONTAINS\(Content\, @FTsearch\)\) files1
+				\}
+				WHERE 1=1
+				    \#param\(JNNumber\, [dci].[FullNumber]\)
+				    \#param\(RegistrationDate\, [dci].[DocDate]\)
+				    \#param\(ProjectNumber\, [dci].[FullNumber]\)
+				    \#param\(CreationDate\, [dci].[CreationDate]\)
+				    \#param\(State\, [aci].[StateID]\)
+				    \#param\(Initiator\, [dci].[RegistratorID]\)
+				    \#param\(AgreementTerm\, [tcd].[AgreementTermID]\)
+				    \#param\(InitiatingDepartment\, [dci].[DepartmentID]\)
+				    \#param\(ObjectPlace\, [dci].[ObjectPlaceID]\)
+				    
+				    \#if\(Winner\) \{		    
+					AND EXISTS \(
+					    SELECT TOP\(1\) 1
+					    FROM [SgmWinners] AS [w] WITH \(NOLOCK\)
+					    WHERE [w].[ID] = [dci].[ID]
+					        \#param\(Winner\, [w].[WinnerID]\)\)
+					\}
+					
+					\#if\(ApprovingTCMember\) \{		    
+					AND EXISTS \(
+					    SELECT TOP\(1\) 1
+					    FROM [SgmApprovalRoles] AS [ar] WITH \(NOLOCK\)
+					    WHERE [ar].[ID] = [dci].[ID]
+					        \#param\(ApprovingTCMember\, [ar].[RoleID]\)\)
+					\}
+					\#if\(DocumentSource\) \{
+			        AND \(\(\#param\(DocumentSource\)=1 AND [sync].DvID is not null\)
+			        OR \(\#param\(DocumentSource\)=2 AND [sync].DvID is null\)\)
+			        \}
+					
+				\#if\(ByState\) \{
+				GROUP BY [aci].[StateID]\, [aci].[StateName]
+				\}
+				\#if\(ByInitiator\) \{
+				GROUP BY [dci].[RegistratorID]\, [dci].[RegistratorName]
+				\}
+				\#if\(ByAgreementTerm\) \{
+				GROUP BY [tcd].[AgreementTermID]\, [tcd].[AgreementTermName]
+				\}
+				\#if\(ByInitiatingDepartment\) \{
+				GROUP BY [dci].[DepartmentID]\, [dci].[DepartmentName]
+				\}
+				\#if\(ByObjectPlace\) \{
+				GROUP BY [dci].[ObjectPlaceID]\, [dci].[ObjectPlaceName]
+				\}
+				\#if \(BySource\) \{
+				GROUP BY case 
+					when [sync].DvID is not null then 1
+					else 2
+					end\,
+					case 
+					when [sync].DvID is not null then 'DocsVision'
+					else 'Tessa'
+					end
+				\}
+			\) AS [t]
+			\#if\(PageOffset\) \{
+			WHERE [t].[rn] >= \#param\(PageOffset\) and [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(Normal\) \{
+			ORDER BY [t].[rn]
+			\}
+			\#if\(ByState\) \{
+			ORDER BY [t].[StateName]
+			\}
+			\#if\(ByInitiator\) \{
+			ORDER BY [t].[InitiatorName]
+			\}
+			\#if\(ByAgreementTerm\) \{
+			ORDER BY [t].[AgreementTermName]
+			\}
+			\#if\(ByInitiatingDepartment\) \{
+			ORDER BY [t].[InitiatingDepartmentName]
+			\}
+			\#if\(ByObjectPlace\) \{
+			ORDER BY [t].[ObjectPlaceName]
+			\}
+		}
+		#pg_query {}
+		#role(RoleID:c741223d-281f-46f7-ba4f-86db5674a940, ViewID:eb811dc7-b580-4675-b3e9-3dacb182e771) 
+		#role(RoleID:c52f10e2-f1c3-4b8d-a89c-04d5bd2c668d, ViewID:eb811dc7-b580-4675-b3e9-3dacb182e771) 
+		#role(RoleID:57a285f8-2fdd-43b4-9daf-ecad21e4ef08, ViewID:eb811dc7-b580-4675-b3e9-3dacb182e771) 
+	}
+}
