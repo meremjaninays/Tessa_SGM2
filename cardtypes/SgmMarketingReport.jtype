@@ -1,0 +1,4545 @@
+﻿{
+  "Blocks": [
+    {
+      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+      "BlockSettings": {
+        "AlwaysMultipleColumn": false,
+        "CollapsedByDefault": false,
+        "ColumnsCount::int": 6,
+        "DoNotCollapseWithTopBlock": false,
+        "HorizontalInterval::int": 5,
+        "IsHidden": false,
+        "VerticalInterval::int": 5
+      },
+      "Caption": "$Sgm_CardTypes_Blocks_MainBlock",
+      "Controls": [
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_JobNoteFullNumber",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 64,
+            "MaxRows::int": 1,
+            "MinRows::int": 1,
+            "ShowExpandButton": false,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": false
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": "JnNumber",
+          "Order::int": 0,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "eeb023b5-f473-4a8b-bef2-88e07b0d0688"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_JobNoteDate",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "DateFormat": true,
+            "DateNullable": true,
+            "IgnoreTimezone": false,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TimeEnabled": false
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": "JnDate",
+          "Order::int": 1,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "b452a4ce-ae1e-43fd-a44f-cc74464a6cd3"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+          "ToolTip": null,
+          "Type::uid": "c08b81f3-ed18-005a-bae6-a61679812709"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_RequestNumber",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 127,
+            "MaxRows::int": 1,
+            "MinRows::int": 1,
+            "ShowExpandButton": false,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": false
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": "RequestNumber",
+          "Order::int": 2,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "7261fc51-418a-47a4-9584-46df2fc87af4"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_Curator",
+          "ComplexColumnID::uid": "e2f24ca0-fe45-48d6-942c-200864397e78",
+          "ControlSettings": {
+            "ComboBoxMode": false,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "PopupColumnLengths": "",
+            "PopupColumnLengthsComboBox": "",
+            "PopupColumnsIndexes": "",
+            "PopupColumnsIndexesComboBox": "",
+            "PopupScreenLengthPercent::int": 100,
+            "RefSection": "SgmUser",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Users",
+            "ViewAliasComboBox": "",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": "DmsrPerformer",
+          "Order::int": 3,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_PurchaseState",
+          "ComplexColumnID::uid": "97973fc8-72fb-495f-b531-4ad19c9d4fd3",
+          "ControlSettings": {
+            "ComboBoxMode": false,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmPurchaseState",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "SgmPurchaseStates",
+            "ViewAliasComboBox": "",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": "PurchaseState",
+          "Order::int": 4,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_SmoNumber",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 64,
+            "MaxRows::int": 1,
+            "MinRows::int": 1,
+            "ShowExpandButton": false,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": false
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 1,
+          "Name": null,
+          "Order::int": 5,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "310c54ac-caed-4b71-85d0-b3512127c614"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 5,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_NomenclatureProductGroups",
+          "Columns": [
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "Reference",
+              "ComplexColumnID::uid": "7a5f97e7-2ee3-4477-83f6-52946b471843",
+              "DisplayFormat": "",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 2,
+              "MaxLength": null,
+              "Order::int": 0,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            }
+          ],
+          "ControlSettings": {
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "LineBreakSetting": false,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "OrderColumnID": null,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmNomenclatureGroup",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "SgmNomenclatureGroups",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 1,
+          "Flags::int": 0,
+          "Form": null,
+          "Name": null,
+          "Order::int": 6,
+          "RequiredText": "",
+          "SectionID::uid": "9412fd7b-d848-47f8-a77c-6fb2ce5396bb",
+          "ToolTip": null,
+          "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_State",
+          "ComplexColumnID::uid": "e23df655-36b5-4f1b-a9eb-b25fc6d22847",
+          "ControlSettings": {
+            "ComboBoxMode": false,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": false,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "",
+            "RefSection": null,
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "",
+            "ViewAliasComboBox": "",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 1,
+          "Name": null,
+          "Order::int": 7,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "579f7207-1bc9-4bcb-bc3f-b3ec1cf98659",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 5,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_ProductName",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 1000,
+            "MaxRows::int": 1,
+            "MinRows::int": 1,
+            "ShowExpandButton": false,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": false
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 8,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "a300fd74-a954-4f44-b1c8-353faed96d24"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": true
+          },
+          "Caption": "$Sgm_CardTypes_Controls_InvestProgram",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 9,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "22b8ac2d-4aa4-4aae-96b4-7a79135620d8"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_Initiator",
+          "ComplexColumnID::uid": "3089d333-8647-49e7-b2ef-d4f8958da086",
+          "ControlSettings": {
+            "ComboBoxMode": false,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "PopupColumnLengths": "",
+            "PopupColumnLengthsComboBox": "",
+            "PopupColumnsIndexes": "1,4",
+            "PopupColumnsIndexesComboBox": "",
+            "PopupScreenLengthPercent::int": 100,
+            "RefSection": "SgmUser",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Users",
+            "ViewAliasComboBox": "",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": "Initiator",
+          "Order::int": 10,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 4,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_InitiatingDepartment",
+          "ComplexColumnID::uid": "36be79af-fff7-417e-997e-4fe3f51aae56",
+          "ControlSettings": {
+            "ComboBoxMode": false,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmDepartment",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Departments",
+            "ViewAliasComboBox": "",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": "InitDepartment",
+          "Order::int": 11,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 3,
+            "ControlSpan": true,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": true,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_ObjectPlace",
+          "Columns": [
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "Reference",
+              "ComplexColumnID::uid": "84337eb1-8c3d-440b-97e7-c954f4912a7f",
+              "DisplayFormat": "",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 0,
+              "MaxLength": null,
+              "Order::int": 0,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            }
+          ],
+          "ControlSettings": {
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "LineBreakSetting": false,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "OrderColumnID": null,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmObjectPlace",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "SgmObjectPlaces",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 1,
+          "Flags::int": 0,
+          "Form": null,
+          "Name": null,
+          "Order::int": 12,
+          "RequiredText": "",
+          "SectionID::uid": "08db9e3d-71a2-4246-844a-b2de6f59224b",
+          "ToolTip": null,
+          "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 3,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_DeliveryAddress",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 1023,
+            "MaxRows::int": 5,
+            "MinRows::int": 1,
+            "ShowExpandButton": true,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": true
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 13,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "97be5934-a3a2-46af-82e2-b8905b48db9c"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 3,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_Comment",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 2147483647,
+            "MaxRows::int": 5,
+            "MinRows::int": 1,
+            "ShowExpandButton": true,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": true
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 14,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "abb02a5f-9cbf-4bd4-a1b8-45fa38b5130c"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 3,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_DoName",
+          "Columns": [
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "Reference",
+              "ComplexColumnID::uid": "8190c26d-9780-4a32-9582-1cf1dc7c0a72",
+              "DisplayFormat": "",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 0,
+              "MaxLength": null,
+              "Order::int": 0,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            }
+          ],
+          "ControlSettings": {
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "LineBreakSetting": false,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "OrderColumnID": null,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmDoName",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "SgmDoNames",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 1,
+          "Flags::int": 0,
+          "Form": null,
+          "Name": null,
+          "Order::int": 15,
+          "RequiredText": "",
+          "SectionID::uid": "e121f1ef-c73b-4878-8149-ae9d104770bb",
+          "ToolTip": null,
+          "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 3,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_ProjectSupplier",
+          "Columns": [
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "Reference",
+              "ComplexColumnID::uid": "2df3245d-b99e-487e-88ff-505623f070f9",
+              "DisplayFormat": "",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 0,
+              "MaxLength": null,
+              "Order::int": 0,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            }
+          ],
+          "ControlSettings": {
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "LineBreakSetting": false,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "OrderColumnID": null,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmPartner",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Partners",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 1,
+          "Flags::int": 0,
+          "Form": null,
+          "Name": null,
+          "Order::int": 16,
+          "RequiredText": "",
+          "SectionID::uid": "4cd77b1f-5119-4157-ad78-6d48178e8479",
+          "ToolTip": null,
+          "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": true,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_PositionsWithLimPrices",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxValue": 9223372036854775807,
+            "MinValue": 0,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 17,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "0e543d24-7c24-4de9-bc5d-a10af1aa26db"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "01c2bb84-6b71-034e-859e-b6e2b64ff2f3"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_LimCostWithoutVat",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "DigitsAfterSeparator::int": 2,
+            "MaxValue::dcm": "79228162514264337593543950335",
+            "MinValue::dcm": "0",
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 18,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "e78b33e3-e1ac-4a42-8048-d187009caf08"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "2860b9fd-2592-0ca1-ae99-e8051a04d4bb"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_Currency",
+          "ComplexColumnID::uid": "756a3b1b-a6b6-4536-9071-1d5b3d8de80a",
+          "ControlSettings": {
+            "ComboBoxMode": true,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmCurrency",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Currencies",
+            "ViewAliasComboBox": "Currencies",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 19,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 3,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_LimCostNote",
+          "ComplexColumnID::uid": "fc451486-cb92-49b2-ba5d-9ebbd215d6ad",
+          "ControlSettings": {
+            "ComboBoxMode": false,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmLimCostNote",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "SgmLimCostNotes",
+            "ViewAliasComboBox": "",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 20,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": true,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_CountOfTzPositions",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxValue": 9223372036854775807,
+            "MinValue": 0,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 21,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "35824558-e95b-4f65-aaed-671636885980"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "01c2bb84-6b71-034e-859e-b6e2b64ff2f3"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_PurchaseVolume",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxValue": 9223372036854775807,
+            "MinValue": 0,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 22,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "92a0469c-dce1-4448-ad91-bc72ddd7edb4"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "01c2bb84-6b71-034e-859e-b6e2b64ff2f3"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_MeasurementUnit",
+          "ComplexColumnID::uid": "182879f5-ddcd-47a3-a284-3459b3e540a3",
+          "ControlSettings": {
+            "ComboBoxMode": false,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmMeasurementUnit",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "SgmMeasurementUnits",
+            "ViewAliasComboBox": "",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 23,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_NmcWithoutVat",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "DigitsAfterSeparator::int": 2,
+            "MaxValue::dcm": "79228162514264337593543950335",
+            "MinValue::dcm": "0",
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 24,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "be19d8e2-15c5-4f19-bf32-4f325465d1a1"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "2860b9fd-2592-0ca1-ae99-e8051a04d4bb"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_Currency",
+          "ComplexColumnID::uid": "a527bc04-3879-4b1b-bfb5-1df6ef6ab05e",
+          "ControlSettings": {
+            "ComboBoxMode": true,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmCurrency",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Currencies",
+            "ViewAliasComboBox": "Currencies",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 25,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_NmcState",
+          "ComplexColumnID::uid": "ef276150-ac07-46ea-8c72-82c46e1bd9b3",
+          "ControlSettings": {
+            "ComboBoxMode": false,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmNmcState",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "SgmNmcStates",
+            "ViewAliasComboBox": "",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 26,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_InitialCpWithoutVat",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "DigitsAfterSeparator::int": 2,
+            "MaxValue::dcm": "79228162514264337593543950335",
+            "MinValue::dcm": "0",
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 27,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "efe47a2f-6848-4249-be4a-f565294404d7"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "2860b9fd-2592-0ca1-ae99-e8051a04d4bb"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_Currency",
+          "ComplexColumnID::uid": "09a9a896-6dc2-4ad7-9ac8-e8653f63b7a3",
+          "ControlSettings": {
+            "ComboBoxMode": true,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmCurrency",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Currencies",
+            "ViewAliasComboBox": "Currencies",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 28,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_IndicatorCostWithoutVat",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "DigitsAfterSeparator::int": 2,
+            "MaxValue::dcm": "79228162514264337593543950335",
+            "MinValue::dcm": "0",
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 29,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "07f03e08-75ca-4713-8a3b-0dcecd245699"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "2860b9fd-2592-0ca1-ae99-e8051a04d4bb"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_Currency",
+          "ComplexColumnID::uid": "d27b8bba-4f78-4775-9097-1ad3492d1c59",
+          "ControlSettings": {
+            "ComboBoxMode": true,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmCurrency",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Currencies",
+            "ViewAliasComboBox": "Currencies",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 30,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_PurchaseInitiatorMinPrice",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "DigitsAfterSeparator::int": 2,
+            "MaxValue::dcm": "79228162514264337593543950335",
+            "MinValue::dcm": "0",
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 31,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "f555874a-1934-47d2-a209-0690da95d572"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "2860b9fd-2592-0ca1-ae99-e8051a04d4bb"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_Currency",
+          "ComplexColumnID::uid": "7bb2cd2a-6513-41d5-829a-dac523ef42d0",
+          "ControlSettings": {
+            "ComboBoxMode": true,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmCurrency",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Currencies",
+            "ViewAliasComboBox": "Currencies",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 32,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_AnalogueMinPrice",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "DigitsAfterSeparator::int": 2,
+            "MaxValue::dcm": "79228162514264337593543950335",
+            "MinValue::dcm": "0",
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 33,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "107ad6f7-3f35-4900-ba78-f3a6b38012e3"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "2860b9fd-2592-0ca1-ae99-e8051a04d4bb"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_Currency",
+          "ComplexColumnID::uid": "b94dbff9-90b5-47f6-b2b7-cf8e24ed46b1",
+          "ControlSettings": {
+            "ComboBoxMode": true,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmCurrency",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Currencies",
+            "ViewAliasComboBox": "Currencies",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 34,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_AllManufacturersMinPrice",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "DigitsAfterSeparator::int": 2,
+            "MaxValue::dcm": "79228162514264337593543950335",
+            "MinValue::dcm": "0",
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 35,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "3c24c928-7854-4cb8-b5a6-b408c47f1163"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "2860b9fd-2592-0ca1-ae99-e8051a04d4bb"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_Currency",
+          "ComplexColumnID::uid": "ce64f430-fa15-4cf6-8f56-003a9fe75e48",
+          "ControlSettings": {
+            "ComboBoxMode": true,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmCurrency",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Currencies",
+            "ViewAliasComboBox": "Currencies",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 36,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 3,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_PotentialPartners",
+          "Columns": [
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "Reference",
+              "ComplexColumnID::uid": "e815cfbf-324c-42e9-9b05-371f7d2a276c",
+              "DisplayFormat": "",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 2,
+              "MaxLength": null,
+              "Order::int": 0,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            }
+          ],
+          "ControlSettings": {
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "LineBreakSetting": false,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "OrderColumnID": null,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmPartner",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Partners",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 1,
+          "Flags::int": 0,
+          "Form": null,
+          "Name": null,
+          "Order::int": 37,
+          "RequiredText": "",
+          "SectionID::uid": "dc707a60-1b54-439a-9941-7a5b28c60df0",
+          "ToolTip": null,
+          "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 3,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_IzRecommendedSuppliers",
+          "Columns": [
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "Reference",
+              "ComplexColumnID::uid": "fe0de497-2f11-4bd1-989d-121afc2d3326",
+              "DisplayFormat": "",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 2,
+              "MaxLength": null,
+              "Order::int": 0,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            }
+          ],
+          "ControlSettings": {
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "LineBreakSetting": false,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "OrderColumnID": null,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmPartner",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Partners",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 1,
+          "Flags::int": 0,
+          "Form": null,
+          "Name": null,
+          "Order::int": 38,
+          "RequiredText": "",
+          "SectionID::uid": "6c98c1be-b41f-4e00-8766-cddcf6ce673f",
+          "ToolTip": null,
+          "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 3,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_DmsdSuppliers",
+          "Columns": [
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "Reference",
+              "ComplexColumnID::uid": "49da6360-351a-48eb-af0e-6f2401e7ce5b",
+              "DisplayFormat": "",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 2,
+              "MaxLength": null,
+              "Order::int": 0,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            }
+          ],
+          "ControlSettings": {
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "LineBreakSetting": false,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "OrderColumnID": null,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmPartner",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Partners",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 1,
+          "Flags::int": 0,
+          "Form": null,
+          "Name": null,
+          "Order::int": 39,
+          "RequiredText": "",
+          "SectionID::uid": "c438eeb7-e5db-466a-8121-5a314ad1ad04",
+          "ToolTip": null,
+          "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 3,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_SupplierFromIp",
+          "Columns": [
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "Reference",
+              "ComplexColumnID::uid": "613686bb-90ef-499a-b533-bec9517732b3",
+              "DisplayFormat": "",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 2,
+              "MaxLength": null,
+              "Order::int": 0,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            }
+          ],
+          "ControlSettings": {
+            "ExtendendLocalization": false,
+            "HideSelectorButton": false,
+            "IsAllowOpenRefs": true,
+            "LineBreakSetting": false,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "OrderColumnID": null,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmPartner",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Partners",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 1,
+          "Flags::int": 0,
+          "Form": null,
+          "Name": null,
+          "Order::int": 40,
+          "RequiredText": "",
+          "SectionID::uid": "921f773f-893a-4d0f-a89f-6b5202f2b435",
+          "ToolTip": null,
+          "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_JnOutgoingNumber",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 255,
+            "MaxRows::int": 1,
+            "MinRows::int": 1,
+            "ShowExpandButton": false,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": false
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 41,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "82b1a1ba-0740-47ab-8781-1bbef6f2c1ac"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_JnOutgoingDate",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "DateFormat": true,
+            "DateNullable": true,
+            "IgnoreTimezone": false,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TimeEnabled": false
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 42,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "36c82ee2-259d-4145-8d9d-796e7bb5b266"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "c08b81f3-ed18-005a-bae6-a61679812709"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_SpecificationNumber",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 127,
+            "MaxRows::int": 1,
+            "MinRows::int": 1,
+            "ShowExpandButton": false,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": false
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 43,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "2296ce7c-bf6a-45f4-af9e-220db509858e"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_SpecificationDate",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "DateFormat": true,
+            "DateNullable": true,
+            "IgnoreTimezone": false,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TimeEnabled": false
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 44,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "c357220e-57bf-410a-85c1-c02f9873e4f7"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "c08b81f3-ed18-005a-bae6-a61679812709"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_SpecificationSum",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "DigitsAfterSeparator::int": 2,
+            "MaxValue::dcm": "79228162514264337593543950335",
+            "MinValue::dcm": "0",
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 45,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "bb1ed3be-e256-447e-92d1-aad98913b659"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "2860b9fd-2592-0ca1-ae99-e8051a04d4bb"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_Currency",
+          "ComplexColumnID::uid": "7af6c444-5bcf-4690-8b62-e98bee96f314",
+          "ControlSettings": {
+            "ComboBoxMode": true,
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "ParameterAlias": "Name",
+            "RefSection": "SgmCurrency",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "Currencies",
+            "ViewAliasComboBox": "Currencies",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 46,
+          "PhysicalColumnIDList": [],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_ArmDate",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "DateFormat": true,
+            "DateNullable": true,
+            "IgnoreTimezone": false,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TimeEnabled": false
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 47,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "12b2adfc-c7dd-45f2-929c-d67d5148ab7b"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "c08b81f3-ed18-005a-bae6-a61679812709"
+        },
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 4,
+            "ControlSpan": false,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_DiscrepancyReasons",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxLength::int": 2147483647,
+            "MaxRows::int": 6,
+            "MinRows::int": 1,
+            "ShowExpandButton": true,
+            "TextColor": "#FF000000",
+            "TextMode::int": 0,
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TextWrap": true
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 48,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "d5cc5e49-1f3a-448e-b87f-fcac016d4551"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": true
+          },
+          "Caption": "$Sgm_CardTypes_Controls_DiscrepancyWithAgreedCost",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 49,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "91ceee15-10bc-4aa5-a15f-f8588e5f617c"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+        }
+      ],
+      "FormSettings": {
+        "HideCaption": true
+      },
+      "Name": "MainBlock",
+      "Order::int": 0
+    },
+    {
+      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+      "BlockSettings": {
+        "AlwaysMultipleColumn": false,
+        "CollapsedByDefault": false,
+        "ColumnsCount::int": 2,
+        "DoNotCollapseWithTopBlock": false,
+        "HorizontalInterval::int": 5,
+        "IsHidden": false,
+        "VerticalInterval::int": 5
+      },
+      "Caption": "$Sgm_CardTypes_Blocks_Contractation",
+      "Controls": [
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_ContractationPeriod",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "MaxValue": 9223372036854775807,
+            "MinValue": 0,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            }
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": "ContractationPeriod",
+          "Order::int": 0,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "7f749963-d4c8-4314-b819-ac9359e8c510"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "01c2bb84-6b71-034e-859e-b6e2b64ff2f3"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": false,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_PurchaseControl",
+          "ComplexColumnID": null,
+          "ControlSettings": {
+            "DateFormat": true,
+            "DateNullable": true,
+            "IgnoreTimezone": false,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "TimeEnabled": false
+          },
+          "ControlType::int": 0,
+          "DisplayFormat": "",
+          "Flags::int": 0,
+          "Name": null,
+          "Order::int": 1,
+          "PhysicalColumnIDList": [
+            {
+              "::types": [
+                "uid"
+              ]
+            },
+            "98c6f1bd-6180-4dd7-adbc-d354eb6fe7f4"
+          ],
+          "RequiredText": "",
+          "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f",
+          "ToolTip": null,
+          "Type::uid": "c08b81f3-ed18-005a-bae6-a61679812709"
+        }
+      ],
+      "FormSettings": {
+        "HideCaption": false
+      },
+      "Name": "Block4",
+      "Order::int": 1
+    },
+    {
+      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+      "BlockSettings": {
+        "AlwaysMultipleColumn": false,
+        "CollapsedByDefault": false,
+        "ColumnsCount::int": 1,
+        "DoNotCollapseWithTopBlock": false,
+        "HorizontalInterval::int": 5,
+        "IsHidden": false,
+        "VerticalInterval::int": 5
+      },
+      "Caption": "$Sgm_CardTypes_Blocks_Approvals",
+      "Controls": [
+        {
+          "BlockSettings": {
+            "ControlSpan": true,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_CurrentPerformers",
+          "Columns": [
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "Reference",
+              "ComplexColumnID::uid": "46252875-b65c-4feb-baee-d3ff9cfdd57f",
+              "DisplayFormat": "",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 2,
+              "MaxLength": null,
+              "Order::int": 0,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            }
+          ],
+          "ControlSettings": {
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "LineBreakSetting": false,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "OrderColumnID": null,
+            "ParameterAlias": "",
+            "RefSection": null,
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 1,
+          "Flags::int": 1,
+          "Form": null,
+          "Name": null,
+          "Order::int": 0,
+          "RequiredText": "",
+          "SectionID::uid": "94b9cc23-d564-46f8-b798-0cd85ef99ab3",
+          "ToolTip": null,
+          "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+        }
+      ],
+      "FormSettings": {
+        "HideCaption": false
+      },
+      "Name": "ApprovalsBlock",
+      "Order::int": 2
+    },
+    {
+      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+      "BlockSettings": {
+        "AlwaysMultipleColumn": false,
+        "CollapsedByDefault": false,
+        "ColumnsCount::int": 2,
+        "DoNotCollapseWithTopBlock": false,
+        "HorizontalInterval::int": 5,
+        "IsHidden": false,
+        "VerticalInterval::int": 5
+      },
+      "Caption": "$Sgm_CardTypes_Blocks_LinkBlock",
+      "Controls": [
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": true,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": false,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_Links",
+          "Columns": [
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "$Sgm_CardTypes_Controls_LinkType",
+              "ComplexColumnID::uid": "222830c8-d767-4bcd-953f-2968cd70eae5",
+              "DisplayFormat": "",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 2,
+              "MaxLength": null,
+              "Order::int": 0,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            },
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "$Sgm_CardTypes_Controls_Link",
+              "ComplexColumnID::uid": "6a5b19c1-20f8-4d06-83e1-ed1a65354cf7",
+              "DisplayFormat": "{2} - {3} - {4:d} - {5}",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 2,
+              "MaxLength": null,
+              "Order::int": 1,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            }
+          ],
+          "ControlSettings": {
+            "AutoSizeRowLimit::int": 25,
+            "CanSort": true,
+            "IsMultiselectable": true,
+            "MaxHeight::int": 800,
+            "OrderColumnID": null
+          },
+          "ControlType::int": 1,
+          "Flags::int": 0,
+          "Form": {
+            "Blocks": [
+              {
+                "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+                "BlockSettings": {
+                  "AlwaysMultipleColumn": false,
+                  "CollapsedByDefault": false,
+                  "ColumnsCount::int": 1,
+                  "DoNotCollapseWithTopBlock": false,
+                  "HorizontalInterval::int": 5,
+                  "IsHidden": false,
+                  "VerticalInterval::int": 5
+                },
+                "Caption": "$Sgm_CardTypes_Blocks_LinkAdding",
+                "Controls": [
+                  {
+                    "BlockSettings": {
+                      "ControlSpan": false,
+                      "HideCaption": false
+                    },
+                    "Caption": "$Sgm_CardTypes_Controls_LinkType",
+                    "ComplexColumnID::uid": "222830c8-d767-4bcd-953f-2968cd70eae5",
+                    "ControlSettings": {
+                      "ComboBoxMode": true,
+                      "ExtendendLocalization": false,
+                      "HideSelectorButton": false,
+                      "IsAllowOpenRefs": true,
+                      "ManualInput": false,
+                      "ManualInputColumnID": null,
+                      "MaxResultsCount::int": 15,
+                      "ParameterAlias": "Name",
+                      "PopupColumnLengths": "",
+                      "PopupColumnLengthsComboBox": "",
+                      "PopupColumnsIndexes": "",
+                      "PopupColumnsIndexesComboBox": "",
+                      "PopupScreenLengthPercent::int": 100,
+                      "RefSection": "SgmLinkType",
+                      "SearchDelay": null,
+                      "TextColor": "#FF000000",
+                      "TextStyle": {
+                        "SelectedFontFamily": "Segoe UI",
+                        "SelectedFontSize": 12.0,
+                        "SelectedFontStretch": "Normal",
+                        "SelectedFontStyle": "Normal",
+                        "SelectedFontWeight": "Normal",
+                        "SelectedTextBaseline": false,
+                        "SelectedTextOverLine": false,
+                        "SelectedTextStrikethrough": false,
+                        "SelectedTextUnderline": false
+                      },
+                      "ViewAlias": "SgmLinkTypes",
+                      "ViewAliasComboBox": "SgmLinkTypes",
+                      "ViewMap": [
+                        {
+                          "CardColumn": null,
+                          "CardSection": null,
+                          "ColumnType::int": 2,
+                          "ConstantValue": false,
+                          "ConstantValueType::int": 4,
+                          "SkipNullParams": false,
+                          "ViewParamName": "CardTypeID"
+                        }
+                      ],
+                      "ViewReferencePrefix": null
+                    },
+                    "ControlType::int": 0,
+                    "DisplayFormat": "",
+                    "Flags::int": 0,
+                    "Name": "LinkType",
+                    "Order::int": 0,
+                    "PhysicalColumnIDList": [],
+                    "RequiredText": "",
+                    "SectionID::uid": "4dfcd44e-5524-428b-8281-819c0081463f",
+                    "ToolTip": null,
+                    "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+                  },
+                  {
+                    "BlockSettings": {
+                      "ControlSpan": false,
+                      "HideCaption": false
+                    },
+                    "Caption": "$Sgm_CardTypes_Controls_Link",
+                    "ComplexColumnID::uid": "6a5b19c1-20f8-4d06-83e1-ed1a65354cf7",
+                    "ControlSettings": {
+                      "ComboBoxMode": false,
+                      "ExtendendLocalization": false,
+                      "HideSelectorButton": false,
+                      "IsAllowOpenRefs": true,
+                      "ManualInput": false,
+                      "ManualInputColumnID": null,
+                      "MaxResultsCount::int": 15,
+                      "ParameterAlias": "QuickSearch",
+                      "PopupColumnLengths": "",
+                      "PopupColumnLengthsComboBox": "",
+                      "PopupColumnsIndexes": "2,3,4,5",
+                      "PopupColumnsIndexesComboBox": "",
+                      "PopupScreenLengthPercent::int": 100,
+                      "RefSection": "SgmDocument",
+                      "SearchDelay": null,
+                      "TextColor": "#FF000000",
+                      "TextStyle": {
+                        "SelectedFontFamily": "Segoe UI",
+                        "SelectedFontSize": 12.0,
+                        "SelectedFontStretch": "Normal",
+                        "SelectedFontStyle": "Normal",
+                        "SelectedFontWeight": "Normal",
+                        "SelectedTextBaseline": false,
+                        "SelectedTextOverLine": false,
+                        "SelectedTextStrikethrough": false,
+                        "SelectedTextUnderline": false
+                      },
+                      "ViewAlias": "SgmDocuments",
+                      "ViewAliasComboBox": "",
+                      "ViewMap": [
+                        {
+                          "CardColumn": null,
+                          "CardSection": null,
+                          "ColumnType::int": 1,
+                          "ConstantValue": false,
+                          "ConstantValueType::int": 4,
+                          "SkipNullParams": false,
+                          "ViewParamName": "ThisCardID"
+                        },
+                        {
+                          "CardColumn::uid": "222830c8-d767-00cd-4000-0968cd70eae5",
+                          "CardSection::uid": "4dfcd44e-5524-428b-8281-819c0081463f",
+                          "ColumnType::int": 0,
+                          "ConstantValue": false,
+                          "ConstantValueType::int": 4,
+                          "SkipNullParams": false,
+                          "ViewParamName": "LinkTypeID"
+                        }
+                      ],
+                      "ViewReferencePrefix": null
+                    },
+                    "ControlType::int": 0,
+                    "DisplayFormat": "{2} - {3} - {4:d} - {5}",
+                    "Flags::int": 0,
+                    "Name": null,
+                    "Order::int": 1,
+                    "PhysicalColumnIDList": [],
+                    "RequiredText": "",
+                    "SectionID::uid": "4dfcd44e-5524-428b-8281-819c0081463f",
+                    "ToolTip": null,
+                    "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+                  }
+                ],
+                "FormSettings": {
+                  "HideCaption": true
+                },
+                "Name": "LinkAddingBlock",
+                "Order::int": 0
+              }
+            ],
+            "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+            "FormSettings": {
+              "Interval::int": 10
+            }
+          },
+          "Name": "LinkTable",
+          "Order::int": 0,
+          "RequiredText": "",
+          "SectionID::uid": "4dfcd44e-5524-428b-8281-819c0081463f",
+          "ToolTip": null,
+          "Type::uid": "b6038b72-342a-0c8d-ae2e-f2f3d122baa9"
+        },
+        {
+          "BlockSettings": {
+            "ControlSpan": true,
+            "HideCaption": false
+          },
+          "Caption": "$Sgm_CardTypes_Controls_LinksOnThisDocument",
+          "Columns": [
+            {
+              "AggregationFormat": "",
+              "Alignment::int": 0,
+              "Caption": "Reference",
+              "ComplexColumnID::uid": "684aaa28-fecf-4f5a-a871-05a6141e089c",
+              "DisplayFormat": "{2} - {3} - {4:d}",
+              "Flags::int": 0,
+              "HeaderAlignment::int": 2,
+              "MaxLength": null,
+              "Order::int": 0,
+              "OwnedComplexColumnID": null,
+              "OwnedOrderColumnID": null,
+              "OwnedPhysicalColumnIDList": [],
+              "OwnedSectionID": null,
+              "PhysicalColumnIDList": [],
+              "SelectableControlName": "",
+              "Separator": "",
+              "ToolTipLineLength::int": 100
+            }
+          ],
+          "ControlSettings": {
+            "ExtendendLocalization": false,
+            "HideSelectorButton": true,
+            "IsAllowOpenRefs": true,
+            "LineBreakSetting": false,
+            "ManualInput": false,
+            "ManualInputColumnID": null,
+            "MaxResultsCount::int": 15,
+            "OrderColumnID": null,
+            "ParameterAlias": "",
+            "RefSection": "",
+            "SearchDelay": null,
+            "TextColor": "#FF000000",
+            "TextStyle": {
+              "SelectedFontFamily": "Segoe UI",
+              "SelectedFontSize": 12.0,
+              "SelectedFontStretch": "Normal",
+              "SelectedFontStyle": "Normal",
+              "SelectedFontWeight": "Normal",
+              "SelectedTextBaseline": false,
+              "SelectedTextOverLine": false,
+              "SelectedTextStrikethrough": false,
+              "SelectedTextUnderline": false
+            },
+            "ViewAlias": "",
+            "ViewMap": null,
+            "ViewReferencePrefix": null
+          },
+          "ControlType::int": 1,
+          "Flags::int": 1,
+          "Form": null,
+          "Name": null,
+          "Order::int": 1,
+          "RequiredText": "",
+          "SectionID::uid": "1d4763aa-e223-4598-9411-744de5a5ab81",
+          "ToolTip": null,
+          "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+        }
+      ],
+      "FormSettings": {
+        "HideCaption": false
+      },
+      "Name": "LinkBlock",
+      "Order::int": 3
+    },
+    {
+      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+      "BlockSettings": {
+        "AlwaysMultipleColumn": false,
+        "CollapsedByDefault": false,
+        "ColumnsCount::int": 1,
+        "DoNotCollapseWithTopBlock": false,
+        "HorizontalInterval::int": 5,
+        "IsHidden": false,
+        "VerticalInterval::int": 5
+      },
+      "Caption": "$Sgm_CardTypes_Blocks_FileList",
+      "Controls": [
+        {
+          "BlockSettings": {
+            "CaptionStyle": {
+              "TextColor": "#FF505050",
+              "TextStyle": {
+                "SelectedFontFamily": "Segoe UI",
+                "SelectedFontSize": 12.0,
+                "SelectedFontStretch": "Normal",
+                "SelectedFontStyle": "Normal",
+                "SelectedFontWeight": "Normal",
+                "SelectedTextBaseline": false,
+                "SelectedTextOverLine": false,
+                "SelectedTextStrikethrough": false,
+                "SelectedTextUnderline": false
+              }
+            },
+            "ColumnSpan::int": 1,
+            "ControlSpan": true,
+            "EmptyColumnsToTheLeft::int": 0,
+            "HideCaption": true,
+            "HorizontalAlignment::int": 3,
+            "Margin": "0,0,0,0",
+            "MaxWidth": 0.0,
+            "MinWidth": 0.0,
+            "StartAtNewLine": false,
+            "VerticalAlignment::int": 3
+          },
+          "Caption": "$Sgm_CardTypes_Controls_FileList",
+          "ControlSettings": {
+            "CategoriesViewMap": null,
+            "FileSortingDirection::int": 0,
+            "FileSortingType": "Name",
+            "GroupByTypes::int": 1,
+            "GroupType": "Category",
+            "IsCategoriesEnabled": true,
+            "IsIgnoreExistingCategories": false,
+            "IsManualCategoriesCreationDisabled": true,
+            "IsNullCategoryCreationDisabled": true,
+            "IsPreservingCategoriesOrder": false,
+            "ViewAlias": "FileCategoriesFiltered"
+          },
+          "ControlType::int": 3,
+          "Flags::int": 0,
+          "Name": "FileList",
+          "Order::int": 0,
+          "RequiredText": "",
+          "ToolTip": null,
+          "Type::uid": "6867130d-0858-0d60-ac87-3ab49bb8d7ed"
+        }
+      ],
+      "FormSettings": {
+        "HideCaption": false
+      },
+      "Name": "FileListBlock",
+      "Order::int": 4
+    }
+  ],
+  "Caption": "$Sgm_CardTypes_Captions_MarketingReport",
+  "CompletionOptions": [],
+  "DigestFormat": "{f:SgmMarketingReport.SmoNumber}",
+  "Extensions": [],
+  "Flags::int": 11,
+  "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "AlwaysMultipleColumn": false,
+            "CollapsedByDefault": false,
+            "ColumnsCount::int": 1,
+            "DoNotCollapseWithTopBlock": false,
+            "HorizontalInterval::int": 5,
+            "IsHidden": false,
+            "VerticalInterval::int": 5
+          },
+          "Caption": "Block1",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": true,
+                "HideCaption": false
+              },
+              "Caption": "$Sgm_CardTypes_Controls_TasksDeadlinesChange",
+              "Columns": [
+                {
+                  "AggregationFormat": "",
+                  "Alignment::int": 0,
+                  "Caption": "$Sgm_CardTypes_Controls_Date",
+                  "ComplexColumnID": null,
+                  "DisplayFormat": "",
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 2,
+                  "MaxLength": null,
+                  "Order::int": 0,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": [],
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": [
+                    {
+                      "::types": [
+                        "uid"
+                      ]
+                    },
+                    "81ffb143-2dc2-49ee-8c11-cfcf4823777d"
+                  ],
+                  "SelectableControlName": "",
+                  "Separator": "",
+                  "ToolTipLineLength::int": 100
+                },
+                {
+                  "AggregationFormat": "",
+                  "Alignment::int": 0,
+                  "Caption": "$Sgm_CardTypes_Controls_User",
+                  "ComplexColumnID::uid": "073321df-c71b-4963-b77a-22e2133f00ce",
+                  "DisplayFormat": "{1}",
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 2,
+                  "MaxLength": null,
+                  "Order::int": 1,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": [],
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": [],
+                  "SelectableControlName": "",
+                  "Separator": "",
+                  "ToolTipLineLength::int": 100
+                },
+                {
+                  "AggregationFormat": "",
+                  "Alignment::int": 0,
+                  "Caption": "$Sgm_CardTypes_Controls_DeadlineIsFrozen",
+                  "ComplexColumnID": null,
+                  "DisplayFormat": "",
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 2,
+                  "MaxLength": null,
+                  "Order::int": 2,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": [],
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": [
+                    {
+                      "::types": [
+                        "uid"
+                      ]
+                    },
+                    "ae228b33-3dea-4216-89de-b5507600edd3"
+                  ],
+                  "SelectableControlName": "",
+                  "Separator": "",
+                  "ToolTipLineLength::int": 100
+                },
+                {
+                  "AggregationFormat": "",
+                  "Alignment::int": 0,
+                  "Caption": "$Sgm_CardTypes_Controls_Comment",
+                  "ComplexColumnID": null,
+                  "DisplayFormat": "",
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 2,
+                  "MaxLength": null,
+                  "Order::int": 3,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": [],
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": [
+                    {
+                      "::types": [
+                        "uid"
+                      ]
+                    },
+                    "12df974b-03e8-4822-ad87-18bd7a79a30f"
+                  ],
+                  "SelectableControlName": "",
+                  "Separator": "",
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "AutoSizeRowLimit::int": 25,
+                "CanSort": true,
+                "IsMultiselectable": true,
+                "MaxHeight::int": 800,
+                "OrderColumnID": null
+              },
+              "ControlType::int": 1,
+              "Flags::int": 0,
+              "Form": {
+                "Blocks": [],
+                "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+                "FormSettings": {
+                  "Interval::int": 10
+                }
+              },
+              "Name": null,
+              "Order::int": 0,
+              "RequiredText": "",
+              "SectionID::uid": "a1c1927b-cd3b-4509-843b-4c095d9c7a2c",
+              "ToolTip": null,
+              "Type::uid": "b6038b72-342a-0c8d-ae2e-f2f3d122baa9"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Block1",
+          "Order::int": 0
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": {
+        "Interval::int": 10
+      },
+      "Name": "TasksDeadlinesChangeTab",
+      "TabCaption": "$Sgm_CardTypes_Tabs_TasksDeadlinesChange",
+      "TabOrder::int": 1
+    },
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "AlwaysMultipleColumn": false,
+            "CollapsedByDefault": false,
+            "ColumnsCount::int": 1,
+            "DoNotCollapseWithTopBlock": false,
+            "HorizontalInterval::int": 5,
+            "IsHidden": false,
+            "VerticalInterval::int": 5
+          },
+          "Caption": "$Sgm_CardTypes_Blocks_RoleRights",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "CaptionStyle": {
+                  "TextColor": "#FF505050",
+                  "TextStyle": {
+                    "SelectedFontFamily": "Segoe UI",
+                    "SelectedFontSize": 12.0,
+                    "SelectedFontStretch": "Normal",
+                    "SelectedFontStyle": "Normal",
+                    "SelectedFontWeight": "Normal",
+                    "SelectedTextBaseline": false,
+                    "SelectedTextOverLine": false,
+                    "SelectedTextStrikethrough": false,
+                    "SelectedTextUnderline": false
+                  }
+                },
+                "ColumnSpan::int": 1,
+                "ControlSpan": true,
+                "EmptyColumnsToTheLeft::int": 0,
+                "HideCaption": true,
+                "HorizontalAlignment::int": 3,
+                "Margin": "0,0,0,0",
+                "MaxWidth": 0.0,
+                "MinWidth": 0.0,
+                "StartAtNewLine": false,
+                "VerticalAlignment::int": 3
+              },
+              "Caption": "$Sgm_CardTypes_Controls_RoleRights",
+              "Columns": [
+                {
+                  "AggregationFormat": "",
+                  "Alignment::int": 0,
+                  "Caption": "$Sgm_CardTypes_Controls_Employee",
+                  "ComplexColumnID::uid": "b3f2458c-f7e7-4360-bca6-e5f74eaca2a1",
+                  "DisplayFormat": "",
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "Order::int": 0,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": [],
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": [],
+                  "SelectableControlName": "",
+                  "Separator": "",
+                  "ToolTipLineLength::int": 100
+                },
+                {
+                  "AggregationFormat": "",
+                  "Alignment::int": 0,
+                  "Caption": "$Sgm_CardTypes_Controls_AllowEdit",
+                  "ComplexColumnID": null,
+                  "DisplayFormat": "",
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "Order::int": 1,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": [],
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": [
+                    {
+                      "::types": [
+                        "uid"
+                      ]
+                    },
+                    "54057d4c-3d91-4c04-8615-16f55bf285c8"
+                  ],
+                  "SelectableControlName": "",
+                  "Separator": "",
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "AutoSizeRowLimit::int": 25,
+                "CanSort": false,
+                "IsMultiselectable": true,
+                "MaxHeight::int": 800,
+                "OrderColumnID": null
+              },
+              "ControlType::int": 1,
+              "Flags::int": 0,
+              "Form": {
+                "Blocks": [
+                  {
+                    "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+                    "BlockSettings": {
+                      "AlwaysMultipleColumn": false,
+                      "CollapsedByDefault": false,
+                      "ColumnsCount::int": 2,
+                      "DoNotCollapseWithTopBlock": false,
+                      "HorizontalInterval::int": 5,
+                      "IsHidden": false,
+                      "VerticalInterval::int": 5
+                    },
+                    "Caption": "$Sgm_CardTypes_Blocks_MainBlock",
+                    "Controls": [
+                      {
+                        "BlockSettings": {
+                          "ControlSpan": false,
+                          "HideCaption": false
+                        },
+                        "Caption": "$Sgm_CardTypes_Controls_Employee",
+                        "ComplexColumnID::uid": "b3f2458c-f7e7-4360-bca6-e5f74eaca2a1",
+                        "ControlSettings": {
+                          "ComboBoxMode": false,
+                          "ExtendendLocalization": false,
+                          "HideSelectorButton": false,
+                          "IsAllowOpenRefs": true,
+                          "ManualInput": false,
+                          "ManualInputColumnID": null,
+                          "MaxResultsCount::int": 15,
+                          "ParameterAlias": "Name",
+                          "RefSection": "SgmUser",
+                          "SearchDelay": null,
+                          "TextColor": "#FF000000",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          },
+                          "ViewAlias": "Users",
+                          "ViewAliasComboBox": "Users",
+                          "ViewMap": null,
+                          "ViewReferencePrefix": null
+                        },
+                        "ControlType::int": 0,
+                        "DisplayFormat": "",
+                        "Flags::int": 0,
+                        "Name": null,
+                        "Order::int": 0,
+                        "PhysicalColumnIDList": [],
+                        "RequiredText": "",
+                        "SectionID::uid": "89a6b1e8-cf25-46a0-b636-3c209c92333c",
+                        "ToolTip": null,
+                        "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+                      },
+                      {
+                        "BlockSettings": {
+                          "CaptionStyle": {
+                            "TextColor": "#FF505050",
+                            "TextStyle": {
+                              "SelectedFontFamily": "Segoe UI",
+                              "SelectedFontSize": 12.0,
+                              "SelectedFontStretch": "Normal",
+                              "SelectedFontStyle": "Normal",
+                              "SelectedFontWeight": "Normal",
+                              "SelectedTextBaseline": false,
+                              "SelectedTextOverLine": false,
+                              "SelectedTextStrikethrough": false,
+                              "SelectedTextUnderline": false
+                            }
+                          },
+                          "ColumnSpan::int": 1,
+                          "ControlSpan": false,
+                          "EmptyColumnsToTheLeft::int": 0,
+                          "HideCaption": true,
+                          "HorizontalAlignment::int": 3,
+                          "Margin": "0,0,0,0",
+                          "MaxWidth": 0.0,
+                          "MinWidth": 0.0,
+                          "StartAtNewLine": false,
+                          "VerticalAlignment::int": 3
+                        },
+                        "Caption": "$Sgm_CardTypes_Controls_AllowEdit",
+                        "ComplexColumnID": null,
+                        "ControlSettings": {
+                          "TextColor": "#FF000000",
+                          "TextStyle": {
+                            "SelectedFontFamily": "Segoe UI",
+                            "SelectedFontSize": 12.0,
+                            "SelectedFontStretch": "Normal",
+                            "SelectedFontStyle": "Normal",
+                            "SelectedFontWeight": "Normal",
+                            "SelectedTextBaseline": false,
+                            "SelectedTextOverLine": false,
+                            "SelectedTextStrikethrough": false,
+                            "SelectedTextUnderline": false
+                          }
+                        },
+                        "ControlType::int": 0,
+                        "DisplayFormat": "",
+                        "Flags::int": 0,
+                        "Name": null,
+                        "Order::int": 1,
+                        "PhysicalColumnIDList": [
+                          {
+                            "::types": [
+                              "uid"
+                            ]
+                          },
+                          "54057d4c-3d91-4c04-8615-16f55bf285c8"
+                        ],
+                        "RequiredText": "",
+                        "SectionID::uid": "89a6b1e8-cf25-46a0-b636-3c209c92333c",
+                        "ToolTip": null,
+                        "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+                      }
+                    ],
+                    "FormSettings": {
+                      "HideCaption": true
+                    },
+                    "Name": "MainBlock",
+                    "Order::int": 0
+                  }
+                ],
+                "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+                "FormSettings": {
+                  "Interval::int": 10
+                }
+              },
+              "Name": null,
+              "Order::int": 0,
+              "RequiredText": "",
+              "SectionID::uid": "89a6b1e8-cf25-46a0-b636-3c209c92333c",
+              "ToolTip": null,
+              "Type::uid": "b6038b72-342a-0c8d-ae2e-f2f3d122baa9"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": false
+          },
+          "Name": "RoleRightsBlock",
+          "Order::int": 0
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "AlwaysMultipleColumn": false,
+            "CollapsedByDefault": false,
+            "ColumnsCount::int": 2,
+            "DoNotCollapseWithTopBlock": false,
+            "HorizontalInterval::int": 5,
+            "IsHidden": false,
+            "VerticalInterval::int": 5
+          },
+          "Caption": "$Sgm_CardTypes_Blocks_DocsVision",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": false,
+                "HideCaption": false
+              },
+              "Caption": "$Sgm_CardTypes_Controls_LastSyncDvDate",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "DateFormat": true,
+                "DateNullable": true,
+                "IgnoreTimezone": false,
+                "TextColor": "#FF000000",
+                "TextStyle": {
+                  "SelectedFontFamily": "Segoe UI",
+                  "SelectedFontSize": 12.0,
+                  "SelectedFontStretch": "Normal",
+                  "SelectedFontStyle": "Normal",
+                  "SelectedFontWeight": "Normal",
+                  "SelectedTextBaseline": false,
+                  "SelectedTextOverLine": false,
+                  "SelectedTextStrikethrough": false,
+                  "SelectedTextUnderline": false
+                },
+                "TimeEnabled": true
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": "",
+              "Flags::int": 1,
+              "Name": null,
+              "Order::int": 0,
+              "PhysicalColumnIDList": [
+                {
+                  "::types": [
+                    "uid"
+                  ]
+                },
+                "31b30c46-e62f-4320-b21a-4d836fa84bbe"
+              ],
+              "RequiredText": "",
+              "SectionID::uid": "8111accd-46a8-4543-986c-ef724c47d392",
+              "ToolTip": null,
+              "Type::uid": "c08b81f3-ed18-005a-bae6-a61679812709"
+            },
+            {
+              "BlockSettings": {
+                "ControlSpan": false,
+                "HideCaption": true
+              },
+              "Caption": "$Sgm_CardTypes_Controls_SyncWithDv",
+              "ControlSettings": {
+                "Text": "$Sgm_CardTypes_Controls_SyncWithDv",
+                "TextColor": "#FF000000",
+                "TextStyle": {
+                  "SelectedFontFamily": "Segoe UI",
+                  "SelectedFontSize": 12.0,
+                  "SelectedFontStretch": "Normal",
+                  "SelectedFontStyle": "Normal",
+                  "SelectedFontWeight": "Normal",
+                  "SelectedTextBaseline": false,
+                  "SelectedTextOverLine": false,
+                  "SelectedTextStrikethrough": false,
+                  "SelectedTextUnderline": false
+                }
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "SyncWithDv",
+              "Order::int": 1,
+              "RequiredText": "",
+              "ToolTip": null,
+              "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+            },
+            {
+              "BlockSettings": {
+                "CaptionStyle": {
+                  "TextColor": "#FF505050",
+                  "TextStyle": {
+                    "SelectedFontFamily": "Segoe UI",
+                    "SelectedFontSize": 12.0,
+                    "SelectedFontStretch": "Normal",
+                    "SelectedFontStyle": "Normal",
+                    "SelectedFontWeight": "Normal",
+                    "SelectedTextBaseline": false,
+                    "SelectedTextOverLine": false,
+                    "SelectedTextStrikethrough": false,
+                    "SelectedTextUnderline": false
+                  }
+                },
+                "ColumnSpan::int": 1,
+                "ControlSpan": false,
+                "EmptyColumnsToTheLeft::int": 0,
+                "HideCaption": false,
+                "HorizontalAlignment::int": 3,
+                "Margin": "0,0,0,0",
+                "MaxWidth": 0.0,
+                "MinWidth": 0.0,
+                "StartAtNewLine": false,
+                "VerticalAlignment::int": 3
+              },
+              "Caption": "$Sgm_CardTypes_Controls_DvCard",
+              "ComplexColumnID::uid": "fd9fd31d-a368-49a9-91fb-594e9409dc5d",
+              "ControlSettings": {
+                "ComboBoxMode": false,
+                "ExtendendLocalization": false,
+                "HideSelectorButton": true,
+                "IsAllowOpenRefs": true,
+                "ManualInput": false,
+                "ManualInputColumnID": null,
+                "MaxResultsCount::int": 15,
+                "ParameterAlias": "",
+                "RefSection": null,
+                "SearchDelay": null,
+                "TextColor": "#FF000000",
+                "TextStyle": {
+                  "SelectedFontFamily": "Segoe UI",
+                  "SelectedFontSize": 12.0,
+                  "SelectedFontStretch": "Normal",
+                  "SelectedFontStyle": "Normal",
+                  "SelectedFontWeight": "Normal",
+                  "SelectedTextBaseline": false,
+                  "SelectedTextOverLine": false,
+                  "SelectedTextStrikethrough": false,
+                  "SelectedTextUnderline": false
+                },
+                "ViewAlias": "",
+                "ViewAliasComboBox": "",
+                "ViewMap": null,
+                "ViewReferencePrefix": null
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": "",
+              "Flags::int": 1,
+              "Name": null,
+              "Order::int": 2,
+              "PhysicalColumnIDList": [],
+              "RequiredText": "",
+              "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": {
+                "ControlSpan": false,
+                "HideCaption": true
+              },
+              "Caption": "$Sgm_CardTypes_Controls_OpenLink",
+              "ControlSettings": {
+                "Text": "$Sgm_CardTypes_Controls_OpenLink",
+                "TextColor": "#FF000000",
+                "TextStyle": {
+                  "SelectedFontFamily": "Segoe UI",
+                  "SelectedFontSize": 12.0,
+                  "SelectedFontStretch": "Normal",
+                  "SelectedFontStyle": "Normal",
+                  "SelectedFontWeight": "Normal",
+                  "SelectedTextBaseline": false,
+                  "SelectedTextOverLine": false,
+                  "SelectedTextStrikethrough": false,
+                  "SelectedTextUnderline": false
+                }
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "OpenLink",
+              "Order::int": 3,
+              "RequiredText": "",
+              "ToolTip": null,
+              "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": false
+          },
+          "Name": "DocsVisionBlock",
+          "Order::int": 1
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": {
+        "Interval::int": 10
+      },
+      "Name": "ServiceTab",
+      "TabCaption": "$Sgm_CardTypes_Tabs_ServiceData",
+      "TabOrder::int": 2
+    }
+  ],
+  "FormSettings": {
+    "Interval::int": 10
+  },
+  "Group": "Documents",
+  "ID::uid": "648e481b-2f9f-4042-8a4c-da2b64423074",
+  "InstanceType::int": 0,
+  "Name": "SgmMarketingReport",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid"
+          ]
+        },
+        "862970ab-6421-4072-b487-d565a6a6f590"
+      ],
+      "SectionID::uid": "00e350cd-5509-4e44-992a-ac6f0aa532a2"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid"
+          ]
+        },
+        "84337eb1-8c3d-440b-97e7-c954f4912a7f"
+      ],
+      "SectionID::uid": "08db9e3d-71a2-4246-844a-b2de6f59224b"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid"
+          ]
+        },
+        "684aaa28-fecf-4f5a-a871-05a6141e089c"
+      ],
+      "SectionID::uid": "1d4763aa-e223-4598-9411-744de5a5ab81"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid"
+          ]
+        },
+        "2df3245d-b99e-487e-88ff-505623f070f9"
+      ],
+      "SectionID::uid": "4cd77b1f-5119-4157-ad78-6d48178e8479"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid",
+            "uid",
+            "uid"
+          ]
+        },
+        "6a5b19c1-20f8-4d06-83e1-ed1a65354cf7",
+        "222830c8-d767-4bcd-953f-2968cd70eae5",
+        "66b21388-0057-4fd6-a22b-dde8fe884fb1"
+      ],
+      "SectionID::uid": "4dfcd44e-5524-428b-8281-819c0081463f"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid"
+          ]
+        },
+        "e23df655-36b5-4f1b-a9eb-b25fc6d22847"
+      ],
+      "SectionID::uid": "579f7207-1bc9-4bcb-bc3f-b3ec1cf98659"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid"
+          ]
+        },
+        "fe0de497-2f11-4bd1-989d-121afc2d3326"
+      ],
+      "SectionID::uid": "6c98c1be-b41f-4e00-8766-cddcf6ce673f"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid",
+            "uid"
+          ]
+        },
+        "73593c16-6a40-419b-879d-b06fc08f1f6f",
+        "31b30c46-e62f-4320-b21a-4d836fa84bbe"
+      ],
+      "SectionID::uid": "8111accd-46a8-4543-986c-ef724c47d392"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid",
+            "uid"
+          ]
+        },
+        "b3f2458c-f7e7-4360-bca6-e5f74eaca2a1",
+        "54057d4c-3d91-4c04-8615-16f55bf285c8"
+      ],
+      "SectionID::uid": "89a6b1e8-cf25-46a0-b636-3c209c92333c"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid"
+          ]
+        },
+        "613686bb-90ef-499a-b533-bec9517732b3"
+      ],
+      "SectionID::uid": "921f773f-893a-4d0f-a89f-6b5202f2b435"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid"
+          ]
+        },
+        "7a5f97e7-2ee3-4477-83f6-52946b471843"
+      ],
+      "SectionID::uid": "9412fd7b-d848-47f8-a77c-6fb2ce5396bb"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid"
+          ]
+        },
+        "46252875-b65c-4feb-baee-d3ff9cfdd57f"
+      ],
+      "SectionID::uid": "94b9cc23-d564-46f8-b798-0cd85ef99ab3"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid"
+          ]
+        },
+        "f9571652-0314-4c48-9beb-80f712cead5c",
+        "f0e5f925-7614-40f1-9700-aa0bbbe85c47",
+        "3e0388c6-dab0-4a7f-9809-2b8336b89475",
+        "578ba57c-af6d-4e3c-91f7-f316856dd082",
+        "cbcfce3e-a01d-4558-9521-d279404b1a5a",
+        "d0c18825-56e0-45ff-82b5-ea13b1e77c8f"
+      ],
+      "SectionID::uid": "9c029ce5-99a8-417d-9cc0-9650fddfffbc"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid"
+          ]
+        },
+        "99037f7d-c376-4cb5-a06a-006fb96548d5",
+        "eeb023b5-f473-4a8b-bef2-88e07b0d0688",
+        "2246998b-e4f7-45f1-8a96-211848466450",
+        "d804eb6c-9f50-4299-b31c-2fef064fae9e",
+        "aa152ba8-dc1f-4efa-8c68-03ba804ef6f1",
+        "3089d333-8647-49e7-b2ef-d4f8958da086",
+        "22ed59ec-4939-4d96-a7a8-cbf0bda55ec0",
+        "adff2ccc-f918-4b5d-8e66-4d7a6fbd2a24",
+        "36be79af-fff7-417e-997e-4fe3f51aae56",
+        "fd9fd31d-a368-49a9-91fb-594e9409dc5d",
+        "e2f24ca0-fe45-48d6-942c-200864397e78",
+        "b452a4ce-ae1e-43fd-a44f-cc74464a6cd3",
+        "abb02a5f-9cbf-4bd4-a1b8-45fa38b5130c",
+        "434a798f-bd1f-4c5c-b291-80490cd0dccf",
+        "5a78f218-dae8-41de-92aa-6746d44468c3"
+      ],
+      "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid",
+            "uid",
+            "uid",
+            "uid"
+          ]
+        },
+        "81ffb143-2dc2-49ee-8c11-cfcf4823777d",
+        "ae228b33-3dea-4216-89de-b5507600edd3",
+        "12df974b-03e8-4822-ad87-18bd7a79a30f",
+        "073321df-c71b-4963-b77a-22e2133f00ce"
+      ],
+      "SectionID::uid": "a1c1927b-cd3b-4509-843b-4c095d9c7a2c"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid"
+          ]
+        },
+        "49da6360-351a-48eb-af0e-6f2401e7ce5b"
+      ],
+      "SectionID::uid": "c438eeb7-e5db-466a-8121-5a314ad1ad04"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid"
+          ]
+        },
+        "e815cfbf-324c-42e9-9b05-371f7d2a276c"
+      ],
+      "SectionID::uid": "dc707a60-1b54-439a-9941-7a5b28c60df0"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid"
+          ]
+        },
+        "8190c26d-9780-4a32-9582-1cf1dc7c0a72"
+      ],
+      "SectionID::uid": "e121f1ef-c73b-4878-8149-ae9d104770bb"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid",
+            "uid"
+          ]
+        },
+        "519748f9-b265-400e-bdaa-8998f9c2817c",
+        "4a9e3a1b-ed5c-4247-a4bf-cc4dc0d5596f"
+      ],
+      "SectionID::uid": "f008539b-2374-4833-9c03-680d06581b6d"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid",
+            "uid"
+          ]
+        },
+        "97973fc8-72fb-495f-b531-4ad19c9d4fd3",
+        "22b8ac2d-4aa4-4aae-96b4-7a79135620d8",
+        "97be5934-a3a2-46af-82e2-b8905b48db9c",
+        "0e543d24-7c24-4de9-bc5d-a10af1aa26db",
+        "e78b33e3-e1ac-4a42-8048-d187009caf08",
+        "fc451486-cb92-49b2-ba5d-9ebbd215d6ad",
+        "35824558-e95b-4f65-aaed-671636885980",
+        "92a0469c-dce1-4448-ad91-bc72ddd7edb4",
+        "182879f5-ddcd-47a3-a284-3459b3e540a3",
+        "be19d8e2-15c5-4f19-bf32-4f325465d1a1",
+        "756a3b1b-a6b6-4536-9071-1d5b3d8de80a",
+        "a527bc04-3879-4b1b-bfb5-1df6ef6ab05e",
+        "ef276150-ac07-46ea-8c72-82c46e1bd9b3",
+        "07f03e08-75ca-4713-8a3b-0dcecd245699",
+        "d27b8bba-4f78-4775-9097-1ad3492d1c59",
+        "f555874a-1934-47d2-a209-0690da95d572",
+        "7bb2cd2a-6513-41d5-829a-dac523ef42d0",
+        "107ad6f7-3f35-4900-ba78-f3a6b38012e3",
+        "b94dbff9-90b5-47f6-b2b7-cf8e24ed46b1",
+        "3c24c928-7854-4cb8-b5a6-b408c47f1163",
+        "ce64f430-fa15-4cf6-8f56-003a9fe75e48",
+        "efe47a2f-6848-4249-be4a-f565294404d7",
+        "09a9a896-6dc2-4ad7-9ac8-e8653f63b7a3",
+        "12b2adfc-c7dd-45f2-929c-d67d5148ab7b",
+        "82b1a1ba-0740-47ab-8781-1bbef6f2c1ac",
+        "36c82ee2-259d-4145-8d9d-796e7bb5b266",
+        "2296ce7c-bf6a-45f4-af9e-220db509858e",
+        "c357220e-57bf-410a-85c1-c02f9873e4f7",
+        "bb1ed3be-e256-447e-92d1-aad98913b659",
+        "7af6c444-5bcf-4690-8b62-e98bee96f314",
+        "91ceee15-10bc-4aa5-a15f-f8588e5f617c",
+        "d5cc5e49-1f3a-448e-b87f-fcac016d4551",
+        "7f749963-d4c8-4314-b819-ac9359e8c510",
+        "98c6f1bd-6180-4dd7-adbc-d354eb6fe7f4",
+        "7261fc51-418a-47a4-9584-46df2fc87af4",
+        "a300fd74-a954-4f44-b1c8-353faed96d24",
+        "310c54ac-caed-4b71-85d0-b3512127c614",
+        "54b09df7-b571-4e37-9876-adada94ca79c"
+      ],
+      "SectionID::uid": "f72c1625-325e-4c01-822a-142674950d0f"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::types": [
+            "uid",
+            "uid"
+          ]
+        },
+        "e6ee922b-9baa-4759-9988-2006013f8a40",
+        "724142e2-1455-4968-9fc1-503b1823191f"
+      ],
+      "SectionID::uid": "ffbcde9d-2969-44bd-a952-737dd986c916"
+    }
+  ],
+  "TabCaption": "$CardTypes_Tabs_Card",
+  "TabOrder::int": 0,
+  "Validators": [
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "eeb023b5-f473-4a8b-bef2-88e07b0d0688",
+        "ErrorMessage": "Укажите № СЗ.",
+        "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+        "Warning": false
+      }
+    },
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "b452a4ce-ae1e-43fd-a44f-cc74464a6cd3",
+        "ErrorMessage": "Укажите дату СЗ.",
+        "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+        "Warning": false
+      }
+    }
+  ]
+}
