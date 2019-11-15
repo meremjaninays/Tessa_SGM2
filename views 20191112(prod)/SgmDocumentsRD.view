@@ -1,0 +1,309 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-15T12\:51\:36) {
+	#exchange_view(RowID:36ba6684-6188-4858-9f49-c42405ba661b, Alias:SgmDocumentsRD, Caption:$Sgm_Views_Captions_RdDocuments, ModifiedById:8d13a7a6-2cfd-4ed7-b1d6-4705d2e2d60e, ModifiedByName:Меремьянина Ю.С., FormatVersion:2, ModifiedDateTime:2019-11-15T08\:06\:10, GroupName:SgmRd) {
+		#metadata {
+			#view(DefaultSortColumn: DocDate, DefaultSortDirection: desc, Paging: always, MultiSelect: true, RowCountSubset: Count, QuickSearchParam: QuickSearch)
+
+			#column(Alias: ElID, Hidden: true, Type: $DocumentCommonInfo.ID)
+			#column(Alias: ElTypeID, Hidden: true, Type: $Types.ID)
+			#column(Alias: ElTypeCaption, Hidden: true, Type: $Types.Caption)
+			#column(Alias: ElCreationDate, Hidden: true, Type: $DocumentCommonInfo.CreationDate)
+			#column(Alias: ElIsDocsvision, Hidden: true, Type: $SgmDocumentLinks.DocumentIsDocsvision)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+			#column(Alias: DocumentRdKindID, Hidden: true, Type: $SgmDocumentRd.DocumentRdKindID)
+			#column(Alias: SignerID, Hidden: true, Type: $SgmDocumentRd.SignedByRoleID)
+			#column(Alias: ObjectPlaceID, Hidden: true, Type: $DocumentCommonInfo.ObjectPlaceID)
+
+			#column(Alias: DocumentRdKindName, Caption: Вид документа, Type: $SgmDocumentRd.DocumentRdKindName, SortBy: [sdr].[DocumentRdKindName])
+			#column(Alias: RegistrationNumber, Caption: Регистрационный номер, Type: $DocumentCommonInfo.RegFullNumber, SortBy: [dci].[RegFullNumber])
+			#column(Alias: DocDate, Caption: $Sgm_Views_Columns_Date, Type: Date, SortBy: [dci].[DocDate])
+			#column(Alias: ElSubject, Caption: Заголовок, Type: $DocumentCommonInfo.Subject)
+			#column(Alias: SignerName, Caption: Подписант, Type: $SgmDocumentRd.SignedByRoleName, SortBy: [sdr].[SignedByRoleName])
+			#column(Alias: CuratorName, Caption: $Sgm_Views_Columns_Curator, Type: $DocumentCommonInfo.CuratorName, SortBy: [dci].[CuratorName])
+			#column(Alias: Comment, Caption: Примечание, Type: $DocumentCommonInfo.Comment)
+			#column(Alias: ElFullNumber, Caption: $Sgm_Views_Columns_ProjectNumber, Type: $DocumentCommonInfo.FullNumber, SortBy: [dci].[FullNumber])
+			#column(Alias: Approvers, Caption: $Sgm_Views_Columns_Approvers, Type: $SgmApprovalRoles.RoleName)
+			#column(Alias: StateName, Caption: $Sgm_Views_Columns_State, Type: $KrApprovalCommonInfo.StateName, Localizable: true, SortBy: [aci].[StateName])
+			#column(Alias: CurrentPerformers, Caption: $Sgm_Views_Columns_CurrentPerformers, Type: $SgmCurrentPerformersVirtual.RoleName)
+			#column(Alias: Year, Caption: Год, Type: Int32)
+			#column(Alias: ObjectPlaceName, Caption: Объект строительства, Type: $DocumentCommonInfo.ObjectPlaceName, SortBy: [dci].[ObjectPlaceName])
+
+			#param(Alias: LinkTypeID, Caption: LinkTypeID, Hidden: true, Type: $DocumentCommonInfo.ID)
+			#param(Alias: ThisUser, Caption: ThisUser, Hidden: true, Multiple: false, Type: $PersonalRoles.ID, RefSection: SgmUser) {
+				#autocomplete(View: Users, Param: Name)
+			}
+			#param(Alias: ThisCardID, Caption: ThisCardID, Hidden: true, Type: $DocumentCommonInfo.ID)
+			#param(Alias: CardID, Caption: CardID, Hidden: true, Type: $DocumentCommonInfo.ID)
+
+			#param(Alias: QuickSearch, Caption: $Sgm_Views_Params_DirectivesQuickSearch, Type: String, Multiple: false)
+			#param(Alias: DocDate, Caption: $Sgm_Views_Columns_Date, Type: Date)
+			#param(Alias: Curator, Caption: $Sgm_Views_Columns_Curator, Multiple: false, Type: $DocumentCommonInfo.CuratorID, RefSection: SgmUser) {
+				#autocomplete(View: Users, Param: Name)
+			}
+			#param(Alias: FullNumber, Caption: $Sgm_Views_Columns_ProjectNumber, Type: $DocumentCommonInfo.FullNumber)
+			#param(Alias: Approver, Caption: $Sgm_Views_Columns_Approvers, Type: $SgmApprovalRoles.RoleID, RefSection: SgmUser, AllowedOperands: Equality) {
+			    #autocomplete(View: Users, Param: Name)
+			}
+			#param(Alias: State, Caption: $Sgm_Views_Columns_State, Type: $KrApprovalCommonInfo.StateID, RefSection: SgmDirectiveState, HideAutoCompleteButton: true) {
+			    #autocomplete(View: SgmDirectiveStates, Param: Name)
+			    #dropdown(View: SgmDirectiveStates)
+			}
+			#param(Alias: CurrentPerformer, Caption: $Sgm_Views_Columns_CurrentPerformers, Type: $SgmCurrentPerformersVirtual.RoleID, RefSection: SgmUser) {
+			    #autocomplete(View: Users, Param: Name)
+			}
+
+			#param(Alias: DocumentRdKindName, Caption: Вид документа, Type: $SgmDocumentRd.DocumentRdKindName)
+			#param(Alias: RegistrationNumber, Caption: Регистрационный номер, Type: $DocumentCommonInfo.RegFullNumber)
+			#param(Alias: SignerName, Caption: Подписант, Type: $SgmDocumentRd.SignedByRoleName)
+			#param(Alias: Comment, Caption: Примечание, Type: $DocumentCommonInfo.Comment)
+			#param(Alias: Year, Caption: Год, Type: Int32)
+			#param(Alias: ObjectPlaceName, Caption: Объект строительства, Type: $DocumentCommonInfo.ObjectPlaceName)
+
+			#reference(ColPrefix: El, RefSection: SgmDocument, DisplayValueColumn: ElFullNumber, IsCard: true, OpenOnDoubleClick: true)
+
+			#subset(Alias: ByCurator, Caption: $Sgm_Views_Subsets_ByCurator, RefColumn: CuratorID, CaptionColumn: CuratorName, RefParam: Curator, CountColumn: Cnt)
+			#subset(Alias: ByState, Caption: $Sgm_Views_Subsets_ByState, RefColumn: StateID, CaptionColumn: StateName, RefParam: State, CountColumn: Cnt)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			DECLARE @dr_type_id UNIQUEIDENTIFIER = 'e38e5eea-9afa-42a2-bf77-3dd6df6e81c1';
+
+			\#if\(LinkTypeID\) \{
+			DECLARE @is_all_link_types BIT = 0;
+
+			SELECT @is_all_link_types = 1
+			FROM [SgmLinkTypeTargetTypes] AS [ltt] WITH \(NOLOCK\)
+			WHERE 1=1
+				\#param\(LinkTypeID\, [ltt].[ID]\)
+			\}
+
+			\#if\(!Administrator || ThisUser\) \{
+			DECLARE @rights TABLE \(
+				[ID] UNIQUEIDENTIFIER\,
+				[AllStates] BIT\,
+				[EmptyState] BIT\,
+				[Name] NVARCHAR\(MAX\)
+			\);
+
+			INSERT INTO @rights\([ID]\, [AllStates]\, [EmptyState]\, [Name]\)
+			SELECT
+				[p].[ID]\,
+				[AllStates].[Value]\,
+				CAST\(1 AS BIT\)\, --[pin].[EmptyState]\,
+				[p].[Caption]
+			FROM [KrPermissions] AS [p] WITH \(NOLOCK\)
+			/*INNER JOIN [KrPermissionStates] AS [pin] WITH \(NOLOCK\)
+				ON [pin].[ID] = [p].[ID]*/
+			CROSS APPLY \(
+				SELECT
+					\(
+						CASE COUNT\(1\)
+							WHEN 0 THEN 1
+							ELSE 0
+						END
+					\) AS [Value]
+				FROM [KrPermissionStates] AS [ps] WITH \(NOLOCK\)
+				WHERE [ps].[ID] = [p].[ID]
+			\) AS [AllStates]
+			WHERE [p].[CanReadCard] = 1
+			AND EXISTS \(
+				SELECT TOP\(1\) 1
+				FROM [KrPermissionTypes] AS [pt] WITH \(NOLOCK\)
+				WHERE [pt].[ID] = [p].[ID] AND [pt].[TypeID] IN \(@dr_type_id\)
+			\)
+			AND EXISTS \(
+				SELECT TOP\(1\) 1
+				FROM [KrPermissionRoles] AS [pr] WITH \(NOLOCK\)
+				INNER JOIN [RoleUsers] AS [ru] WITH \(NOLOCK\)
+					ON [pr].[RoleID] = [ru].[ID]
+				WHERE [pr].[ID] = [p].[ID] AND [ru].[UserID] = \#if\(ThisUser\) \{ \#param\(ThisUser\) \} \{ \#param\(CurrentUserID\) \}
+			\);
+
+			DECLARE @rules TABLE \(
+				[StateID] INT\,
+				[EmptyState] BIT\,
+				[StateName] NVARCHAR\(MAX\)
+			\);
+
+			INSERT INTO @rules\(StateID\, EmptyState\, StateName\)
+			SELECT DISTINCT
+				[ps].[StateID]\,
+				[r].[EmptyState]\,
+				[ps].[StateName]
+			FROM @rights AS [r]
+			LEFT JOIN [KrPermissionStates] AS [ps] WITH \(NOLOCK\)
+				ON [r].[ID] = [ps].[ID];
+			\}
+
+			SELECT
+				[t].*
+			FROM
+			\(
+				SELECT
+					\#if\(Normal\) \{
+					[dci].[ID] AS [ElID]\,
+					[dci].[CardTypeID] AS [ElTypeID]\,
+					[t].[Caption] AS [ElTypeCaption]\,
+					[dci].[FullNumber] AS [ElFullNumber]\,
+					[dci].[CreationDate] AS [ElCreationDate]\,
+					[dci].[Subject] AS [ElSubject]\,
+					CAST\(0 AS BIT\) AS [ElIsDocsvision]\,
+					
+					[dci].[DocDate]\,
+					[dci].[CuratorName]\,
+					STUFF\(\(
+					    SELECT N'\, ' + [ar].[RoleName]
+					    FROM [SgmApprovalRoles] AS [ar] WITH \(NOLOCK\)
+					    WHERE [ar].[ID] = [dci].[ID]
+					    ORDER BY [ar].[RoleName]
+					    FOR XML PATH\, TYPE
+				    \).value\(N'.[1]'\, N'nvarchar\(max\)'\)\, 1\, 2\, N''\) AS [Approvers]\,
+				    [aci].[StateName]\,
+				    STUFF\(\(
+					    SELECT N'\, ' + ISNULL\(t.UserName\,t.RoleName\)
+					    FROM [Tasks] AS [t] WITH \(NOLOCK\)
+					    WHERE [t].[ID] = [dci].[ID]
+					    --and not exists\(select 1 from [TaskHistory] as [th] 
+						--where [t].[RowID]=[th].[ParentRowID] and [th].[ParentRowID] is not null\)
+					    ORDER BY ISNULL\(t.UserName\,t.RoleName\)
+					    FOR XML PATH\, TYPE
+				    \).value\(N'.[1]'\, N'nvarchar\(max\)'\)\, 1\, 2\, N''\) AS [CurrentPerformers]\,
+				    [dci].[RegFullNumber] as RegistrationNumber\,
+					[sdr].[SignedByRoleID] as SignerID\,
+					[sdr].[SignedByRoleName] as SignerName\,
+					[sdr].[DocumentRdKindID]\,
+					[sdr].[DocumentRdKindName]\,
+					[dci].[ObjectPlaceID]\,
+					[dci].[ObjectPlaceName]\,
+					[dci].[Comment]\,
+					YEAR\([dci].[DocDate]\) AS [Year]\,
+					ROW_NUMBER\(\) OVER \(ORDER BY \#order_by\) AS [rn]
+					\}
+
+					\#if\(ByState\) \{
+					[aci].[StateID]\,
+					ISNULL\([aci].[StateName]\, N'$Sgm_Views_Values_Null'\) AS [StateName]\,
+					\}
+					
+					\#if\(ByCurator\) \{
+					[dci].[CuratorID]\,
+					ISNULL\([dci].[CuratorName]\, N'$Sgm_Views_Values_Null'\) AS [CuratorName]\,
+					\}
+					
+					\#if\(!Normal\) \{
+					COUNT\(1\) AS [Cnt]
+					\}
+				FROM [DocumentCommonInfo] [dci] WITH\(NOLOCK\)
+				INNER JOIN [SgmDocumentRd] [sdr] WITH\(NOLOCK\)
+					ON [dci].[ID] = [sdr].[ID]
+				INNER JOIN [Types] [t] WITH\(NOLOCK\)
+					ON [t].[ID] = [dci].[CardTypeID]
+				LEFT JOIN [KrApprovalCommonInfo] [aci] WITH\(NOLOCK\)
+				    ON [aci].[MainCardID] = [dci].[ID]
+				WHERE [dci].[CardTypeID] = @dr_type_id
+					\#if\(ThisCardID\) \{ AND [dci].[ID] <> \#param\(ThisCardID\) \}
+					\#if\(LinkTypeID\) \{
+					AND \(
+						@is_all_link_types = 0
+						OR EXISTS \(
+							SELECT TOP\(1\) 1
+							FROM [SgmLinkTypeTargetTypes] AS [ltt] WITH \(NOLOCK\)
+							WHERE [ltt].[TypeID] = [dci].[CardTypeID]
+								\#param\(LinkTypeID\, [ltt].[ID]\)
+							\)
+						\)
+					\}
+					\#param\(CardID\, [dci].[ID]\)
+					\#param\(QuickSearch\, [dci].[FullNumber]\)
+					\#param\(DocDate\, [dci].[DocDate]\)
+					\#param\(Curator\, [dci].[CuratorID]\)
+					\#param\(FullNumber\, [dci].[FullNumber]\)
+					\#param\(State\, [aci].[StateID]\)
+					\#param\(DocumentRdKindName\, [sdr].[DocumentRdKindName]\)
+					\#param\(RegistrationNumber\, [dci].[RegFullNumber]\)
+					\#param\(SignerName\, [sdr].[SignedByRoleName]\)
+					\#param\(Comment\, [dci].[Comment]\)
+					\#param\(Year\, YEAR\([dci].[DocDate]\)\)
+					\#param\(ObjectPlaceName\, [dci].[ObjectPlaceName]\)
+					
+					\#if\(Approver\) \{		    
+					AND EXISTS \(
+					    SELECT TOP\(1\) 1
+					    FROM [SgmApprovalRoles] AS [ar] WITH \(NOLOCK\)
+					    WHERE [ar].[ID] = [dci].[ID]
+					        \#param\(Approver\, [ar].[RoleID]\)\)
+					\}
+					
+					\#if\(CurrentPerformer\) \{
+					AND EXISTS \(
+					    SELECT TOP\(1\) 1
+					    FROM [Tasks] AS [t] WITH \(NOLOCK\)
+					    WHERE [t].[ID] = [dci].[ID]
+					        \#param\(CurrentPerformer\, ISNULL\(t.UserID\,t.RoleID\)\)\)
+					\}
+					
+					\#if\(!Administrator || ThisUser\) \{
+					AND \(
+						EXISTS \(
+							SELECT TOP\(1\) 1 FROM @rules AS [r]
+							WHERE \(\([r].[EmptyState] = 1 AND [aci].[StateID] IS NULL\) OR [r].[StateID] = [aci].[StateID] OR [r].[StateID] IS NULL\)
+						\)
+						OR
+						EXISTS \( -- я как назначенный и как исполнитель
+							SELECT TOP\(1\) 1
+							FROM [TaskHistory] AS [th] WITH \(NOLOCK\)
+							INNER JOIN [RoleUsers] AS [ru] WITH \(NOLOCK\)
+								ON \([ru].[ID] = [th].[RoleID] OR [ru].[ID] = [th].[UserID]\)
+							WHERE [th].[ID] = [dci].[ID]
+								AND [ru].[UserID] = \#if\(ThisUser\) \{ \#param\(ThisUser\) \} \{ \#param\(CurrentUserID\) \}
+						\)
+						OR
+						EXISTS \( -- я для автора или куратора
+							SELECT TOP\(1\) 1
+							FROM RoleUsers ru WITH \(NOLOCK\)
+							WHERE \([ru].[ID] = [dci].[AuthorID] OR [ru].[ID] = [dci].[CuratorID]\)
+								AND [ru].[UserID] = \#if\(ThisUser\) \{ \#param\(ThisUser\) \} \{ \#param\(CurrentUserID\) \}
+						\)
+						OR
+						EXISTS \( -- читатели документа
+							SELECT TOP\(1\) 1
+							FROM [SgmDocumentRoleRights] AS [dr] WITH \(NOLOCK\)
+							WHERE [dr].[ID] = [dci].[ID]
+								AND [dr].[RoleID] = \#if\(ThisUser\) \{ \#param\(ThisUser\) \} \{ \#param\(CurrentUserID\) \}
+						\)
+						OR
+						\(
+							[sdr].[AccessTypeID] = 0 AND
+							EXISTS \( -- читатели всех РД
+								SELECT TOP\(1\) 1
+								FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+								WHERE [ru].[id] = '9e5e451e-1ab0-43b2-96ff-574d12344b74' 
+									AND [ru].[UserID] = \#if\(ThisUser\) \{ \#param\(ThisUser\) \} \{ \#param\(CurrentUserID\) \}
+							\) 
+						\)
+					\)
+					\}
+					
+				\#if\(ByState\) \{
+				GROUP BY [aci].[StateID]\,[aci].[StateName]
+				\}
+				\#if\(ByCurator\) \{
+				GROUP BY [dci].[CuratorID]\, [dci].[CuratorName]
+				\}
+			\) [t]
+			\#if\(PageOffset\) \{
+			WHERE [t].[rn] >= \#param\(PageOffset\) and [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+			\}
+			\#if\(ByState\) \{
+			ORDER BY [t].[StateName]
+			\}
+			\#if\(ByCurator\) \{
+			ORDER BY [t].[CuratorName]
+			\}
+			\#if\(Normal\) \{
+			ORDER BY [t].[rn]
+			\}
+		}
+		#pg_query {}
+	}
+}
