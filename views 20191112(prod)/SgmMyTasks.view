@@ -1,0 +1,995 @@
+#tessa_exchange_format(Version:1, CreationTime:2019-11-20T11\:05\:32) {
+	#exchange_view(RowID:d0eae665-807b-4584-89c1-2b55699b5d97, Alias:SgmMyTasks, Caption:$Sgm_Views_Captions_MyActiveTasks, ModifiedById:8d13a7a6-2cfd-4ed7-b1d6-4705d2e2d60e, ModifiedByName:Меремьянина Ю.С., FormatVersion:2, ModifiedDateTime:2019-11-20T11\:03\:42, GroupName:SgmWorkplace) {
+		#metadata {
+			#view(DefaultSortColumn: CreatedDate, DefaultSortDirection: desc, Paging: always, MultiSelect: true, RowCountSubset: Count)
+
+			#column(Alias: CardID, Hidden: true, Type: $Tasks.ID)
+			#column(Alias: CardName, Hidden: true, Type: $DocumentCommonInfo.FullNumber)
+			#column(Alias: CardTypeID, Hidden: true, Type: $DocumentCommonInfo.DocTypeID)
+			#column(Alias: QuantsToFinish, Hidden: true, Type: $CalendarQuants.QuantNumber)
+			#column(Alias: AppearanceColumn, Hidden: true, Type: String)
+			#column(Alias: AppearanceColumn2, Hidden: true, Type: String)
+			#column(Alias: rn, Hidden: true, Type: Int64)
+
+			#column(Alias: CardTypeName, Caption: $Sgm_Views_Columns_TypeCaption, Type: $Types.Caption, Localizable: true)
+			#column(Alias: TaskTypeCaption, Caption: $Sgm_Views_Columns_TaskCaption, Type: $Tasks.TypeCaption, Localizable: true)
+			#column(Alias: ChildRoles, Caption: На доп. согласовании, Type: String, Appearance: AppearanceColumn2)
+			#column(Alias: FullNumber, Caption: $Sgm_Views_Columns_DocNumber, Type: $DocumentCommonInfo.FullNumber, SortBy: dci.FullNumber)
+			#column(Alias: DocDate, Caption: $Sgm_Views_Columns_DocDate, Type: $DocumentCommonInfo.DocDateTime, SortBy: dci.DocDateTime)
+
+			#column(Alias: CreatedDate, Caption: $Sgm_Views_Columns_StartDate, Type: $Tasks.InProgress, SortBy: t.Created)
+			#column(Alias: PlannedDate, Caption: $Sgm_Views_Columns_Planned, Type: $Tasks.Planned, SortBy: t.Planned, Appearance: AppearanceColumn)
+			#column(Alias: TimeToCompletion, Caption: $Views_MyTasks_TimeToCompletion, Type: String, Localizable: true, SortBy: t.Planned, Appearance: AppearanceColumn)
+
+			#column(Alias: ParentDocumentName, Caption: $Sgm_Views_Columns_ParentDocument, Type: String)
+			#column(Alias: PrimaryDocumentName, Caption: $Sgm_Views_Columns_PrimaryDocument, Type: String, Hidden: true)
+			#column(Alias: Subject, Caption: $Sgm_Views_Columns_Subject, Type: $SgmProcessInfo.CuratorComment, MaxLength: 150)
+			#column(Alias: CuratorName, Caption: $Sgm_Views_Columns_ProjectCurator, Type: $DocumentCommonInfo.CuratorName, SortBy: dci.CuratorName)
+
+			#column(Alias: AuthorName, Caption: $Sgm_Views_Columns_Author, Type: $Tasks.AuthorName, SortBy: t.AuthorName)
+			#column(Alias: StateName, Caption: $Sgm_Views_Columns_Status, Type: $KrApprovalCommonInfo.StateName, Localizable: true)
+			#column(Alias: DocumentTypeName, Caption: $Sgm_Views_Columns_DocumentType, Type: $SgmItDocument.DocumentTypeName, Localizable: true)
+			#column(Alias: PartnerName, Caption: $Sgm_Views_Columns_Partner, Type: $DocumentCommonInfo.PartnerName)
+			#column(Alias: ChildRoleName, Caption: Дополнительные исполнители, Type: $Tasks.RoleName, Hidden: false)
+			#column(Alias: ObjectPlaceName, Caption: $Sgm_Views_Columns_ProjectAS, Type: $DocumentCommonInfo.ObjectPlaceName)
+
+
+			#param(Alias: CardID, Caption: CardID, Hidden: true, Type: $DocumentCommonInfo.ID)
+			#param(Alias: Status, Caption: $Views_MyTasks_State_Param, Hidden: true, Multiple: true, Type: $KrApprovalCommonInfo.StateID)
+			#param(Alias: TaskType, Caption: $Views_MyTasks_TaskType_Param, Hidden: true, Multiple: true, Type: $Tasks.TypeID)
+			#param(Alias: TaskTypeGrouped, Caption: $Views_MyTasks_TaskTypeGrouped_Param, Hidden: true, Type: $TaskCommonInfo.KindID, AllowedOperands: Equality)
+			#param(Alias: AuthorDepartment, Caption: $Views_MyTasks_AuthorDepartment_Param, Hidden: true, Type: $RoleUsers.ID, AllowedOperands: Equality)
+			#param(Alias: TaskDateDueInterval, Caption: $Views_MyTasks_TaskDateDueInterval_Param, Hidden: true, Type: Int32, AllowedOperands: Equality)
+			#param(Alias: User, Caption: $Views_MyTasks_User_Param, Hidden: true, Multiple: true, Type: $Tasks.UserID, RefSection: PersonalRoles, AllowedOperands: Equality) {
+				#autocomplete(View: Users, Param: Name, PopupColumns: 1 4)
+			}
+			#param(Alias: Role, Caption: $Views_MyTasks_Role_Param, Hidden: true, Type: $Tasks.RoleID, AllowedOperands: Equality)
+			#param(Alias: DeputyMode, Caption: $Views_MyTasks_Deputy_Param, Hidden: true, Type: Int32, AllowedOperands: Equality)
+			#param(Alias: CreationDate, Caption: $Views_ReportCurrentTasksByUser_CreationDate_Param, Hidden: true, Multiple: true, Type: $Tasks.Created)
+			#param(Alias: EndDate, Caption: $Views_CurrentTasks_EndDate_Param, Hidden: true, Multiple: true, Type: $Tasks.Planned)
+			#param(Alias: IsDelayed, Caption: $Views_MyTasks_IsDelayed_Param, Hidden: true, Type: Boolean, AllowedOperands: IsTrue IsFalse)
+			#param(Alias: TypeParam, Caption: $Views_CurrentTasks_DocType_Param, Hidden: true, Type: $DocumentCommonInfo.DocTypeID, RefSection: TypeForView, AllowedOperands: Equality) {
+				#autocomplete(View: KrTypesEffective, Param: Caption, PopupColumns: 1)
+				#dropdown(View: KrTypesEffective, PopupColumns: 1)
+			}
+
+			#param(Alias: ObjectPlace, Caption: $Sgm_Views_Columns_ObjectPlace, Type: $DocumentCommonInfo.ObjectPlaceID, RefSection: SgmObjectPlace) {
+			    #autocomplete(View: SgmObjectPlaces, Param: Name)
+			}
+			#param(Alias: ChildTaskState, Caption: $Sgm_Views_Columns_ChildTaskState, Multiple: false, Type: Int32, RefSection: SgmChildTaskState, AllowedOperands: Equality, HideAutoCompleteButton: true) {
+				#dropdown(View: SgmChildTaskStates)
+			}
+			#param(Alias: Curator, Caption: $Sgm_Views_Columns_Curator, Multiple: false, Type: $DocumentCommonInfo.CuratorID, RefSection: SgmUser) {
+				#autocomplete(View: Users, Param: Name)
+			}
+			#param(Alias: DocumentType, Caption: $Sgm_Views_Columns_DocumentType, Type: $SgmItDocument.DocumentTypeID, RefSection: SgmItDocumentType, HideAutoCompleteButton: true) {
+				#autocomplete(View: SgmItDocumentTypes, Param: Name)
+			    #dropdown(View: SgmItDocumentTypes)
+			}
+			#param(Alias: Partner, Caption: $Sgm_Views_Columns_Partner, Type: $DocumentCommonInfo.PartnerID, RefSection: SgmPartner) {
+			    #autocomplete(View: Partners, Param: Name)
+			}
+			#param(Alias: CardType, Caption: $Sgm_Views_Columns_TypeCaption, Type: $DocumentCommonInfo.CardTypeID, RefSection: SgmSolutionDocumentType) {
+				#autocomplete(View: SgmSolutionDocumentTypes, Param: QuickSearch)
+				#dropdown(View: SgmSolutionDocumentTypes)
+			}
+			#param(Alias: ChildRole, Caption: Дополнительные исполнители, Type: $Tasks.RoleID, AllowedOperands: Equality)
+
+			#reference(ColPrefix: Card, RefSection: Instances, DisplayValueColumn: CardName, IsCard: true, OpenOnDoubleClick: true)
+
+			#subset(Alias: ByChildTaskState, Caption: $Sgm_Views_Subsets_ByChildTaskState, RefParam: ChildTaskState, RefColumn: ChildTaskStateID, CaptionColumn: ChildTaskStateName, CountColumn: cnt)
+			#subset(Alias: ByStatus, Caption: $Views_MyTasks_ByState_Param, RefParam: Status, RefColumn: StateID, CaptionColumn: StateName, CountColumn: cnt)
+			#subset(Alias: ByTaskType, Caption: $Views_MyTasks_ByTaskType_Param, RefParam: TaskTypeGrouped, RefColumn: TypeID, CaptionColumn: TypeCaption, CountColumn: cnt)
+			#subset(Alias: ByTaskDueDateInterval, Caption: $Views_MyTasks_ByTaskDueDate_Param, RefParam: TaskDateDueInterval, RefColumn: IntervalID, CaptionColumn: IntervalName, CountColumn: cnt)
+			#subset(Alias: ByAuthorDepartment, Caption: $Views_MyTasks_ByAuthorDepartment_Param, RefParam: AuthorDepartment, RefColumn: AuthorDeptID, CaptionColumn: AuthorDeptName, CountColumn: cnt)
+			#subset(Alias: ByRole, Caption: $Views_MyTasks_ByRole_Param, RefParam: Role, RefColumn: RoleID, CaptionColumn: RoleName, CountColumn: cnt)
+			#subset(Alias: ByDeputy, Caption: $Views_MyTasks_ByDeputy_Param, RefParam: DeputyMode, RefColumn: DeputyModeID, CaptionColumn: DeputyModeName, CountColumn: cnt)
+			#subset(Alias: ByCurator, Caption: $Sgm_Views_Subsets_ByCurator, RefColumn: CuratorID, CaptionColumn: CuratorName, RefParam: Curator, CountColumn: Cnt)
+			#subset(Alias: ByPartner, Caption: $Sgm_Views_Subsets_ByPartner, RefColumn: PartnerID, CaptionColumn: PartnerName, RefParam: Partner, CountColumn: Cnt)
+			#subset(Alias: ByCardType, Caption: $Sgm_Views_Subsets_ByCardType, RefColumn: CardTypeID, CaptionColumn: CardTypeName, RefParam: CardType, CountColumn: Cnt)
+			#subset(Alias: ByDocumentType, Caption: $Sgm_Views_Subsets_ByDocumentType, RefColumn: DocumentTypeID, CaptionColumn: DocumentTypeName, RefParam: DocumentType, CountColumn: Cnt)
+			#subset(Alias: ByChildPerformer, Caption: По доп. исполнителю, RefParam: ChildRole, RefColumn: ChildRoleID, CaptionColumn: ChildRoleName, CountColumn: cnt)
+			#subset(Alias: Count)
+		}
+		#description {}
+		#ms_query {
+			BEGIN
+
+			/*--------*/
+			DECLARE @AcquaintanceTypeID			uniqueidentifier;
+			SET @AcquaintanceTypeID = '24a1f63e-5f7c-465e-8a13-a0365f331c22';
+
+
+			DECLARE @additional_approval_tasks TABLE \(
+				[TypeID] UNIQUEIDENTIFIER
+			\);
+			INSERT INTO @additional_approval_tasks\([TypeID]\)
+			VALUES
+			\('2ab6fbdb-c89c-4ffa-93a6-0ca158918bab'\)\, -- SgmDirectiveAdditionalAgreement
+			\('53a496a2-ce39-43d8-9180-d8d4254e6d98'\)\, -- SgmItDocumentAdditionalAgreement
+			\('2ed59cef-bfcf-4564-b929-951763485c88'\)\, -- SgmPoaAdditionalAgreement
+			\('0ff6b06d-323d-4d95-b956-9cf3de391058'\)\, -- SgmPoaDpvuiAdditionalAgreement
+			\('a5e849c0-f06c-4c5d-bd5b-a7f13bd421ba'\)\, -- SgmRequestPoaAdditionalAgreement
+			\('932f52f2-ef68-4f84-83a8-f8ea527ec34a'\)\, -- SgmDocumentRDAdditionalApproval
+			\('23d163ee-6618-4f5e-bc7d-7c8465a8eb56'\)\, -- SgmMarketingReportAdditionalExecution
+			\('410f334f-3ca7-458d-8120-5179c1c65268'\); -- SgmTcDocumentAdditionalApproval
+
+				\#if\(Normal\) \{
+				DECLARE @RedThreshold			int;
+				DECLARE @NoName					nvarchar\(max\);
+				\}
+
+				\#if\(Normal || ByAuthorDepartment\) \{
+				DECLARE @NoDepartmentID			uniqueidentifier;
+				DECLARE @NoDepartmentName		nvarchar\(max\);
+				\}
+
+				\#if\(Normal || IsDelayed\) \{
+				DECLARE @NowTimestamp			datetime;
+				\}
+
+				\#if\(Normal\) \{
+				DECLARE @NowQuant				bigint;
+				\}
+
+				\#if\(ByDeputy\) \{
+				DECLARE @NoDeputyName			nvarchar\(max\);
+				DECLARE @DeputyName				nvarchar\(max\);
+				\}
+
+				\#if\(ByTaskType || TaskTypeGrouped\) \{
+				-- Группа ID типов заданий с одинаковым именем для объекдинения в сабсете
+				DECLARE @TypeGroupTaskID		uniqueidentifier;
+				DECLARE @TypeGroupTaskName		nvarchar\(max\);
+				\#var\(typeGroupTask\: "\('928132fe-202d-4f9f-8ec5-5093ea2122d1'\, '539ecfe8-5fb6-4681-8aa8-1ee4d9ef1dda'\, '85a5e8d7-a901-46df-9173-4d9a043ce6d3'\)"\)
+
+				DECLARE @TypeGroupEditID		uniqueidentifier;
+				DECLARE @TypeGroupEditName		nvarchar\(max\);
+				\#var\(typeGroupEdit\: "\('e19ca9b5-48be-4fdf-8dc5-78534b4767de'\, 'c9b93ae3-9b7b-4431-a306-aace4aea8732'\)"\)
+				\}
+
+				\#if\(ByTaskDueDateInterval || TaskDateDueInterval\) \{
+				DECLARE @MonthAgoStr			nvarchar\(max\);
+				DECLARE @WeekAgoStr				nvarchar\(max\);
+				DECLARE @YesterdayStr			nvarchar\(max\);
+				DECLARE @TodayStr				nvarchar\(max\);
+				DECLARE @TomorrowStr			nvarchar\(max\);
+				DECLARE @WeekStr				nvarchar\(max\);
+				DECLARE @MonthStr				nvarchar\(max\);
+
+				DECLARE @DT1					datetime;
+				DECLARE @DT2					datetime;
+				DECLARE @DT3					datetime;
+				\}
+
+				\#if\(Normal\) \{
+				SET @RedThreshold		= 320; -- задания\, просроченные более чем на две недели \(320 квантов\)\, будут одинаково красные
+				SET @NoName				= [dbo].[GetString]\(N'Views_MyTasks_NoNameStr_Sql'\, \#param\(locale\)\);
+				\}
+
+				\#if\(Normal || ByAuthorDepartment\) \{
+				SET @NoDepartmentID		= '13769a42-e766-4407-8f9b-758820972ee5';
+				SET @NoDepartmentName	= [dbo].[GetString]\(N'Views_MyTasks_NoDepartmentName_Sql'\, \#param\(locale\)\);
+				\}
+
+				\#if\(Normal || IsDelayed\) \{
+				SET @NowTimestamp		= GETUTCDATE\(\);
+				\}
+
+				\#if\(Normal\) \{
+				SELECT TOP \(1\) @NowQuant = [q].[QuantNumber]
+				FROM [CalendarQuants] AS [q] WITH\(NOLOCK\)
+				WHERE [q].[StartTimeUTC] <= @NowTimestamp
+				ORDER BY [q].[StartTimeUTC] DESC;
+				\}
+
+				\#if\(ByDeputy\) \{
+				SET @NoDeputyName		= [dbo].[GetString]\(N'Views_MyTasks_NoDeputyName_Sql'\, \#param\(locale\)\);
+				SET @DeputyName			= [dbo].[GetString]\(N'Views_MyTasks_DeputyName_Sql'\, \#param\(locale\)\);
+				\}
+
+				\#if\(ByTaskType || TaskTypeGrouped\) \{
+				-- Группа ID типов заданий с одинаковым именем для объекдинения в сабсете
+				SET @TypeGroupTaskID	= '928132fe-202d-4f9f-8ec5-5093ea2122d1';
+				SET @TypeGroupTaskName	= N'$CardTypes_TypesNames_WfResolution';
+
+				SET @TypeGroupEditID	= 'e19ca9b5-48be-4fdf-8dc5-78534b4767de';
+				SET @TypeGroupEditName	= N'$CardTypes_TypesNames_KrEdit';
+				\}
+
+				\#if\(ByTaskDueDateInterval || TaskDateDueInterval\) \{
+				/*
+				-3 Просрочено на месяц
+				-2 Просрочено на неделю
+				-1 Вчера
+				0 Сегодня
+				1 Завтра
+				2 Неделя
+				3 Месяц
+				*/
+
+				SET @MonthAgoStr	= [dbo].[GetString]\(N'Views_MyTasks_MonthAgo_Sql'\, \#param\(locale\)\);
+				SET @WeekAgoStr		= [dbo].[GetString]\(N'Views_MyTasks_WeekAgo_Sql'\, \#param\(locale\)\);
+				SET @YesterdayStr	= [dbo].[GetString]\(N'Views_MyTasks_Yesterday_Sql'\, \#param\(locale\)\);
+				SET @TodayStr		= [dbo].[GetString]\(N'Views_MyTasks_Today_Sql'\, \#param\(locale\)\);
+				SET @TomorrowStr	= [dbo].[GetString]\(N'Views_MyTasks_Tomorrow_Sql'\, \#param\(locale\)\);
+				SET @WeekStr		= [dbo].[GetString]\(N'Views_MyTasks_WeekLater_Sql'\, \#param\(locale\)\);
+				SET @MonthStr		= [dbo].[GetString]\(N'Views_MyTasks_MonthLater_Sql'\, \#param\(locale\)\);
+
+				CREATE TABLE [\#intervals] \(
+					[Interval]	int				NOT NULL\,	-- номер интервала
+					[Caption]	nvarchar\(max\)	NOT NULL\,	-- название интервала
+					[DateFrom]	datetime		NOT NULL\,	-- дата начала интервала \(включительно\)
+					[DateTo]	datetime		NOT NULL\);	-- дата окончания интервала \(исключая\)
+
+				SET @DT1 = GETUTCDATE\(\);
+
+				-- Просрочено на месяц и более
+				-- Ищем день 20 рабочих дней тому назад и берем начало следующего астрономического дня
+				SET @DT2 = DATEADD\(day\, DATEDIFF\(day\, 0\, [dbo].[CalendarGetLastQuantStart]\(@DT1\, -20\)\)\, 1\);
+
+				INSERT INTO [\#intervals]
+				VALUES \(-3\, @MonthAgoStr\, '1753-01-01T00\:00\:00.000'\, @DT2\);
+
+				-- Просрочено на неделю \(от пяти до 20 рабочих дней\)
+				SET @DT3 = DATEADD\(day\, DATEDIFF\(day\, 0\, [dbo].[CalendarGetLastQuantStart]\(@DT1\, -5\)\)\, 1\);
+
+				INSERT INTO [\#intervals]
+				VALUES \(-2\, @WeekAgoStr\, @DT2\, @DT3\);
+
+				-- Вчера \(-1 рабочий день\)
+				SET @DT2 = DATEADD\(day\, DATEDIFF\(day\, 0\, @DT1\)\, 0\);
+
+				INSERT INTO [\#intervals]
+				VALUES \(-1\, @YesterdayStr\, @DT3\, @DT2\);
+
+				-- Сегодня \(текущий астрономический день\)
+				SET @DT3 = DATEADD\(day\, DATEDIFF\(day\, 0\, @DT1\)\, 1\);
+
+				INSERT INTO [\#intervals]
+				VALUES \(0\, @TodayStr\, @DT2\, @DT3\);
+
+				-- Завтра \(+1 рабочий день\)
+				SET @DT2 = DATEADD\(day\, DATEDIFF\(day\, 0\, [dbo].[CalendarGetLastQuantStart]\(@DT1\, 5\)\)\, 1\);
+
+				INSERT INTO [\#intervals]
+				VALUES \(1\, @TomorrowStr\, @DT3\, @DT2\);
+
+				-- Через неделю \(+5 рабочих дней\)
+				SET @DT3 = DATEADD\(day\, DATEDIFF\(day\, 0\, [dbo].[CalendarGetLastQuantStart]\(@DT1\, 20\)\)\, 1\);
+
+				INSERT INTO [\#intervals]
+				VALUES \(2\, @WeekStr\, @DT2\, @DT3\);
+
+				-- Через месяц \(+20 рабочих дней\)
+				INSERT INTO [\#intervals]
+				VALUES \(3\, @MonthStr\, @DT3\, '9999-12-31T23\:59\:59.996'\);
+				\}
+
+				/* ОСНОВНАЯ ВЫБОРКА */
+
+				SELECT
+					\#if\(ByTaskDueDateInterval\) \{
+					/* Сабсет по интервалу завершения */
+					[\#intervals].[Interval]		AS [IntervalID]\,
+					[\#intervals].[Caption]		AS [IntervalName]\,
+					[t].[cnt]
+					\} \{
+					\#if\(ByRole\) \{
+					[t].[RoleID]\,
+					[lRoleName].[Value]			AS [RoleName]\,
+					[t].[cnt]
+					\} \{
+					[t].*
+					\} \}
+					\#if\(Normal\) \{\,
+					CASE
+						WHEN \([t].[QuantsToFinish] < 0\) THEN
+							CASE WHEN \([t].[QuantsToFinish] < \(-1 * @RedThreshold\)\)
+								THEN N'\#appearance\(Background\: \#A0FF0000\)'
+								ELSE N'\#appearance\(Background\: ' + CAST\(abs\([t].[QuantsToFinish]\) * 160 / @RedThreshold * 256 * 256 * 256 + 255 * 256 * 256 AS nvarchar\(max\)\) + N'\)'
+							END
+							WHEN \([t].[QuantsToFinish] < 32\) and \([t].[QuantsToFinish] > 0\) THEN
+							N'\#appearance\(Background\: \#A0F7FF00\)'
+							ELSE N''
+					END AS [AppearanceColumn]\,
+					CASE
+						WHEN  \([t].[ChildRoles] = 'Доп. согласование завершено'\) then N'\#appearance\(Background\: \#A0F7FF00\)'
+						WHEN  \([t].[ChildRoles] like '%\:%'\) then N'\#appearance\(Background\: \#A02250dc\)'
+								ELSE N''
+					END AS [AppearanceColumn2]
+					\}
+				FROM \(
+					SELECT
+						\#if\(Normal\) \{
+						/*[t2].[TypeID]\,			
+						[t2].[Digest]								AS [TaskInfo]\,
+						[t2].[RoleID]\,
+						[t2].[RoleName]\,
+						
+						COALESCE\([rad].[ID]\, @NoDepartmentID\)		AS [AuthorDeptID]\,
+						COALESCE\(
+							STUFF\(\(
+								SELECT N'\, ' + [r].[Name]
+								FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+								INNER JOIN [Roles] AS [r] WITH \(NOLOCK\)
+									ON [r].[ID] = [ru].[ID]
+								WHERE [ru].[UserID] = [t2].[AuthorID]
+									AND [ru].[IsDeputy] = 0
+									AND [r].[TypeID] = 2
+								ORDER BY [r].[Name]
+								FOR XML PATH\, TYPE
+							\).value\(N'.[1]'\, N'nvarchar\(max\)'\)\, 1\, 2\, N''\)\,
+							@NoDepartmentName
+						\)																AS [AuthorDeptName]\,
+						[t2].[Modified]													AS [ModificationTime]\,
+						[t2].[Created]\,
+						[t2].[CreatedByID]\,
+						[t2].[CreatedByName]\,
+						[t2].[RoleTypeID]\,*/
+						[t].[ID]														AS [CardID]\,
+						COALESCE\([dci].[FullNumber]\, @NoName\)							AS [CardName]\,
+						COALESCE\([dci].[DocTypeID]\, [i].[TypeID]\)						AS [CardTypeID]\,
+						COALESCE\([dci].[DocTypeTitle]\, [i].[TypeCaption]\)				AS [CardTypeName]\,
+						COALESCE\([t].[TypeCaption]\, [tt].[KindCaption]\)				AS [TaskTypeCaption]\,
+						[dci].[FullNumber]\,
+						[dci].[DocDateTime] 											AS [DocDate]\,
+						\(
+							[lParentTypeCaption].[Value]
+							+ N' - ' + ISNULL\([dci].[ParentFullNumber]\, N''\)
+							+ N' - ' + CONVERT\(NVARCHAR\(MAX\)\, [dci].[ParentCreationDate]\, 120\)
+							+ N' - ' + ISNULL\([dci].[ParentSubject]\, N''\)
+						\) AS [ParentDocumentName]\,
+						\(
+							[lPrimaryTypeCaption].[Value]
+							+ N' - ' + ISNULL\([dci].[PrimaryFullNumber]\, N''\)
+							+ N' - ' + CONVERT\(NVARCHAR\(MAX\)\, [dci].[PrimaryCreationDate]\, 120\)
+							+ N' - ' + ISNULL\([dci].[PrimarySubject]\, N''\)
+						\) AS [PrimaryDocumentName]\,
+						[dci].[Subject]\,
+						[dci].[CuratorName]\,
+						[t].[Created] 													AS [CreatedDate]\,
+						[t].[Planned]													AS [PlannedDate]\,
+						[t].[AuthorName]\,
+						[aci].[StateName]\,
+						/*[tp].[Caption] 												AS [CardTypeCaption]\,*/
+						[dci].[PartnerName]\,
+						[dci].[ObjectPlaceName]\,
+						[it].[DocumentTypeName]\,
+						/*[t2].[RoleName] 												AS [Performer]\,*/
+						[t].[rn]\,
+						[dbo].[GetTimeIntervalLiteral]\([qq].[QuantNumber] - @NowQuant\)	AS [TimeToCompletion]\,
+						\([qq].[QuantNumber] - @NowQuant\)								AS [QuantsToFinish]\,
+						[ChildTaskStateName].Value+
+							isnull\(\(SELECT 
+							[th].RoleName+';'
+							FROM [Tasks] AS [th] WITH\(NOLOCK\)
+							INNER JOIN @additional_approval_tasks AS [at]
+								ON [at].[TypeID] = [th].[TypeID]
+							WHERE [th].[ParentID] =[t].RowID 
+							FOR XML PATH \(''\)\)\,''\)	 as [ChildRoles]							
+						\}
+						\#if\(Count\) \{
+						[t].*
+						\}
+						\#if\(ByTaskDueDateInterval\) \{
+						[t].[Interval]\,
+						count\(*\) AS [cnt]
+						\}
+						\#if\(ByRole || ByDeputy || ByAuthorDepartment || ByStatus || ByTaskType || ByChildTaskState || ByCurator || ByPartner || ByCardType || ByDocumentType||ByChildPerformer\) \{
+						[t].*\,
+						count\(*\) AS [cnt]
+						\}
+					FROM \(
+						SELECT
+							\#if\(Normal\) \{
+							[t].ID\,
+							[t].[RowID]\,
+							[t].[Planned]\,
+							[t].[TypeCaption]\,
+							[t].[AuthorID]\,
+							[t].[AuthorName]\,
+							[t].[Created]\,
+							row_number\(\) OVER \(ORDER BY \#order_by\) AS [rn]
+							\}
+
+							\#if\(Count\) \{
+							count\(*\) AS [cnt]
+							\}
+
+							-------------------------
+							\#if\(ByChildTaskState\) \{
+							[ChildTaskStateID].[Value] AS [ChildTaskStateID]\,
+							[ChildTaskStateName].[Value] AS [ChildTaskStateName]
+							\}
+							\#if\(ByChildPerformer\) \{
+							[ChildRoles].[ChildRoleID] AS [ChildRoleID]\,
+							isnull\([ChildRoles].[ChildRoleName]\, 'Нет доп. исполнителей'\) AS [ChildRoleName]
+							\}
+							\#if\(ByCurator\) \{
+							[dci].[CuratorID]\,
+							ISNULL\([dci].[CuratorName]\, N'$Sgm_Views_Values_Null'\) AS [CuratorName]
+							\}
+							\#if\(ByPartner\) \{
+							[dci].[PartnerID]\,
+							ISNULL\([dci].[PartnerName]\, N'$Sgm_Views_Values_Null'\) AS [PartnerName]
+							\}
+							\#if\(ByCardType\) \{
+							[tp].[ID] AS [CardTypeID]\,
+							[tp].[Caption] AS [CardTypeName]
+							\}
+							\#if\(ByDocumentType\) \{
+							[it].[DocumentTypeID]\,
+							ISNULL\([it].[DocumentTypeName]\, N'$Sgm_Views_Values_Null'\) AS [DocumentTypeName]
+							\}
+							-------------------------
+
+							\#if\(ByTaskDueDateInterval\) \{		
+							[t].[Planned]\,
+							[ddi].[Interval]\,
+							[ddi].[Caption] AS [IntervalName]
+							\}
+
+							\#if\(ByStatus\) \{
+							[t].[StateID]\,
+							[ts].[Name] AS [StateName]
+							\}
+
+							\#if\(ByTaskType\) \{
+							COALESCE\([tt].[KindID]\, CASE
+								WHEN [t].[TypeID] IN \#eval\(typeGroupTask\) THEN @TypeGroupTaskID
+								WHEN [t].[TypeID] IN \#eval\(typeGroupEdit\) THEN @TypeGroupEditID
+								ELSE [t].[TypeID]
+							END\) AS [TypeID]\,
+							COALESCE\([tt].[KindCaption]\, CASE
+								WHEN [t].[TypeID] IN \#eval\(typeGroupTask\) THEN @TypeGroupTaskName
+								WHEN [t].[TypeID] IN \#eval\(typeGroupEdit\) THEN @TypeGroupEditName
+								ELSE COALESCE\([tt].[KindCaption]\, [t].[TypeCaption]\)
+							END\) AS [TypeCaption]
+							\}
+
+							\#if\(ByDeputy\) \{
+							CASE WHEN [rd].[Value] IS NULL AND [rdu].[Value] IS NULL
+								THEN 0
+								ELSE 1
+							END AS [DeputyModeID]\,
+							CASE WHEN [rd].[Value] IS NULL AND [rdu].[Value] IS NULL
+								THEN @NoDeputyName
+								ELSE @DeputyName
+							END AS [DeputyModeName]
+							\}
+
+							\#if\(ByAuthorDepartment\) \{
+							COALESCE\([rad].[ID]\, @NoDepartmentID\)		AS [AuthorDeptID]\,
+							COALESCE\([rad].[Name]\, @NoDepartmentName\)	AS [AuthorDeptName]
+							\}
+
+							\#if\(ByRole\) \{
+							CASE
+								/* Временная роль */
+								WHEN [t].[RoleTypeID] = 'e97c253c-9102-0440-ac7e-4876e8f789da'
+									THEN '00000000-0000-0000-0000-000000000000'
+								/* Для задач на комментирование\, например */
+								WHEN [tr].[TypeID] = 6 AND [tr].[ParentID] IS NOT NULL
+									THEN [tr].[ParentID]
+								ELSE [t].[RoleID]
+							END AS [RoleID]\,
+							CASE
+								/* Временная роль\, показываем как [Исполнители задания] */
+								WHEN [t].[RoleTypeID] = 'e97c253c-9102-0440-ac7e-4876e8f789da'
+									THEN N'$WfResolution_TaskPerformersRole'
+								WHEN [t].[RoleTypeID] = '929ad23c-8a22-09aa-9000-398bf13979b2' AND [t].[RoleID] = \#if\(User\) \{ \#param\(User\) \} \{ \#param\(CurrentUserID\) \}
+									THEN N'$Views_MyTasks_MyRole_Sql'
+								ELSE [t].[RoleName]
+							END AS [RoleName]
+							\}
+
+						FROM
+						\(
+							SELECT
+								[t].[ID]\,
+								[t].[RowID]\,
+								[t].[Planned]\,
+								[t].[StateID]\,
+								[t].[TypeID]\,
+								[t].[TypeCaption]\,
+								[t].[RoleTypeID]\,
+								[t].[RoleID]\,
+								[t].[RoleName]\,
+								[t].[UserID]\,
+								[t].[UserName]\,
+								[t].[Created]\,
+								[t].[AuthorID]\,
+								[t].[AuthorName]
+							FROM [Tasks] AS [t] WITH \(NOLOCK\)
+							WHERE \(
+								/* Сотрудник взял задание в работу\, а затем исчез из роли */
+								[t].[UserID] IS NOT NULL AND [t].[UserID] = \#if\(User\) \{ \#param\(User\) \} \{ \#param\(CurrentUserID\) \}
+								OR
+								[t].[UserID] IS NULL
+								AND
+								EXISTS \(
+									/* Для новых заданий замещение отработается тут - текущий поользователь будет в составе роли */
+									SELECT NULL
+									FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+									WHERE [ru].[ID] = [t].[RoleID]
+										AND [ru].[UserID] = \#if\(User\) \{ \#param\(User\) \} \{ \#param\(CurrentUserID\) \}
+										/* \#if\(User\) нужен для работы отчета по заданиям других пользователей */
+									\)
+								OR
+								EXISTS \(
+									/* Сотрудник является личным заместителем в роли\, на которую выдано задание */
+									SELECT NULL
+									FROM [RoleDeputies] AS [rd] WITH \(NOLOCK\)
+									WHERE [rd].[ID] = [t].[RoleID]													-- Заместитель видит только задания в работе на определенную роль
+										AND [rd].[IsActive] = 1														-- Только активные замещения - выставляется в Chronos
+										AND [rd].[DeputyID] = \#if\(User\) \{ \#param\(User\) \} \{ \#param\(CurrentUserID\) \}	-- Для работы отчета по заданиям других пользователей
+										AND [rd].[DeputizedID] = [t].[UserID]										-- Замещение в неконтекстной роли\, в работе у замещаемого
+									\)
+								\)
+
+								\#param\(CardID\, [t].[ID]\)
+								\#param\(Status\, [t].[StateID]\)
+								\#param\(TaskType\, [t].[TypeID]\)
+								\#param\(EndDate\, [t].[Planned]\)
+								\#param\(CreationDate\, [t].[Created]\)
+								
+							\#if\(!TaskType\) \{
+							
+							UNION ALL
+								
+							SELECT
+								[ar].[CardID]\,
+								[ar].[ID]\,
+								[ar].[PlanDate]\,
+								0\,
+								@AcquaintanceTypeID\,
+								[ar].[AcquaintanceTypeName]\,
+								cast\('929ad23c-8a22-09aa-9000-398bf13979b2' as uniqueidentifier\)\,
+								[ar].[UserID]\,
+								[ar].[UserName]\,
+								[ar].[UserID]\,
+								[ar].[UserName]\,
+								[ar].[Sent]\,
+								[ar].[SenderID]\,
+								[ar].[SenderName]
+								
+							FROM [AcquaintanceRows] AS [ar] WITH \(NOLOCK\)
+							WHERE 
+								[ar].[IsReceived] = 0 AND \( 
+									[ar].[UserID] = \#if\(User\) \{ \#param\(User\) \} \{ \#param\(CurrentUserID\) \}
+									OR
+									EXISTS \(
+										/* Сотрудник является личным заместителем в роли\, на которую выдано задание */
+										SELECT NULL
+										FROM [RoleDeputies] AS [rd] WITH \(NOLOCK\)
+										WHERE [rd].[ID] = [ar].[UserID]													-- Заместитель видит только задания в работе на определенную роль
+											AND [rd].[IsActive] = 1														-- Только активные замещения - выставляется в Chronos
+											AND [rd].[DeputyID] = \#if\(User\) \{ \#param\(User\) \} \{ \#param\(CurrentUserID\) \}	-- Для работы отчета по заданиям других пользователей
+											AND [rd].[DeputizedID] = [ar].[UserID]										-- Замещение в неконтекстной роли\, в работе у замещаемого
+										\)						
+								\)
+
+								\#param\(CardID\, [ar].[CardID]\)
+								\#param\(EndDate\, [ar].[PlanDate]\)
+								\#param\(CreationDate\, [ar].[Sent]\)	
+							\}
+								
+						\) AS [t] 
+
+						/* Сабсет по дате завершения задания - джойним интервалы для определения номера интервала */
+						\#if\(ByTaskDueDateInterval\) \{
+						INNER JOIN [\#intervals] AS [ddi]
+							ON [ddi].[DateFrom] <= [t].[Planned]
+							AND [ddi].[DateTo] > [t].[Planned]
+						\} \{
+						/* Сабсет по интервалу завершения - отрабатываем фильтрацию по номеру интервала */
+						\#if\(TaskDateDueInterval\) \{
+						INNER JOIN [\#intervals] AS [ddi]
+							ON [ddi].[Interval] = \#param\(TaskDateDueInterval\)
+							AND [ddi].[DateFrom] <= [t].[Planned]
+							AND [ddi].[DateTo] > [t].[Planned]
+						\}
+						\}
+
+						\#if\(ByStatus\) \{
+						INNER JOIN [TaskStates] AS [ts] WITH \(NOLOCK\)
+							ON [ts].[ID] = [t].[StateID]
+						\}
+
+						\#if\(ByTaskType || TaskTypeGrouped\) \{
+						LEFT JOIN [TaskCommonInfo] AS [tt] WITH \(NOLOCK\)
+							ON [tt].[ID] = [t].[RowID]
+						\}
+
+						\#if\(TypeParam || ObjectPlace || Curator || Partner || CardType
+							|| ByCurator || ByPartner || ByCardType
+							|| request.SortedBy\("FullNumber"\) || request.SortedBy\("DocDate"\) || request.SortedBy\("CuratorName"\)\) \{
+						LEFT JOIN [DocumentCommonInfo] AS [dci] WITH \(NOLOCK\)
+							ON [dci].[ID] = [t].[ID]
+						\}
+						
+						---------------------------
+						\#if\(DocumentType || ByDocumentType\) \{
+						LEFT JOIN [SgmItDocument] AS [it] WITH\(NOLOCK\)
+							ON [it].[ID] = [t].[ID]
+						\}
+						\#if\(ByCardType\) \{
+						INNER JOIN [Types] AS [tp] WITH\(NOLOCK\)
+							ON [tp].[ID] = [dci].[CardTypeID]
+						\}
+						---------------------------
+
+						\#if\(ByDeputy || DeputyMode\) \{
+						/*
+						Отработка замещения конкретного пользователя в ролях для заданий в работе \(в т.ч. персональной роли\).
+						Пользователь будет видеть задания в работе тех сотрудников\, кого он замещает .
+						Система заботится о том чтобы периоды замещения не пересекались\, поэтому строчки не множатся.
+						Используется outer apply вместо LEFT JOIN\, т.к. в RoleDeputies могут быть несколько строк по разным замещаемым сотрудникам
+						*/
+						OUTER APPLY \(
+							SELECT TOP \(1\) 1
+							FROM [RoleDeputies] AS [rd] WITH \(NOLOCK\)
+							WHERE [rd].[ID] = [t].[RoleID]													-- Заместитель видит только задания в работе на определенную роль
+								AND [rd].[IsActive] = 1														-- Только активные замещения - выставляется в Chronos
+								AND [rd].[DeputyID] = \#if\(User\) \{ \#param\(User\) \} \{ \#param\(CurrentUserID\) \}	-- Для работы отчета по заданиям других пользователей
+								AND [rd].[DeputizedID] = [t].[UserID]										-- Замещение в неконтекстной роли\, в работе у замещаемого
+							\) AS [rd]\([Value]\)
+						OUTER APPLY \(
+							SELECT TOP \(1\) 1
+							FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+							WHERE [t].[UserID] IS NULL
+								AND [ru].[ID] = [t].[RoleID]
+								AND [ru].[UserID] = \#if\(User\) \{ \#param\(User\) \} \{ \#param\(CurrentUserID\) \}
+								AND [ru].[IsDeputy] = 1
+							\) AS [rdu]\([Value]\)
+						\}
+
+						/* Если сабсет - то очень непонятно отображение первого департамента\, в который входит автор\, поэтому для сабсета по деп-там
+						будем брать все департаменты\, а для отображения\, чтобы не задваивать/затраивать заданмя - первый */
+						\#if\(ByAuthorDepartment\) \{
+						OUTER APPLY \(
+							SELECT [r].[ID]\, [r].[Name]
+							FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+							INNER JOIN [Roles] AS [r] WITH \(NOLOCK\)
+								ON [r].[ID] = [ru].[ID]
+							WHERE [ru].[UserID] = [t].[AuthorID]
+								AND [ru].[TypeID] = 2
+							\) AS [rad]
+						\}
+
+						\#if\(ByRole || Role\) \{
+						INNER JOIN [Roles] AS [tr] WITH \(NOLOCK\)
+							ON [tr].[ID] = [t].[RoleID]
+						\}
+					    
+					    --------------------
+
+					    \#if\(ByChildTaskState || ChildTaskState\) \{
+						OUTER APPLY \(
+							SELECT TOP\(1\) 1 AS [Value]
+							FROM [Tasks] AS [th] WITH\(NOLOCK\)
+							INNER JOIN @additional_approval_tasks AS [at]
+								ON [at].[TypeID] = [th].[TypeID]
+							WHERE [th].[ParentID] = [t].[RowID]
+						\) AS [AnyActive]
+						OUTER APPLY \(
+							SELECT TOP\(1\) 1 AS [Value]
+							FROM [TaskHistory] AS [th] WITH\(NOLOCK\)
+							INNER JOIN @additional_approval_tasks AS [at]
+								ON [at].[TypeID] = [th].[TypeID]
+							WHERE [th].[ParentRowID] = [t].[RowID]
+								AND [OptionID] IS NOT NULL
+						\) AS [AnyComplate]
+						OUTER APPLY \(
+							SELECT
+								\(
+									CASE
+										WHEN [AnyActive].[Value] = 1 THEN N'Активное доп. согласование'
+										WHEN [AnyComplate].[Value] = 1 THEN N'Завершены все доп. согласования'
+										ELSE N'Нет доп. согласований'
+									END
+								\) AS [Value]
+						\) AS [ChildTaskStateName]
+						OUTER APPLY \(
+							SELECT
+								\(
+									CASE
+										WHEN [AnyActive].[Value] = 1 THEN 2
+										WHEN [AnyComplate].[Value] = 1 THEN 3
+										ELSE 1
+									END
+								\) AS [Value]
+						\) AS [ChildTaskStateID]
+						\}
+					    --------------------
+					    /*сабсэт по доп исполнителю*/
+					   \#if\(ByChildPerformer||ChildRole\)\{
+					   	OUTER APPLY \(
+							SELECT 
+							[th].RoleID as [ChildRoleID]\,
+							[th].RoleName as [ChildRoleName]
+							FROM [Tasks] AS [th] WITH\(NOLOCK\)
+							INNER JOIN @additional_approval_tasks AS [at]
+								ON [at].[TypeID] = [th].[TypeID]
+							WHERE [th].[ParentID] = [t].[RowID]
+								\) as [ChildRoles]			
+					   \}
+					    
+					    
+						WHERE 1=1
+							
+							---------------------------
+							\#param\(ChildTaskState\, [ChildTaskStateID].[Value]\)
+							\#param\(ChildRole\, [ChildRoles].[ChildRoleID]\)
+							\#param\(ObjectPlace\, [dci].[ObjectPlaceID]\)
+							\#param\(Curator\, [dci].[CuratorID]\)
+							\#param\(Partner\, [dci].[PartnerID]\)
+							\#param\(CardType\, [dci].[CardTypeID]\)
+							\#param\(DocumentType\, [it].[DocumentTypeID]\)
+							---------------------------
+
+							\#if\(TaskTypeGrouped\) \{
+							AND \(
+								[tt].[KindID] = \#param\(TaskTypeGrouped\)
+								OR
+								[tt].[KindID] IS NULL
+								AND \(
+									\#param\(TaskTypeGrouped\) = [t].[TypeID]
+									OR
+									\#param\(TaskTypeGrouped\) = @TypeGroupTaskID AND [t].[TypeID] IN \#eval\(typeGroupTask\)
+									OR
+									\#param\(TaskTypeGrouped\) = @TypeGroupEditID AND [t].[TypeID] IN \#eval\(typeGroupEdit\)
+									\)
+								\)
+							\}
+
+							\#if\(AuthorDepartment\) \{
+								\#if\(AuthorDepartment.Value == Guid.Parse\("13769a42-e766-4407-8f9b-758820972ee5"\)\) \{ --NoDepartmentID
+							AND NOT EXISTS \(
+								SELECT NULL
+								FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+								WHERE [ru].[UserID] = [t].[AuthorID]
+									AND [ru].[TypeID] = 2
+								\)
+								\} \{
+							AND EXISTS \(
+								SELECT NULL
+								FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+								WHERE [ru].[ID] = \#param\(AuthorDepartment\)
+									AND [ru].[UserID] = [t].[AuthorID]
+									AND [ru].[TypeID] = 2
+								\)
+								\}
+							\}
+
+							\#if\(Role\) \{
+								\#if\(Role.Value1 == Guid.Empty\) \{
+							AND [t].[RoleTypeID] = 'e97c253c-9102-0440-ac7e-4876e8f789da'
+								\} \{
+							AND \([t].[RoleID] = \#param\(Role\) OR [tr].[ParentID] = \#param\(Role\)\)
+								\}
+							\}
+
+							\#param\(TypeParam\, COALESCE\([dci].[DocTypeID]\, [dci].[CardTypeID]\)\)
+
+							\#if\(DeputyMode\) \{
+								\#if\(DeputyMode.Value == 0\) \{
+							-- я исполнитель
+							AND [rd].[Value] IS NULL
+							AND [rdu].[Value] IS NULL
+								\} \{
+							-- я заместитель
+							AND \([rd].[Value] IS NOT NULL OR [rdu].[Value] IS NOT NULL\)
+								\}
+							\}
+
+							\#if\(IsDelayed\) \{
+								\#if\(IsDelayed.CriteriaName == "IsTrue"\) \{
+							AND [t].[Planned] < @NowTimestamp
+								\} \{
+							AND [t].[Planned] >= @NowTimestamp
+								\}
+							\}
+						\) AS [t]
+					\#if\(Normal\) \{
+					/*
+					INNER JOIN [Tasks] AS [t2] WITH \(NOLOCK\)
+						ON [t2].[RowID] = [t].[RowID]*/
+					/*INNER JOIN [TaskStates] AS [ts] WITH \(NOLOCK\)
+						ON [ts].[ID] = [t2].[StateID]*/
+					INNER JOIN [Instances] AS [i] WITH \(NOLOCK\)
+						ON [i].[ID] = [t].[ID]
+					LEFT JOIN [DocumentCommonInfo] AS [dci] WITH \(NOLOCK\)
+						ON [dci].[ID] = [t].[ID]
+					LEFT JOIN [TaskCommonInfo] AS [tt] WITH \(NOLOCK\)
+						ON [tt].[ID] = [t].[RowID]
+					--TODO\: автор может быть в нескольких подразделениях - отобразим их через [\, ]\, а здесь выберем первый ИД\, чтобы если у автора нет
+					--департамента\, отобразить [без департамента] и дать возможность фильтрации
+					OUTER APPLY \(
+						SELECT TOP \(1\) [ru].[ID]
+						FROM [RoleUsers] AS [ru] WITH \(NOLOCK\)
+						WHERE [ru].[UserID] = [t].[AuthorID]
+							AND [ru].[TypeID] = 2
+						\) AS [rad]
+					OUTER APPLY \(
+						SELECT TOP \(1\) [q].[QuantNumber]
+						FROM [CalendarQuants] AS [q] WITH \(NOLOCK\)
+						WHERE [q].[EndTimeUTC] >= [t].[Planned]
+						ORDER BY [q].[EndTimeUTC] ASC
+						\) AS [qq]
+					\}
+					\#if\(ByTaskDueDateInterval\) \{
+					OUTER APPLY \(
+						SELECT TOP \(1\) [q].[QuantNumber]
+						FROM [CalendarQuants] AS [q] WITH \(NOLOCK\)
+						WHERE [q].[EndTimeUTC] >= [t].[Planned]
+						ORDER BY [q].[EndTimeUTC] ASC
+						\) AS [qq]
+					\}
+					\#if\(Normal\) \{
+					--------------------------------------------
+					INNER JOIN [Types] AS [tp] WITH \(NOLOCK\)
+						ON [tp].[ID] = [dci].[CardTypeID]
+					
+					LEFT JOIN [SgmItDocument] AS [it] WITH \(NOLOCK\)
+				    	ON [it].[ID] = [dci].[ID]
+					
+					LEFT JOIN [KrApprovalCommonInfo] AS [aci] WITH \(NOLOCK\)
+					    ON [aci].[MainCardID] = [t].[ID]
+					    
+					CROSS APPLY [Localization]\([dci].[ParentTypeCaption]\, \#param\(locale\)\) AS [lParentTypeCaption]
+					CROSS APPLY [Localization]\([dci].[PrimaryTypeCaption]\, \#param\(locale\)\) AS [lPrimaryTypeCaption]
+					--------------------------------------------
+					OUTER APPLY \(
+							SELECT TOP\(1\) 1 AS [Value]
+							FROM [Tasks] AS [th] WITH\(NOLOCK\)
+							INNER JOIN @additional_approval_tasks AS [at]
+								ON [at].[TypeID] = [th].[TypeID]
+							WHERE [th].[ParentID] = [t].[RowID]
+						\) AS [AnyActive]
+									OUTER APPLY \(
+							SELECT TOP\(1\) 1 AS [Value]
+							FROM [TaskHistory] AS [th] WITH\(NOLOCK\)
+							INNER JOIN @additional_approval_tasks AS [at]
+								ON [at].[TypeID] = [th].[TypeID]
+							WHERE [th].[ParentRowID] = [t].[RowID]
+								AND [OptionID] IS NOT NULL
+						\) AS [AnyComplate]
+									OUTER APPLY \(
+							SELECT
+								\(
+									CASE
+										WHEN [AnyActive].[Value] = 1 THEN N'Активное доп. согласование\: '
+										WHEN [AnyComplate].[Value] = 1 THEN N'Доп. согласование завершено'
+										ELSE N'Нет доп. согласований'
+									END
+								\) AS [Value]
+						\) AS [ChildTaskStateName]
+									OUTER APPLY \(
+							SELECT
+								\(
+									CASE
+										WHEN [AnyActive].[Value] = 1 THEN 2
+										WHEN [AnyComplate].[Value] = 1 THEN 3
+										ELSE 1
+									END
+								\) AS [Value]
+						\) AS [ChildTaskStateID]
+						
+						
+					\}
+					\#if\(PageOffset\) \{
+					WHERE [t].[rn] >= \#param\(PageOffset\) AND [t].[rn] < \(\#param\(PageOffset\) + \#param\(PageLimit\)\)
+					\}
+					\#if\(ByTaskDueDateInterval\) \{
+					/* Сабсет по дате завершения задания */
+					GROUP BY [t].[Interval]\, [t].[IntervalName]
+					\}
+					\#if\(ByStatus\) \{
+					/* Сабсет по состоянию заданий */
+					GROUP BY [t].[StateID]\, [t].[StateName]
+					\}
+					\#if\(ByTaskType\) \{
+					/* Сабсет по типу заданий */
+					GROUP BY [t].[TypeID]\, [t].[TypeCaption]
+					\}
+					\#if\(ByAuthorDepartment\) \{
+					/* Сабсет по подразделению автора */
+					GROUP BY [t].[AuthorDeptID]\, [t].[AuthorDeptName]
+					\}
+					\#if\(ByRole\) \{
+					/* Сабсет по роли */
+					GROUP BY [t].[RoleID]\, [t].[RoleName]
+					\}
+					\#if\(ByDeputy\) \{
+					/* Сабсет по замещению */
+					GROUP BY [t].[DeputyModeID]\, [t].[DeputyModeName]
+					\}
+					-----------------------------
+					\#if \(ByChildTaskState\) \{
+					GROUP BY [t].[ChildTaskStateID]\, [t].[ChildTaskStateName]
+					\}
+					\#if \(ByChildPerformer\) \{
+					GROUP BY [t].[ChildRoleID]\, [t].[ChildRoleName]
+					\}
+					\#if \(ByCurator\) \{
+					GROUP BY [t].[CuratorID]\, [t].[CuratorName]
+					\}
+					\#if \(ByPartner\) \{
+					GROUP BY [t].[PartnerID]\, [t].[PartnerName]
+					\}
+					\#if \(ByCardType\) \{
+					GROUP BY [t].[CardTypeID]\, [t].[CardTypeName]
+					\}
+					\#if \(ByDocumentType\) \{
+					GROUP BY [t].[DocumentTypeID]\, [t].[DocumentTypeName]
+					\}
+					
+					-----------------------------
+					\) AS [t]
+				\#if\(Normal\) \{
+				ORDER BY [t].[rn]
+				\}
+				----------------------------
+				\#if \(ByChildTaskState\) \{
+				ORDER BY [t].[ChildTaskStateID]
+				\}
+				\#if \(ByCurator\) \{
+				ORDER BY [t].[CuratorName]
+				\}
+				\#if \(ByPartner\) \{
+				ORDER BY [t].[PartnerName]
+				\}
+				\#if\(ByCardType\) \{
+				CROSS APPLY [Localization]\([t].[CardTypeName]\, \#param\(locale\)\) AS [lCardTypeName]
+				\}
+				\#if \(ByCardType\) \{
+				ORDER BY [lCardTypeName].[Value]
+				\}
+				\#if\(ByDocumentType\) \{
+				CROSS APPLY [Localization]\([t].[DocumentTypeName]\, \#param\(locale\)\) AS [lDocumentTypeName]
+				\}
+				\#if \(ByDocumentType\) \{
+				ORDER BY [lDocumentTypeName].[Value]
+				\}
+				----------------------------
+				\#if\(ByTaskType\) \{
+				CROSS APPLY [Localization]\([t].[TypeCaption]\, \#param\(locale\)\) AS [lTypeCaption]
+				\}
+				\#if\(ByRole\) \{
+				CROSS APPLY [Localization]\([t].[RoleName]\, \#param\(locale\)\) AS [lRoleName]
+				\}
+				\#if\(ByTaskDueDateInterval\) \{
+				RIGHT JOIN [\#intervals]
+					ON [\#intervals].[Interval] = [t].[Interval]
+				\}
+				\#if\(ByTaskType\) \{
+				ORDER BY [lTypeCaption].[Value]\, [t].[TypeCaption]
+				\}
+				\#if\(ByStatus\) \{
+				ORDER BY [t].[StateName]
+				\}
+				\#if\(ByTaskDueDateInterval\) \{
+				ORDER BY [\#intervals].[Interval]
+				\}
+				\#if\(ByAuthorDepartment\) \{
+				ORDER BY [t].[AuthorDeptName]
+				\}
+				\#if\(ByRole\) \{
+				ORDER BY
+					CASE WHEN [t].[RoleName] = N'$Views_MyTasks_MyRole_Sql' THEN 0 ELSE 1 END\,
+					[lRoleName].[Value]\,
+					[t].[RoleName]
+				\}
+				\#if\(ByDeputy\) \{
+				ORDER BY [t].[DeputyModeID]
+				\}
+				;
+				RETURN;
+			END;
+		}
+		#pg_query {}
+		#role(RoleID:7ff52dc0-ff6a-4c9d-ba25-b562c370004d, ViewID:d0eae665-807b-4584-89c1-2b55699b5d97) 
+	}
+}
