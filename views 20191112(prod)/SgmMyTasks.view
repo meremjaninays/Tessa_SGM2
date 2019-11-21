@@ -1,5 +1,5 @@
-#tessa_exchange_format(Version:1, CreationTime:2019-11-20T11\:05\:32) {
-	#exchange_view(RowID:d0eae665-807b-4584-89c1-2b55699b5d97, Alias:SgmMyTasks, Caption:$Sgm_Views_Captions_MyActiveTasks, ModifiedById:8d13a7a6-2cfd-4ed7-b1d6-4705d2e2d60e, ModifiedByName:Меремьянина Ю.С., FormatVersion:2, ModifiedDateTime:2019-11-20T11\:03\:42, GroupName:SgmWorkplace) {
+#tessa_exchange_format(Version:1, CreationTime:2019-11-21T09\:01\:45) {
+	#exchange_view(RowID:d0eae665-807b-4584-89c1-2b55699b5d97, Alias:SgmMyTasks, Caption:$Sgm_Views_Captions_MyActiveTasks, ModifiedById:8d13a7a6-2cfd-4ed7-b1d6-4705d2e2d60e, ModifiedByName:Меремьянина Ю.С., FormatVersion:2, ModifiedDateTime:2019-11-21T09\:00\:31, GroupName:SgmWorkplace) {
 		#metadata {
 			#view(DefaultSortColumn: CreatedDate, DefaultSortDirection: desc, Paging: always, MultiSelect: true, RowCountSubset: Count)
 
@@ -346,7 +346,7 @@
 							+ N' - ' + CONVERT\(NVARCHAR\(MAX\)\, [dci].[PrimaryCreationDate]\, 120\)
 							+ N' - ' + ISNULL\([dci].[PrimarySubject]\, N''\)
 						\) AS [PrimaryDocumentName]\,
-						[dci].[Subject]\,
+						isnull\([sdr].[RdSubject]\,[dci].[Subject]\) 						AS [Subject]\,
 						[dci].[CuratorName]\,
 						[t].[Created] 													AS [CreatedDate]\,
 						[t].[Planned]													AS [PlannedDate]\,
@@ -802,6 +802,8 @@
 						ON [i].[ID] = [t].[ID]
 					LEFT JOIN [DocumentCommonInfo] AS [dci] WITH \(NOLOCK\)
 						ON [dci].[ID] = [t].[ID]
+					LEFT JOIN [SgmDocumentRd] AS [sdr] WITH \(NOLOCK\)
+						ON [dci].[ID] = [sdr].[ID]			
 					LEFT JOIN [TaskCommonInfo] AS [tt] WITH \(NOLOCK\)
 						ON [tt].[ID] = [t].[RowID]
 					--TODO\: автор может быть в нескольких подразделениях - отобразим их через [\, ]\, а здесь выберем первый ИД\, чтобы если у автора нет
